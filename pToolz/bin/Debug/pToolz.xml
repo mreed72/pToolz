@@ -22,12 +22,27 @@ pToolz
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:pToolz.My.Resources.Resources._13744995">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:pToolz.My.Resources.Resources._56260">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:pToolz.My.Resources.Resources._92055">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:pToolz.My.Resources.Resources.CAD1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:pToolz.My.Resources.Resources.CAD2">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

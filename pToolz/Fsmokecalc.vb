@@ -1,4 +1,13 @@
-﻿Public Class Fsmokecalc
+﻿'==============================================================================
+'Smoke Tools - Assisting burn managers with Smoke Management. ©2018 Scott Reed
+'This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+'the Free Software Foundation, either version 3 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful,
+'but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+'You should have received a copy of the GNU General Public License along with this program.  If not, see <https://www.gnu.org/licenses/>
+'==============================================================================
+
+
+Public Class Fsmokecalc
     Dim x As New xFuels.ClassFuels
     Dim sADJ, sNEW As Integer
 
@@ -13,7 +22,7 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Me.Close()
+        Close()
 
     End Sub
 
@@ -31,7 +40,7 @@
             Dim MSize As New Size(_location)
             MSize.Width = e.X - _location.X
             MSize.Height = e.Y - _location.Y
-            Me.Location = Point.Add(Me.Location, MSize)
+            Location = Point.Add(Location, MSize)
 
         End If
     End Sub
@@ -56,6 +65,16 @@
             txResults.BackColor = Color.FromArgb(238, 242, 245)
         Catch ex As Exception
         End Try
+    End Sub
+
+    Private Sub txCatDay_Leave(sender As Object, e As EventArgs) Handles txCatDay.Leave
+        If txCatDay.Text < 1 Or txCatDay.Text > 5 Then
+            txCatDay.BackColor = Color.Yellow
+            txCatDay.Clear()
+            txCatDay.Focus()
+        Else
+            txCatDay.BackColor = Color.FromArgb(238, 242, 245)
+        End If
     End Sub
 
     Private Sub btnCalc_Click(sender As Object, e As EventArgs) Handles btnCalc.Click

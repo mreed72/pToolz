@@ -1,8 +1,10 @@
-﻿' **** SIMONCODER SOFTWARE ****
-' You may freely change, use and distribute this code under the following conditions:
-' 1. You may NOT charge money for the use of this software or any software that uses this code.
-' 2. You must keep this copyright information throughout the code.
-' **** © 2018 Scott Reed ****
+﻿'==============================================================================
+'Smoke Tools - Assisting burn managers with Smoke Management. ©2018 Scott Reed
+'This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+'the Free Software Foundation, either version 3 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful,
+'but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+'You should have received a copy of the GNU General Public License along with this program.  If not, see <https://www.gnu.org/licenses/>
+'==============================================================================
 
 Public Class ClassFuels
 
@@ -274,7 +276,7 @@ Public Class ClassFuels
 
     End Function
 
-    Function ProIgnCalc(ByVal xshad As Integer, ByVal xdry As Integer, ByVal xfdfm As Integer)
+    Public Function ProIgnCalc(ByVal xshad As Integer, ByVal xdry As Integer, ByVal xfdfm As Integer)
 
         Select Case xshad
             Case 1 To 10
@@ -1576,12 +1578,179 @@ Public Class ClassFuels
         Next
     End Function
 
-    Function SESLog(TTL As String, MSG As String)
+    Public Function SESLog(TTL As String, MSG As String)
         Dim LC As String = GetMyKey("SLOG")
         Dim file As System.IO.StreamWriter
         file = My.Computer.FileSystem.OpenTextFileWriter(LC, True)
         file.WriteLine(Date.Now & "===" & TTL & "===" & vbCrLf & MSG & vbCrLf)
         file.Close()
     End Function
+
+    Public Function LVORI_day(xRelativeHumidity As Integer, xDispersionIndex As Integer)
+        Select Case xRelativeHumidity
+            Case 0 To 55
+                Select Case xDispersionIndex
+                    Case 1 To 30
+                        Return 2
+                    Case Is > 30
+                        Return 1
+                    Case Else
+                        Return 0
+                End Select
+            Case 56 To 59
+                Select Case xDispersionIndex
+                    Case 1 To 8
+                        Return 3
+                    Case 9 To 30
+                        Return 2
+                    Case Is > 31
+                        Return 1
+                    Case Else
+                        Return 0
+                End Select
+            Case 60 To 64
+                Select Case xDispersionIndex
+                    Case 1 To 10
+                        Return 3
+                    Case 11 To 30
+                        Return 2
+                    Case Is > 31
+                        Return 1
+                    Case Else
+                        Return 0
+                End Select
+            Case 65 To 69
+                Select Case xDispersionIndex
+                    Case 1
+                        Return 4
+                    Case 2 To 40
+                        Return 2
+                    Case Is > 41
+                        Return 1
+                    Case Else
+                        Return 0
+                End Select
+            Case 70 To 74
+                Select Case xDispersionIndex
+                    Case 1
+                        Return 4
+                    Case Is > 2
+                        Return 3
+                    Case Else
+                        Return 0
+                End Select
+            Case 75 To 79
+                Select Case xDispersionIndex
+                    Case 1 To 16
+                        Return 4
+                    Case Is > 17
+                        Return 3
+                    Case Else
+                        Return 0
+                End Select
+            Case 80 To 82
+                Select Case xDispersionIndex
+                    Case 1
+                        Return 6
+                    Case 2 To 4
+                        Return 5
+                    Case 5 To 16
+                        Return 4
+                    Case Is > 17
+                        Return 3
+                    Case Else
+                        Return 0
+                End Select
+            Case 83 To 85
+                Select Case xDispersionIndex
+                    Case 1
+                        Return 6
+                    Case 2 To 6
+                        Return 5
+                    Case Is > 7
+                        Return 4
+                    Case Else
+                        Return 0
+                End Select
+            Case 86 To 88
+                Select Case xDispersionIndex
+                    Case 1 To 4
+                        Return 6
+                    Case 5 To 12
+                        Return 5
+                    Case Is > 13
+                        Return 4
+                    Case Else
+                        Return 0
+                End Select
+            Case 89 To 91
+                Select Case xDispersionIndex
+                    Case 1 To 2
+                        Return 7
+                    Case 3 To 6
+                        Return 6
+                    Case 7 To 16
+                        Return 5
+                    Case Is > 17
+                        Return 4
+                    Case Else
+                        Return 0
+                End Select
+            Case 92 To 94
+                Select Case xDispersionIndex
+                    Case 1
+                        Return 8
+                    Case 2
+                        Return 7
+                    Case 3 To 10
+                        Return 6
+                    Case 11 To 25
+                        Return 5
+                    Case Is > 26
+                        Return 4
+                    Case Else
+                        Return 0
+                End Select
+            Case 95 To 97
+                Select Case xDispersionIndex
+                    Case 1
+                        Return 9
+                    Case 2 To 4
+                        Return 8
+                    Case 5 To 6
+                        Return 7
+                    Case 7 To 12
+                        Return 6
+                    Case 13 To 25
+                        Return 5
+                    Case Is > 26
+                        Return 4
+                    Case Else
+                        Return 0
+                End Select
+            Case Is > 97
+                Select Case xDispersionIndex
+                    Case 1 To 2
+                        Return 10
+                    Case 3 To 6
+                        Return 9
+                    Case 7 To 10
+                        Return 8
+                    Case 11 To 12
+                        Return 7
+                    Case 13 To 25
+                        Return 5
+                    Case Is > 26
+                        Return 4
+                    Case Else
+                        Return 0
+                End Select
+            Case Else
+                Return 0
+        End Select
+    End Function
+
+
+
 
 End Class

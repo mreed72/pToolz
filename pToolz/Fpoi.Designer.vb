@@ -23,22 +23,22 @@ Partial Class Fpoi
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txShading = New System.Windows.Forms.NumericUpDown()
-        Me.txDryBulb = New System.Windows.Forms.NumericUpDown()
         Me.txFDFM = New System.Windows.Forms.NumericUpDown()
-        Me.txResult = New System.Windows.Forms.TextBox()
-        Me.btnCalc = New System.Windows.Forms.Button()
-        Me.pb = New System.Windows.Forms.PictureBox()
+        Me.txDryBulb = New System.Windows.Forms.NumericUpDown()
+        Me.txShading = New System.Windows.Forms.NumericUpDown()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.bLog = New System.Windows.Forms.Label()
+        Me.pb = New System.Windows.Forms.PictureBox()
+        Me.btnCalc = New System.Windows.Forms.Button()
+        Me.txResult = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
-        CType(Me.txShading, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txDryBulb, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txFDFM, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txDryBulb, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txShading, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
         CType(Me.pb, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -56,6 +56,54 @@ Partial Class Fpoi
         Me.Panel1.Size = New System.Drawing.Size(251, 100)
         Me.Panel1.TabIndex = 0
         '
+        'txFDFM
+        '
+        Me.txFDFM.Location = New System.Drawing.Point(169, 65)
+        Me.txFDFM.Name = "txFDFM"
+        Me.txFDFM.Size = New System.Drawing.Size(51, 22)
+        Me.txFDFM.TabIndex = 2
+        '
+        'txDryBulb
+        '
+        Me.txDryBulb.Location = New System.Drawing.Point(169, 37)
+        Me.txDryBulb.Name = "txDryBulb"
+        Me.txDryBulb.Size = New System.Drawing.Size(51, 22)
+        Me.txDryBulb.TabIndex = 1
+        '
+        'txShading
+        '
+        Me.txShading.Location = New System.Drawing.Point(169, 9)
+        Me.txShading.Name = "txShading"
+        Me.txShading.Size = New System.Drawing.Size(51, 22)
+        Me.txShading.TabIndex = 0
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(11, 67)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(152, 17)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "Fine Dead Fuel Moisture:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(70, 39)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(93, 17)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Dry Bulb Temp:"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(83, 11)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(80, 17)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Shading (%):"
+        '
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
@@ -68,72 +116,14 @@ Partial Class Fpoi
         Me.Panel2.Size = New System.Drawing.Size(251, 100)
         Me.Panel2.TabIndex = 1
         '
-        'Label1
+        'bLog
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(83, 11)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(80, 17)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Shading (%):"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(70, 39)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(93, 17)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Dry Bulb Temp:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(11, 67)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(152, 17)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Fine Dead Fuel Moisture:"
-        '
-        'txShading
-        '
-        Me.txShading.Location = New System.Drawing.Point(169, 9)
-        Me.txShading.Name = "txShading"
-        Me.txShading.Size = New System.Drawing.Size(51, 22)
-        Me.txShading.TabIndex = 3
-        '
-        'txDryBulb
-        '
-        Me.txDryBulb.Location = New System.Drawing.Point(169, 37)
-        Me.txDryBulb.Name = "txDryBulb"
-        Me.txDryBulb.Size = New System.Drawing.Size(51, 22)
-        Me.txDryBulb.TabIndex = 4
-        '
-        'txFDFM
-        '
-        Me.txFDFM.Location = New System.Drawing.Point(169, 65)
-        Me.txFDFM.Name = "txFDFM"
-        Me.txFDFM.Size = New System.Drawing.Size(51, 22)
-        Me.txFDFM.TabIndex = 5
-        '
-        'txResult
-        '
-        Me.txResult.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txResult.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txResult.Location = New System.Drawing.Point(46, 13)
-        Me.txResult.Name = "txResult"
-        Me.txResult.Size = New System.Drawing.Size(100, 30)
-        Me.txResult.TabIndex = 0
-        Me.txResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'btnCalc
-        '
-        Me.btnCalc.Image = Global.pToolz.My.Resources.Resources._56260
-        Me.btnCalc.Location = New System.Drawing.Point(157, 13)
-        Me.btnCalc.Name = "btnCalc"
-        Me.btnCalc.Size = New System.Drawing.Size(38, 30)
-        Me.btnCalc.TabIndex = 2
-        Me.btnCalc.UseVisualStyleBackColor = True
+        Me.bLog.AutoSize = True
+        Me.bLog.Location = New System.Drawing.Point(115, 66)
+        Me.bLog.Name = "bLog"
+        Me.bLog.Size = New System.Drawing.Size(48, 17)
+        Me.bLog.TabIndex = 4
+        Me.bLog.Text = "Label4"
         '
         'pb
         '
@@ -143,14 +133,26 @@ Partial Class Fpoi
         Me.pb.TabIndex = 3
         Me.pb.TabStop = False
         '
-        'bLog
+        'btnCalc
         '
-        Me.bLog.AutoSize = True
-        Me.bLog.Location = New System.Drawing.Point(115, 66)
-        Me.bLog.Name = "bLog"
-        Me.bLog.Size = New System.Drawing.Size(48, 17)
-        Me.bLog.TabIndex = 4
-        Me.bLog.Text = "Label4"
+        Me.btnCalc.Image = Global.pToolz.My.Resources.Resources._56260
+        Me.btnCalc.Location = New System.Drawing.Point(157, 13)
+        Me.btnCalc.Name = "btnCalc"
+        Me.btnCalc.Size = New System.Drawing.Size(38, 30)
+        Me.btnCalc.TabIndex = 0
+        Me.btnCalc.UseVisualStyleBackColor = True
+        '
+        'txResult
+        '
+        Me.txResult.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txResult.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txResult.Location = New System.Drawing.Point(46, 13)
+        Me.txResult.Name = "txResult"
+        Me.txResult.ReadOnly = True
+        Me.txResult.Size = New System.Drawing.Size(100, 30)
+        Me.txResult.TabIndex = 0
+        Me.txResult.TabStop = False
+        Me.txResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Fpoi
         '
@@ -164,11 +166,11 @@ Partial Class Fpoi
         Me.Text = "Probability of Ignition"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.txFDFM, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txDryBulb, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txShading, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.txShading, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txDryBulb, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txFDFM, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pb, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

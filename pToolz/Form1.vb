@@ -1,8 +1,17 @@
-﻿Public Class Form1
+﻿'==============================================================================
+'Smoke Tools - Assisting burn managers with Smoke Management. ©2018 Scott Reed
+'This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+'the Free Software Foundation, either version 3 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful,
+'but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+'You should have received a copy of the GNU General Public License along with this program.  If not, see <https://www.gnu.org/licenses/>
+'==============================================================================
+
+
+Public Class Form1
     Dim x As New xFuels.ClassFuels
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.Text = "Smoke Tools - " & x.GetMyKey("REGKEY")
+        Text = "Smoke Tools - " & x.GetMyKey("REGKEY")
         txLogLocation.Text = x.GetMyKey("SLOG")
 
     End Sub
@@ -43,6 +52,20 @@
 
     Private Sub ProbabilityOfIgnitionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProbabilityOfIgnitionToolStripMenuItem.Click
         Dim a As New Fpoi
+        a.MdiParent = Me
+        a.Show()
+
+    End Sub
+
+    Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
+        Dim a As New Fabout
+        a.MdiParent = Me
+        a.Show()
+
+    End Sub
+
+    Private Sub LVORIToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LVORIToolStripMenuItem.Click
+        Dim a As New Flvori
         a.MdiParent = Me
         a.Show()
 

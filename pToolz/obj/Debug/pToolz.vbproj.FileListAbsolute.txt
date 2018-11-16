@@ -18,3 +18,7 @@ C:\GITHUB REPOS\pToolz\pToolz\obj\Debug\pToolz.vbproj.CopyComplete
 C:\GITHUB REPOS\pToolz\pToolz\obj\Debug\pToolz.Fsmokecalc.resources
 C:\GITHUB REPOS\pToolz\pToolz\obj\Debug\pToolz.Flogs.resources
 C:\GITHUB REPOS\pToolz\pToolz\obj\Debug\pToolz.Fpoi.resources
+C:\GITHUB REPOS\pToolz\pToolz\obj\Debug\pToolz.Fabout.resources
+C:\GITHUB REPOS\pToolz\pToolz\bin\Debug\gpl.txt
+C:\GITHUB REPOS\pToolz\pToolz\obj\Debug\pToolz.Flvori.resources
+C:\GITHUB REPOS\pToolz\pToolz\obj\Debug\pToolz.FimgViewer.resources
