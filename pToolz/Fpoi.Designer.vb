@@ -34,6 +34,7 @@ Partial Class Fpoi
         Me.pb = New System.Windows.Forms.PictureBox()
         Me.btnCalc = New System.Windows.Forms.Button()
         Me.txResult = New System.Windows.Forms.TextBox()
+        Me.btnClear = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.txFDFM, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txDryBulb, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -107,6 +108,7 @@ Partial Class Fpoi
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel2.Controls.Add(Me.btnClear)
         Me.Panel2.Controls.Add(Me.bLog)
         Me.Panel2.Controls.Add(Me.pb)
         Me.Panel2.Controls.Add(Me.btnCalc)
@@ -154,6 +156,15 @@ Partial Class Fpoi
         Me.txResult.TabStop = False
         Me.txResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
+        'btnClear
+        '
+        Me.btnClear.Image = Global.pToolz.My.Resources.Resources._92055
+        Me.btnClear.Location = New System.Drawing.Point(201, 13)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(34, 30)
+        Me.btnClear.TabIndex = 5
+        Me.btnClear.UseVisualStyleBackColor = True
+        '
         'Fpoi
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -188,4 +199,5 @@ Partial Class Fpoi
     Friend WithEvents btnCalc As Button
     Friend WithEvents bLog As Label
     Friend WithEvents pb As PictureBox
+    Friend WithEvents btnClear As Button
 End Class

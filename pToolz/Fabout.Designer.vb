@@ -33,11 +33,12 @@ Partial Class Fabout
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.LinkLabel4 = New System.Windows.Forms.LinkLabel()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txDayUsing = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -115,9 +116,9 @@ Partial Class Fabout
         'Button1
         '
         Me.Button1.Image = Global.pToolz.My.Resources.Resources.weIMAGE118
-        Me.Button1.Location = New System.Drawing.Point(591, 12)
+        Me.Button1.Location = New System.Drawing.Point(546, 4)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(23, 23)
+        Me.Button1.Size = New System.Drawing.Size(49, 47)
         Me.Button1.TabIndex = 2
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -148,72 +149,83 @@ Partial Class Fabout
         Me.Panel2.Controls.Add(Me.LinkLabel4)
         Me.Panel2.Controls.Add(Me.Label7)
         Me.Panel2.Controls.Add(Me.LinkLabel3)
+        Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Controls.Add(Me.Label6)
         Me.Panel2.Controls.Add(Me.Label5)
         Me.Panel2.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel2.Location = New System.Drawing.Point(16, 395)
+        Me.Panel2.Location = New System.Drawing.Point(16, 430)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(598, 93)
+        Me.Panel2.Size = New System.Drawing.Size(598, 58)
         Me.Panel2.TabIndex = 7
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(3, 10)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(434, 14)
-        Me.Label5.TabIndex = 0
-        Me.Label5.Text = "Descriptive information was taken from the following sources:"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(29, 35)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(287, 14)
-        Me.Label6.TabIndex = 1
-        Me.Label6.Text = "Atmospheric Dispersion Index Definition:"
-        '
-        'LinkLabel3
-        '
-        Me.LinkLabel3.AutoSize = True
-        Me.LinkLabel3.LinkColor = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(124, Byte), Integer))
-        Me.LinkLabel3.Location = New System.Drawing.Point(320, 35)
-        Me.LinkLabel3.Name = "LinkLabel3"
-        Me.LinkLabel3.Size = New System.Drawing.Size(63, 14)
-        Me.LinkLabel3.TabIndex = 2
-        Me.LinkLabel3.TabStop = True
-        Me.LinkLabel3.Text = "(source)"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(29, 59)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(126, 14)
-        Me.Label7.TabIndex = 3
-        Me.Label7.Text = "LVORI Definition:"
         '
         'LinkLabel4
         '
         Me.LinkLabel4.AutoSize = True
         Me.LinkLabel4.LinkColor = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(124, Byte), Integer))
-        Me.LinkLabel4.Location = New System.Drawing.Point(161, 59)
+        Me.LinkLabel4.Location = New System.Drawing.Point(161, 37)
         Me.LinkLabel4.Name = "LinkLabel4"
         Me.LinkLabel4.Size = New System.Drawing.Size(63, 14)
         Me.LinkLabel4.TabIndex = 4
         Me.LinkLabel4.TabStop = True
         Me.LinkLabel4.Text = "(source)"
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(29, 37)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(126, 14)
+        Me.Label7.TabIndex = 3
+        Me.Label7.Text = "LVORI Definition:"
+        '
+        'LinkLabel3
+        '
+        Me.LinkLabel3.AutoSize = True
+        Me.LinkLabel3.LinkColor = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(124, Byte), Integer))
+        Me.LinkLabel3.Location = New System.Drawing.Point(320, 21)
+        Me.LinkLabel3.Name = "LinkLabel3"
+        Me.LinkLabel3.Size = New System.Drawing.Size(63, 14)
+        Me.LinkLabel3.TabIndex = 2
+        Me.LinkLabel3.TabStop = True
+        Me.LinkLabel3.Text = "(source)"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(29, 21)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(287, 14)
+        Me.Label6.TabIndex = 1
+        Me.Label6.Text = "Atmospheric Dispersion Index Definition:"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(3, 4)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(434, 14)
+        Me.Label5.TabIndex = 0
+        Me.Label5.Text = "Descriptive information was taken from the following sources:"
+        '
+        'txDayUsing
+        '
+        Me.txDayUsing.AutoSize = True
+        Me.txDayUsing.ForeColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.txDayUsing.Location = New System.Drawing.Point(19, 404)
+        Me.txDayUsing.Name = "txDayUsing"
+        Me.txDayUsing.Size = New System.Drawing.Size(16, 16)
+        Me.txDayUsing.TabIndex = 5
+        Me.txDayUsing.Text = "x"
+        '
         'Fabout
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(626, 500)
+        Me.Controls.Add(Me.txDayUsing)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.LinkLabel2)
         Me.Controls.Add(Me.PictureBox2)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.LinkLabel1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Panel1)
@@ -253,4 +265,5 @@ Partial Class Fabout
     Friend WithEvents LinkLabel3 As LinkLabel
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
+    Friend WithEvents txDayUsing As Label
 End Class

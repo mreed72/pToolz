@@ -100,6 +100,12 @@
     <Compile Include="Flvori.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FmultiCalc.Designer.vb">
+      <DependentUpon>FmultiCalc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FmultiCalc.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Flvori.resx">
       <DependentUpon>Flvori.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FmultiCalc.resx">
+      <DependentUpon>FmultiCalc.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>

@@ -6,6 +6,8 @@
 'You should have received a copy of the GNU General Public License along with this program.  If not, see <https://www.gnu.org/licenses/>
 '==============================================================================
 
+Imports System.IO
+
 Public Class ClassFuels
 
     Public Function GetAvFuels(ByVal cTypx As String, ByVal cLoad As String)
@@ -249,6 +251,7 @@ Public Class ClassFuels
                 My.Computer.FileSystem.CreateDirectory(DirName)
                 My.Computer.FileSystem.WriteAllText(DirName & "\elog.txt", "", False)
                 My.Computer.FileSystem.WriteAllText(DirName & "\slog.txt", "", False)
+                My.Computer.FileSystem.CreateDirectory(DirName & "\Sessions\")
             End If
             Return True
             Exit Function
@@ -1586,6 +1589,14 @@ Public Class ClassFuels
         file.Close()
     End Function
 
+    Public Function ERRlog(Code As String, MSG As String)
+        Dim LC As String = GetMyKey("ELOG")
+        Dim file As System.IO.StreamWriter
+        file = My.Computer.FileSystem.OpenTextFileWriter(LC, True)
+        file.WriteLine(Date.Now & "===" & Code & "===" & vbCrLf & MSG & vbCrLf)
+        file.Close()
+    End Function
+
     Public Function LVORI_day(xRelativeHumidity As Integer, xDispersionIndex As Integer)
         Select Case xRelativeHumidity
             Case 0 To 55
@@ -1750,7 +1761,59 @@ Public Class ClassFuels
         End Select
     End Function
 
+    Public Function CTFD()
+        Dim sld As String = GetMyKey("SESS")
+        Dim d As New System.IO.DirectoryInfo(sld)
+        Dim intFiles As Integer
+        intFiles = d.GetFiles.GetUpperBound(0) + 1
+        Dim cnt As Integer
+        cnt = intFiles + 1
+        Return cnt
+    End Function
+
+    Public Function finSize(lgt As Long)
+        Dim sizetype As String
+        If lgt < 1000 Then
+            sizetype = " Bytes"
+        Else
+            If lgt < 1000000000 Then
+                If lgt < 1000000 Then
+                    sizetype = " KBytes"
+                    lgt = lgt / 1000
+                Else
+                    sizetype = " MBytes"
+                    lgt = lgt / 1000000
+                End If
+            Else
+                sizetype = " GBytes"
+            End If
+        End If
+        Return lgt & sizetype
+    End Function
+
+    Function GetFolderSize(ByVal DirPath As String, Optional IncludeSubFolders As Boolean = True) As Long
+
+        Dim lngDirSize As Long
+        Dim objFileInfo As FileInfo
+        Dim objDir As DirectoryInfo = New DirectoryInfo(DirPath)
+        Dim objSubFolder As DirectoryInfo
+
+        'add length of each file
+        For Each objFileInfo In objDir.GetFiles()
+            lngDirSize += objFileInfo.Length
+        Next
+
+        'call recursively to get sub folders
+        'if you don't want this set optional
+        'parameter to false 
+        If IncludeSubFolders Then
+            For Each objSubFolder In objDir.GetDirectories()
+                lngDirSize += GetFolderSize(objSubFolder.FullName)
+            Next
+        End If
 
 
+        Return lngDirSize
+    End Function
 
 End Class

@@ -1,44 +1,59 @@
 ﻿'==============================================================================
 'Smoke Tools - Assisting burn managers with Smoke Management. ©2018 Scott Reed
 'This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
-'the Free Software Foundation, either version 3 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful,
+'the Free Software Foundation, either version 3 of the License, or any later version. This program is distributed in the hope that it will be useful,
 'but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 'You should have received a copy of the GNU General Public License along with this program.  If not, see <https://www.gnu.org/licenses/>
 '==============================================================================
 
 
+Imports xFuels
+
 Public Class Flogs
-    Dim x As New xFuels.ClassFuels
-    Private eg As String = x.GetMyKey("ELOG")
-    Private sg As String = x.GetMyKey("SLOG")
+    Private x As New xFuels.ClassFuels
+    Private eg As String = X1.GetMyKey("ELOG")
+    Private sg As String = X1.GetMyKey("SLOG")
 
-
+    Public Property X1 As ClassFuels
+        Get
+            Return x
+        End Get
+        Set(value As ClassFuels)
+            x = value
+        End Set
+    End Property
 
     Private Sub Flogs_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ChkSets()
 
-
-
-
-
     End Sub
 
     Public Function ChkSets()
-        If My.Settings.cbLogSession = True Then
-            lgbtn.Image = My.Resources.weIMAGE124
-            lgbtn.Text = "Enabled!"
-        Else
-            lgbtn.Image = My.Resources.weIMAGE118
-            lgbtn.Text = "Disabled!"
-        End If
+        Try
+            If My.Settings.cbLogSession = True Then
+                lgbtn.Image = My.Resources.weIMAGE124
+                lgbtn.Text = "Enabled!"
+            Else
+                lgbtn.Image = My.Resources.weIMAGE118
+                lgbtn.Text = "Disabled!"
+            End If
+        Catch ex As Exception
+            X1.ERRlog(ex.Message, "6xUN8IS") ' ERROR LOG CODE
+        End Try
 
-        If My.Settings.ExLogAppend = True Then
-            exlg.Text = "T"
-            exlg.BackColor = Color.FromArgb(104, 244, 136)
-        Else
-            exlg.Text = "F"
-            exlg.BackColor = Color.FromArgb(249, 170, 166)
-        End If
+        Try
+            If My.Settings.ExLogAppend = True Then
+                exlg.Text = "T"
+                exlg.BackColor = Color.FromArgb(104, 244, 136)
+            Else
+                exlg.Text = "F"
+                exlg.BackColor = Color.FromArgb(249, 170, 166)
+            End If
+        Catch ex As Exception
+            X1.ERRlog(ex.Message, "6x6HI4C") ' ERROR LOG CODE
+        End Try
+
+
     End Function
     Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
         Try
@@ -50,6 +65,7 @@ Public Class Flogs
                 rtb.Text = srg
             End If
         Catch ex As Exception
+            X1.ERRlog(ex.Message, "6x7MO14") ' ERROR LOG CODE
         End Try
     End Sub
 
@@ -63,6 +79,7 @@ Public Class Flogs
                 rtb.Text = srg
             End If
         Catch ex As Exception
+            X1.ERRlog(ex.Message, "6xWFWLK") ' ERROR LOG CODE
         End Try
     End Sub
 
@@ -86,6 +103,7 @@ Public Class Flogs
                 txSTA.Text = svLocation
             Catch ex As Exception
                 txSTA.Text = "error..."
+                X1.ERRlog(ex.Message, "6xGIG7E") ' ERROR LOG CODE
             End Try
         End If
     End Sub
@@ -101,7 +119,7 @@ Public Class Flogs
             End If
             MessageBox.Show("Session Log Cleared!", "Session Log", MessageBoxButtons.OK)
         Catch ex As Exception
-            MsgBox(ex.Message)
+            X1.ERRlog(ex.Message, "6xWDADE") ' ERROR LOG CODE
         End Try
 
 
@@ -115,18 +133,23 @@ Public Class Flogs
             Dim xv As String = txSTA.Text
             Diagnostics.Process.Start(xv)
         Catch ex As Exception
+            X1.ERRlog(ex.Message, "6x5CP29") ' ERROR LOG CODE
         End Try
 
     End Sub
 
     Private Sub exlg_Click(sender As Object, e As EventArgs) Handles exlg.Click
-        If MessageBox.Show("Would you like to APPEND (yes) the text to the log or OVERWRITE (no)?", "Append Text", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.Yes Then
-            My.Settings.ExLogAppend = True
-        Else
-            My.Settings.ExLogAppend = False
-        End If
-        My.Settings.Save()
-        ChkSets()
+        Try
+            If MessageBox.Show("Would you like to APPEND (yes) the text to the log or OVERWRITE (no)?", "Append Text", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.Yes Then
+                My.Settings.ExLogAppend = True
+            Else
+                My.Settings.ExLogAppend = False
+            End If
+            My.Settings.Save()
+            ChkSets()
+        Catch ex As Exception
+            X1.ERRlog(ex.Message, "6xVZIPA") ' ERROR LOG CODE
+        End Try
 
     End Sub
 End Class

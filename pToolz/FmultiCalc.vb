@@ -7,9 +7,10 @@
 '==============================================================================
 
 
+
 Imports xFuels
 
-Public NotInheritable Class SplashScreen
+Public Class FmultiCalc
     Private x As New xFuels.ClassFuels
 
     Public Property X1 As ClassFuels
@@ -21,35 +22,7 @@ Public NotInheritable Class SplashScreen
         End Set
     End Property
 
-    Private Sub SplashScreen_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Dim rk, rTY As String
-        rk = X1.grs(5) & "-" & X1.grs(5)
-        Dim gDt As Date
-
-        If X1.GetMyKey("REGKEY") = "" Then
-            X1.SetMyKey("REGKEY", rk)
-            X1.SetMyKey("REGDATE", Date.Now)
-        End If
-        gDt = X1.GetMyKey("REGDATE")
-        rTY = X1.GetMyKey("REGKEY")
-
-
-        Label2.Text = rTY & " - " & gDt
-
-        If X1.ChkLocations = True Then
-            pb3.Image = My.Resources.weIMAGE124
-        Else
-            pb3.Image = My.Resources.weIMAGE118
-        End If
-
-        If X1.GetMyKey("ELOG") = "" Then
-            X1.SetMyKey("ELOG", "C:\SMTOOLZ\elog.txt")
-            X1.SetMyKey("SLOG", "C:\SMTOOLZ\slog.txt")
-            X1.SetMyKey("SESS", "C:\SMTOOLZ\Sessions\")
-
-        End If
-
+    Private Sub FmultiCalc_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
-
 End Class

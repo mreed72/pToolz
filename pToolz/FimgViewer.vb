@@ -1,6 +1,6 @@
 ﻿Public Class FimgViewer
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Me.Close()
+        Close()
 
     End Sub
 
@@ -9,9 +9,9 @@
     End Sub
 
     'Set the forms text to be empty and the controlbox to false
-    Const WM_NCHITTEST As Integer = &H84
-    Const HTCLIENT As Integer = &H1
-    Const HTCAPTION As Integer = &H2
+    Private Const WM_NCHITTEST As Integer = &H84
+    Private Const HTCLIENT As Integer = &H1
+    Private Const HTCAPTION As Integer = &H2
     Protected Overrides Sub WndProc(ByRef m As System.Windows.Forms.Message)
         Select Case m.Msg
             Case WM_NCHITTEST
