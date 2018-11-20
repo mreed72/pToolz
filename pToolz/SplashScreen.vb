@@ -46,8 +46,27 @@ Public NotInheritable Class SplashScreen
             X1.SetMyKey("ELOG", "C:\SMTOOLZ\elog.txt")
             X1.SetMyKey("SLOG", "C:\SMTOOLZ\slog.txt")
             X1.SetMyKey("SESS", "C:\SMTOOLZ\Sessions\")
-
         End If
+
+
+
+        'Time Check for Archived Session Log Removal
+        If X1.GetMyKey("LOGTIME") = "" Then
+            X1.SetMyKey("LOGTIME", Date.Now.Month)
+        End If
+
+        If X1.GetMyKey("LOGTIME") = Date.Now.Month Then
+            Exit Sub
+        Else
+            My.Computer.FileSystem.DeleteDirectory("C:\SMTOOLZ\Sessions\", FileIO.DeleteDirectoryOption.DeleteAllContents)
+            My.Computer.FileSystem.CreateDirectory("C:\SMTOOLZ\Sessions\")
+            X1.SetMyKey("LOGTIME", Date.Now.Month)
+        End If
+
+
+
+
+
 
 
     End Sub

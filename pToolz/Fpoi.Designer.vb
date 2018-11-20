@@ -30,11 +30,12 @@ Partial Class Fpoi
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btnClear = New System.Windows.Forms.Button()
         Me.bLog = New System.Windows.Forms.Label()
         Me.pb = New System.Windows.Forms.PictureBox()
         Me.btnCalc = New System.Windows.Forms.Button()
         Me.txResult = New System.Windows.Forms.TextBox()
-        Me.btnClear = New System.Windows.Forms.Button()
+        Me.lkb = New System.Windows.Forms.LinkLabel()
         Me.Panel1.SuspendLayout()
         CType(Me.txFDFM, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txDryBulb, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,23 +61,29 @@ Partial Class Fpoi
         'txFDFM
         '
         Me.txFDFM.Location = New System.Drawing.Point(169, 65)
+        Me.txFDFM.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.txFDFM.Name = "txFDFM"
         Me.txFDFM.Size = New System.Drawing.Size(51, 22)
         Me.txFDFM.TabIndex = 2
+        Me.txFDFM.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'txDryBulb
         '
         Me.txDryBulb.Location = New System.Drawing.Point(169, 37)
+        Me.txDryBulb.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.txDryBulb.Name = "txDryBulb"
         Me.txDryBulb.Size = New System.Drawing.Size(51, 22)
         Me.txDryBulb.TabIndex = 1
+        Me.txDryBulb.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'txShading
         '
         Me.txShading.Location = New System.Drawing.Point(169, 9)
+        Me.txShading.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.txShading.Name = "txShading"
         Me.txShading.Size = New System.Drawing.Size(51, 22)
         Me.txShading.TabIndex = 0
+        Me.txShading.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'Label3
         '
@@ -108,6 +115,7 @@ Partial Class Fpoi
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel2.Controls.Add(Me.lkb)
         Me.Panel2.Controls.Add(Me.btnClear)
         Me.Panel2.Controls.Add(Me.bLog)
         Me.Panel2.Controls.Add(Me.pb)
@@ -118,18 +126,29 @@ Partial Class Fpoi
         Me.Panel2.Size = New System.Drawing.Size(251, 100)
         Me.Panel2.TabIndex = 1
         '
+        'btnClear
+        '
+        Me.btnClear.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(148, Byte), Integer))
+        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnClear.Image = Global.pToolz.My.Resources.Resources._92055
+        Me.btnClear.Location = New System.Drawing.Point(201, 13)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(34, 30)
+        Me.btnClear.TabIndex = 5
+        Me.btnClear.UseVisualStyleBackColor = False
+        '
         'bLog
         '
         Me.bLog.AutoSize = True
-        Me.bLog.Location = New System.Drawing.Point(115, 66)
+        Me.bLog.Location = New System.Drawing.Point(125, 67)
         Me.bLog.Name = "bLog"
-        Me.bLog.Size = New System.Drawing.Size(48, 17)
+        Me.bLog.Size = New System.Drawing.Size(110, 17)
         Me.bLog.TabIndex = 4
-        Me.bLog.Text = "Label4"
+        Me.bLog.Text = "Logging Enabled!"
         '
         'pb
         '
-        Me.pb.Location = New System.Drawing.Point(91, 65)
+        Me.pb.Location = New System.Drawing.Point(101, 66)
         Me.pb.Name = "pb"
         Me.pb.Size = New System.Drawing.Size(18, 18)
         Me.pb.TabIndex = 3
@@ -137,12 +156,14 @@ Partial Class Fpoi
         '
         'btnCalc
         '
+        Me.btnCalc.BackColor = System.Drawing.Color.FromArgb(CType(CType(148, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(74, Byte), Integer))
+        Me.btnCalc.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnCalc.Image = Global.pToolz.My.Resources.Resources._56260
         Me.btnCalc.Location = New System.Drawing.Point(157, 13)
         Me.btnCalc.Name = "btnCalc"
         Me.btnCalc.Size = New System.Drawing.Size(38, 30)
         Me.btnCalc.TabIndex = 0
-        Me.btnCalc.UseVisualStyleBackColor = True
+        Me.btnCalc.UseVisualStyleBackColor = False
         '
         'txResult
         '
@@ -156,14 +177,15 @@ Partial Class Fpoi
         Me.txResult.TabStop = False
         Me.txResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'btnClear
+        'lkb
         '
-        Me.btnClear.Image = Global.pToolz.My.Resources.Resources._92055
-        Me.btnClear.Location = New System.Drawing.Point(201, 13)
-        Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(34, 30)
-        Me.btnClear.TabIndex = 5
-        Me.btnClear.UseVisualStyleBackColor = True
+        Me.lkb.AutoSize = True
+        Me.lkb.Location = New System.Drawing.Point(11, 67)
+        Me.lkb.Name = "lkb"
+        Me.lkb.Size = New System.Drawing.Size(35, 17)
+        Me.lkb.TabIndex = 6
+        Me.lkb.TabStop = True
+        Me.lkb.Text = "POI?"
         '
         'Fpoi
         '
@@ -200,4 +222,5 @@ Partial Class Fpoi
     Friend WithEvents bLog As Label
     Friend WithEvents pb As PictureBox
     Friend WithEvents btnClear As Button
+    Friend WithEvents lkb As LinkLabel
 End Class

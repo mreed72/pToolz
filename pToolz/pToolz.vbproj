@@ -211,6 +211,9 @@
     <Content Include="gpl.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\weIMAGE072.png" />
+    <None Include="Resources\weIMAGE048.png" />
+    <None Include="Resources\weIMAGE096.png" />
     <None Include="Resources\CAD2.png" />
     <None Include="Resources\CAD1.png" />
     <None Include="Resources\13744995.jpg" />

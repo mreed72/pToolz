@@ -86,4 +86,9 @@ Public Class Fpoi
         End Try
 
     End Sub
+
+    Private Sub lkb_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lkb.LinkClicked
+        MessageBox.Show("The chance that a firebrand will cause an ignition when it lands on receptive fuels.", "POI", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+    End Sub
 End Class
