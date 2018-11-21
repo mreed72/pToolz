@@ -44,9 +44,9 @@ Partial Class Flogs
         Me.rtb.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.rtb.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.rtb.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rtb.Location = New System.Drawing.Point(0, 70)
+        Me.rtb.Location = New System.Drawing.Point(0, 57)
         Me.rtb.Name = "rtb"
-        Me.rtb.Size = New System.Drawing.Size(451, 518)
+        Me.rtb.Size = New System.Drawing.Size(451, 531)
         Me.rtb.TabIndex = 0
         Me.rtb.Text = ""
         '

@@ -110,4 +110,10 @@ Public Class Form1
         tsStat.Text = Date.Now
 
     End Sub
+
+
+
+
+
+
 End Class

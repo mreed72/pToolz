@@ -12,7 +12,7 @@
 
 Public Class FmultiCalc
     Private x As New xFuels.ClassFuels
-    Private sADJ As Integer
+    Private sADJ, zTotalSize, zTotalTons As Integer
 
 
     Private Sub FmultiCalc_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -51,35 +51,39 @@ Public Class FmultiCalc
 #End Region
 
 
-        Dim avf As Double
-        avf = x.GetAvFuels(txFtype.SelectedItem, txFload.SelectedItem)
-        Dim tfv As Integer
-        tfv = Val(txBlockSize.Text) * Val(avf)
-
-        dgv.Rows.Add(txBlockSize.Text, txFtype.SelectedItem, txFload.SelectedItem, avf, tfv)
-
-        txBlockSize.Clear()
-        txFtype.SelectedIndex = -1
-        txFload.SelectedIndex = -1
-        txBlockSize.Focus()
-
-    End Sub
-
-    Private Sub dgv_RowsAdded(sender As Object, e As DataGridViewRowsAddedEventArgs) Handles dgv.RowsAdded
-
         Try
-            Dim xA, xB As Integer
-            For Each row As DataGridViewRow In dgv.Rows
-                xA += row.Cells(0).Value
-                xB += row.Cells(4).Value
-            Next
 
-            txTotalSize.Text = xA
-            txTotalTons.Text = xB
+            Dim avf As Double
+            avf = x.GetAvFuels(txFtype.SelectedItem, txFload.SelectedItem)
+            Dim tfv As Integer
+            tfv = Val(txBlockSize.Text) * Val(avf)
+
+            Dim b As New Label() With {
+                .Text = txBlockSize.Text & ", " & txFtype.SelectedItem & ", " & txFload.SelectedItem & ", " & avf & ", " & tfv,
+                .Height = 23,
+                .Width = 400
+                }
+            fPan.Controls.Add(b)
+
+            zTotalSize = zTotalSize + Val(txBlockSize.Text)
+            zTotalTons = zTotalTons + tfv
+
+
+            txBlockSize.Clear()
+            txFtype.SelectedIndex = -1
+            txFload.SelectedIndex = -1
+            txBlockSize.Focus()
         Catch ex As Exception
+
         End Try
 
+        txTotalSize.Text = zTotalSize
+        txTotalTons.Text = zTotalTons
+
+
+
     End Sub
+
 
     Private Sub btnCalc_Click(sender As Object, e As EventArgs) Handles btnCalc.Click
 
@@ -112,6 +116,68 @@ Public Class FmultiCalc
 
         txAllowed.Text = sADJ
 
+        zTotalSize = 0
+        zTotalTons = 0
+    End Sub
+
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        'CLEAR
+        Try
+            txBlockSize.Clear()
+            txFtype.SelectedIndex = -1
+            txFload.SelectedIndex = -1
+            txCatDay.Clear()
+            txDistance.Clear()
+            fPan.Controls.Clear()
+            txTotalSize.Text = 0
+            txTotalTons.Text = 0
+            txResults.Clear()
+            txResults.BackColor = Color.White
+            zTotalSize = 0
+            zTotalTons = 0
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub TrackBar1_Scroll(sender As Object, e As EventArgs) Handles TrackBar1.Scroll
+        Dim t As Integer = TrackBar1.Value
+        Dim x As Integer = txFtype.SelectedIndex
+        Select Case t
+            Case 0
+                x = 0
+            Case 1
+                x = 1
+            Case 2
+                x = 2
+            Case 3
+                x = 3
+            Case 4
+                x = 4
+            Case 5
+                x = 5
+            Case 6
+                x = 6
+            Case 7
+                x = 7
+            Case 8
+                x = 8
+            Case 9
+                x = 9
+            Case 10
+                x = 10
+            Case 11
+                x = 11
+            Case 12
+                x = 12
+            Case 13
+                x = 13
+            Case Else
+                x = -1
+        End Select
+
+        txFtype.SelectedIndex = x
 
 
     End Sub

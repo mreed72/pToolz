@@ -7,6 +7,7 @@
 '==============================================================================
 
 Imports System.IO
+Imports System.Text
 
 Public Class ClassFuels
 
@@ -1814,6 +1815,13 @@ Public Class ClassFuels
 
 
         Return lngDirSize
+    End Function
+
+    Function MergeAllTextFiles(xPath As String, xFileName As String)
+        Dim Paths() As String = Directory.GetFiles(xPath, "*.txt")
+        For Each Path As String In Paths
+            File.AppendAllText(xFileName, File.ReadAllText(Path), Encoding.Default)
+        Next
     End Function
 
 End Class
