@@ -45,16 +45,16 @@ Partial Class Form1
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.tsStat = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.tsSesLogSize = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.xAFDSZ = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.cbSesLog = New System.Windows.Forms.CheckBox()
-        Me.T1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.T1 = New System.Windows.Forms.Timer(Me.components)
         Me.cbDelLogs30Days = New System.Windows.Forms.CheckBox()
+        Me.cbSesLog = New System.Windows.Forms.CheckBox()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -187,7 +187,7 @@ Partial Class Form1
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsStat, Me.ToolStripStatusLabel1, Me.ToolStripStatusLabel2})
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsStat, Me.ToolStripStatusLabel1, Me.tsSesLogSize})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 686)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(1062, 22)
@@ -207,11 +207,11 @@ Partial Class Form1
         Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(10, 17)
         Me.ToolStripStatusLabel1.Text = "|"
         '
-        'ToolStripStatusLabel2
+        'tsSesLogSize
         '
-        Me.ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
-        Me.ToolStripStatusLabel2.Size = New System.Drawing.Size(120, 17)
-        Me.ToolStripStatusLabel2.Text = "ToolStripStatusLabel2"
+        Me.tsSesLogSize.Name = "tsSesLogSize"
+        Me.tsSesLogSize.Size = New System.Drawing.Size(120, 17)
+        Me.tsSesLogSize.Text = "ToolStripStatusLabel2"
         '
         'Panel1
         '
@@ -265,22 +265,6 @@ Partial Class Form1
         Me.Panel2.Size = New System.Drawing.Size(249, 36)
         Me.Panel2.TabIndex = 0
         '
-        'cbSesLog
-        '
-        Me.cbSesLog.AutoSize = True
-        Me.cbSesLog.Checked = Global.pToolz.My.MySettings.Default.cbLogSession
-        Me.cbSesLog.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.pToolz.My.MySettings.Default, "cbLogSession", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.cbSesLog.Location = New System.Drawing.Point(3, 8)
-        Me.cbSesLog.Name = "cbSesLog"
-        Me.cbSesLog.Size = New System.Drawing.Size(89, 17)
-        Me.cbSesLog.TabIndex = 0
-        Me.cbSesLog.Text = "Log Sessions"
-        Me.cbSesLog.UseVisualStyleBackColor = True
-        '
-        'T1
-        '
-        Me.T1.Enabled = True
-        '
         'Panel4
         '
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
@@ -289,6 +273,10 @@ Partial Class Form1
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(144, 26)
         Me.Panel4.TabIndex = 1
+        '
+        'T1
+        '
+        Me.T1.Enabled = True
         '
         'cbDelLogs30Days
         '
@@ -303,6 +291,18 @@ Partial Class Form1
         Me.cbDelLogs30Days.TabIndex = 0
         Me.cbDelLogs30Days.Text = "Delete logs after 30 days"
         Me.cbDelLogs30Days.UseVisualStyleBackColor = True
+        '
+        'cbSesLog
+        '
+        Me.cbSesLog.AutoSize = True
+        Me.cbSesLog.Checked = Global.pToolz.My.MySettings.Default.cbLogSession
+        Me.cbSesLog.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.pToolz.My.MySettings.Default, "cbLogSession", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.cbSesLog.Location = New System.Drawing.Point(3, 8)
+        Me.cbSesLog.Name = "cbSesLog"
+        Me.cbSesLog.Size = New System.Drawing.Size(89, 17)
+        Me.cbSesLog.TabIndex = 0
+        Me.cbSesLog.Text = "Log Sessions"
+        Me.cbSesLog.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -359,7 +359,7 @@ Partial Class Form1
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
-    Friend WithEvents ToolStripStatusLabel2 As ToolStripStatusLabel
+    Friend WithEvents tsSesLogSize As ToolStripStatusLabel
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Button1 As Button
     Friend WithEvents xAFDSZ As Label

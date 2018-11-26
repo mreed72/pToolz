@@ -13,28 +13,6 @@ Public Class Fsmokecalc
     Private x As New xFuels.ClassFuels
     Private sADJ, sNEW As Integer
 
-    Private Sub Fsmokecalc_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Try
-            If My.Settings.cbLogSession = True Then
-                pb1.Image = My.Resources.weIMAGE124
-                k7.Text = "Log Enabled!"
-            Else
-                pb1.Image = My.Resources.weIMAGE118
-                k7.Text = "Log Disabled!"
-            End If
-        Catch ex As Exception
-            X1.ERRlog(ex.Message, "6xZEHVF") ' ERROR LOG CODE
-        End Try
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Close()
-
-    End Sub
-
-#Region "Move the Form Click anywhere"
-    Private _location As Point
-
     Public Property X1 As ClassFuels
         Get
             Return x
@@ -62,23 +40,43 @@ Public Class Fsmokecalc
         End Set
     End Property
 
-    Private Sub Form1_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseDown
-        _location = e.Location
+    Private Sub Fsmokecalc_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            If My.Settings.cbLogSession = True Then
+                pb1.Image = My.Resources.weIMAGE124
+                k7.Text = "Log Enabled!"
+            Else
+                pb1.Image = My.Resources.weIMAGE118
+                k7.Text = "Log Disabled!"
+            End If
+        Catch ex As Exception
+            X1.ERRlog(ex.Message, "6xZEHVF") ' ERROR LOG CODE
+        End Try
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Close()
 
     End Sub
 
-    Private Sub Form1_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseMove
-        If String.Compare(Control.MouseButtons.ToString(), "Left") = 0 Then
+#Region "Click Anywhere and move form (Un-Comment to enable)"
+    'Private _location As Point
 
-            Dim MSize As New Size(_location)
-            MSize.Width = e.X - _location.X
-            MSize.Height = e.Y - _location.Y
-            Location = Point.Add(Location, MSize)
+    'Private Sub Form1_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseDown
+    '    _location = e.Location
 
-        End If
-    End Sub
+    'End Sub
 
+    'Private Sub Form1_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseMove
+    '    If String.Compare(Control.MouseButtons.ToString(), "Left") = 0 Then
 
+    '        Dim MSize As New Size(_location)
+    '        MSize.Width = e.X - _location.X
+    '        MSize.Height = e.Y - _location.Y
+    '        Location = Point.Add(Location, MSize)
+
+    '    End If
+    'End Sub
 #End Region
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
@@ -117,7 +115,7 @@ Public Class Fsmokecalc
 
     Private Sub btnCalc_Click(sender As Object, e As EventArgs) Handles btnCalc.Click
 
-
+#Region "Quick Error Check"
         Try
             If txBurnSize.Text = "" Then
                 txBurnSize.BackColor = Drawing.Color.Yellow
@@ -160,6 +158,9 @@ Public Class Fsmokecalc
             X1.ERRlog(ex.Message, "6x9XTN3") ' ERROR LOG CODE
         End Try
 
+#End Region
+
+        'Calculation Process
         Try
             txAvFuels.Text = X1.GetAvFuels(txFtype.SelectedItem, txFload.SelectedItem)
             txTotalTons.Text = Val(txBurnSize.Text) * Val(txAvFuels.Text)

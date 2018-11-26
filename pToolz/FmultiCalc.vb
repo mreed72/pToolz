@@ -239,43 +239,45 @@ Public Class FmultiCalc
     End Sub
 
     Private Sub TrackBar1_Scroll(sender As Object, e As EventArgs) Handles TrackBar1.Scroll
-        Dim t As Integer = TrackBar1.Value
-        Dim x As Integer = txFtype.SelectedIndex
-        Select Case t
-            Case 0
-                x = 0
-            Case 1
-                x = 1
-            Case 2
-                x = 2
-            Case 3
-                x = 3
-            Case 4
-                x = 4
-            Case 5
-                x = 5
-            Case 6
-                x = 6
-            Case 7
-                x = 7
-            Case 8
-                x = 8
-            Case 9
-                x = 9
-            Case 10
-                x = 10
-            Case 11
-                x = 11
-            Case 12
-                x = 12
-            Case 13
-                x = 13
-            Case Else
-                x = -1
-        End Select
+        Try
+            Dim t As Integer = TrackBar1.Value
+            Dim x As Integer = txFtype.SelectedIndex
+            Select Case t
+                Case 0
+                    x = 0
+                Case 1
+                    x = 1
+                Case 2
+                    x = 2
+                Case 3
+                    x = 3
+                Case 4
+                    x = 4
+                Case 5
+                    x = 5
+                Case 6
+                    x = 6
+                Case 7
+                    x = 7
+                Case 8
+                    x = 8
+                Case 9
+                    x = 9
+                Case 10
+                    x = 10
+                Case 11
+                    x = 11
+                Case 12
+                    x = 12
+                Case 13
+                    x = 13
+                Case Else
+                    x = -1
+            End Select
 
-        txFtype.SelectedIndex = x
-
-
+            txFtype.SelectedIndex = x
+        Catch ex As Exception
+            x.ERRlog(ex.Message, "8x6M28E") ' ERROR LOG CODE
+        End Try
     End Sub
 End Class

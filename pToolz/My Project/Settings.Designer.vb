@@ -89,6 +89,18 @@ Namespace My
                 Me("cbDelLogs30Days") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property SessionLogFileSize() As Integer
+            Get
+                Return CType(Me("SessionLogFileSize"),Integer)
+            End Get
+            Set
+                Me("SessionLogFileSize") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

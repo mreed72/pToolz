@@ -295,7 +295,7 @@ Partial Class Fsmokecalc
         '
         'btnCalc
         '
-        Me.btnCalc.BackColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(229, Byte), Integer))
+        Me.btnCalc.BackColor = System.Drawing.Color.FromArgb(CType(CType(142, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(99, Byte), Integer))
         Me.btnCalc.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnCalc.Image = Global.pToolz.My.Resources.Resources._56260
         Me.btnCalc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft

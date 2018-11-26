@@ -1,4 +1,13 @@
-﻿Public Class FimgViewer
+﻿'==============================================================================
+'Smoke Tools - Assisting burn managers with Smoke Management. ©2018 Scott Reed
+'This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+'the Free Software Foundation, either version 3 of the License, or any later version. This program is distributed in the hope that it will be useful,
+'but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+'You should have received a copy of the GNU General Public License along with this program.  If not, see <https://www.gnu.org/licenses/>
+'==============================================================================
+
+
+Public Class FimgViewer
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Close()
 
@@ -8,7 +17,11 @@
 
     End Sub
 
-    'Set the forms text to be empty and the controlbox to false
+
+    ''' <summary>
+    ''' This code snippett and all instances of it in this application were obtained from the following source:
+    ''' (https://stackoverflow.com/questions/24449543/how-to-move-form-without-form-border-visual-studio)
+    ''' </summary>
     Private Const WM_NCHITTEST As Integer = &H84
     Private Const HTCLIENT As Integer = &H1
     Private Const HTCAPTION As Integer = &H2

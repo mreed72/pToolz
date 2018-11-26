@@ -12,25 +12,33 @@ Imports xFuels
 Public Class Form1
 
     Public Property X1 As New xFuels.ClassFuels
+    Dim SesLogSize As Integer
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Text = "Smoke Tools - " & X1.GetMyKey("REGKEY")
 
-        'Archived Folder Size
-        Dim bkf As String = "C:\SMTOOLZ\Sessions\"
-        xAFDSZ.Text = "Archived Session Directory Size: " & X1.finSize(X1.GetFolderSize(bkf, True))
+        Try
+            'Archived Folder Size
+            Dim bkf As String = "C:\SMTOOLZ\Sessions\"
+            xAFDSZ.Text = "Archived Session Directory Size: " & X1.finSize(X1.GetFolderSize(bkf, True))
+        Catch ex As Exception
+            X1.ERRlog(ex.Message, "8xXC3DL") ' ERROR LOG CODE
+        End Try
 
+
+        Try
+            SesLogSize = My.Computer.FileSystem.GetFileInfo("C:\SMTOOLZ\slog.txt").Length
+            My.Settings.SessionLogFileSize = SesLogSize
+            My.Settings.Save()
+
+            tsSesLogSize.Text = "SLFS: " & SesLogSize
+        Catch ex As Exception
+            X1.ERRlog(ex.Message, "8xN711H") ' ERROR LOG CODE
+        End Try
 
 
     End Sub
-
-
-
-
-
-
-
 
     Private Sub EXITToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EXITToolStripMenuItem.Click
         Application.Exit()
@@ -86,23 +94,34 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        'TODO: This code needs some adjusting
 
-        If My.Settings.cbLogSession = True Then
+        Dim ss As Integer
+        ss = My.Computer.FileSystem.GetFileInfo("C:\SMTOOLZ\slog.txt").Length
+
+        If ss > My.Settings.SessionLogFileSize Then
+            If My.Settings.cbLogSession = True Then
+                Try
+                    Dim FileName As String
+                    FileName = "SessionLog_" & Date.Now.Month & "_" & Date.Now.Day & "_" & Date.Now.Year & "_" & CInt(X1.CTFD) & ".txt"
+                    My.Computer.FileSystem.CopyFile("C:\SMTOOLZ\slog.txt", "C:\SMTOOLZ\Sessions\" & FileName)
+                Catch ex As Exception
+                    X1.ERRlog(ex.Message, "6xRSQ8E") ' ERROR LOG CODE
+                End Try
+            Else
+                Exit Sub
+            End If
+
             Try
-                Dim FileName As String
-                FileName = "SessionLog_" & Date.Now.Month & "_" & Date.Now.Day & "_" & Date.Now.Year & "_" & CInt(X1.CTFD) & ".txt"
-                My.Computer.FileSystem.CopyFile("C:\SMTOOLZ\slog.txt", "C:\SMTOOLZ\Sessions\" & FileName)
+                My.Computer.FileSystem.DeleteFile("C:\SMTOOLZ\slog.txt")
+                My.Computer.FileSystem.WriteAllText("C:\SMTOOLZ\slog.txt", "", False)
             Catch ex As Exception
-                X1.ERRlog(ex.Message, "6xRSQ8E") ' ERROR LOG CODE
+                X1.ERRlog(ex.Message, "8xU8VLJ") ' ERROR LOG CODE
             End Try
         Else
             Exit Sub
         End If
 
 
-        My.Computer.FileSystem.DeleteFile("C:\SMTOOLZ\slog.txt")
-        My.Computer.FileSystem.WriteAllText("C:\SMTOOLZ\slog.txt", "", False)
 
     End Sub
 

@@ -86,10 +86,11 @@ Public Class Flogs
     Private Sub ToolStripButton3_Click(sender As Object, e As EventArgs) Handles ToolStripButton3.Click
         'Export RTB to RTF
         If rtb.Text = "" Then
+            txSTA.Text = "NO TEXT TO EXPORT!!!"
             Exit Sub
         End If
-        Dim dd As Boolean = My.Settings.ExLogAppend
 
+        Dim dd As Boolean = My.Settings.ExLogAppend
         Dim sd As New SaveFileDialog
         sd.DefaultExt = "doc"
         sd.Filter = "Microsoft Word Document (.doc)|*.doc"
