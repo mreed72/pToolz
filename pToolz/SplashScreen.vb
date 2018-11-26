@@ -42,11 +42,11 @@ Public NotInheritable Class SplashScreen
             pb3.Image = My.Resources.weIMAGE118
         End If
 
-        If X1.GetMyKey("ELOG") = "" Then
-            X1.SetMyKey("ELOG", "C:\SMTOOLZ\elog.txt")
-            X1.SetMyKey("SLOG", "C:\SMTOOLZ\slog.txt")
-            X1.SetMyKey("SESS", "C:\SMTOOLZ\Sessions\")
-        End If
+
+        X1.SetMyKey("ELOG", "C:\SMTOOLZ\elog.txt")
+        X1.SetMyKey("SLOG", "C:\SMTOOLZ\slog.txt")
+        X1.SetMyKey("SESS", "C:\SMTOOLZ\Sessions\")
+
 
 
 
@@ -55,13 +55,19 @@ Public NotInheritable Class SplashScreen
             X1.SetMyKey("LOGTIME", Date.Now.Month)
         End If
 
-        If X1.GetMyKey("LOGTIME") = Date.Now.Month Then
-            Exit Sub
+        If My.Settings.cbDelLogs30Days = True Then
+            If X1.GetMyKey("LOGTIME") = Date.Now.Month Then
+                Exit Sub
+            Else
+                My.Computer.FileSystem.DeleteDirectory("C:\SMTOOLZ\Sessions\", FileIO.DeleteDirectoryOption.DeleteAllContents)
+                Threading.Thread.Sleep(1000)
+                My.Computer.FileSystem.CreateDirectory("C:\SMTOOLZ\Sessions\")
+                X1.SetMyKey("LOGTIME", Date.Now.Month)
+            End If
         Else
-            My.Computer.FileSystem.DeleteDirectory("C:\SMTOOLZ\Sessions\", FileIO.DeleteDirectoryOption.DeleteAllContents)
-            My.Computer.FileSystem.CreateDirectory("C:\SMTOOLZ\Sessions\")
-            X1.SetMyKey("LOGTIME", Date.Now.Month)
+            Exit Sub
         End If
+
 
 
 

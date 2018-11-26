@@ -77,9 +77,9 @@ Public Class Fpoi
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         Try
-            txShading.Value = 0
-            txDryBulb.Value = 0
-            txFDFM.Value = 0
+            txShading.Value = 1
+            txDryBulb.Value = 1
+            txFDFM.Value = 1
             txResult.Clear()
         Catch ex As Exception
             X1.ERRlog(ex.Message, "6xFHFG9") ' ERROR LOG CODE

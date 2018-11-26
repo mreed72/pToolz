@@ -13,11 +13,22 @@
 Public Class FmultiCalc
     Private x As New xFuels.ClassFuels
     Private sADJ, zTotalSize, zTotalTons As Integer
-
+    Private XGX As String
 
     Private Sub FmultiCalc_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            Dim t As Boolean
+            t = My.Settings.cbLogSession
+            If t = True Then
+                pb.Image = My.Resources.weIMAGE124
+            Else
+                pb.Image = My.Resources.weIMAGE118
+            End If
+        Catch ex As Exception
+            x.ERRlog(ex.Message, "8x9JUKR") ' ERROR LOG CODE
+        End Try
 
-
+        lbLabel001.Visible = False
 
 
 
@@ -58,15 +69,8 @@ Public Class FmultiCalc
             Dim tfv As Integer
             tfv = Val(txBlockSize.Text) * Val(avf)
 
-            Dim b As New Label() With {
-                .Text = txBlockSize.Text & ", " & txFtype.SelectedItem & ", " & txFload.SelectedItem & ", " & avf & ", " & tfv,
-                .Height = 23,
-                .Width = 400
-                }
-            fPan.Controls.Add(b)
+            dgv1.Rows.Add(txBlockSize.Text, txFtype.SelectedItem, txFload.SelectedItem, avf, tfv)
 
-            zTotalSize = zTotalSize + Val(txBlockSize.Text)
-            zTotalTons = zTotalTons + tfv
 
 
             txBlockSize.Clear()
@@ -74,11 +78,8 @@ Public Class FmultiCalc
             txFload.SelectedIndex = -1
             txBlockSize.Focus()
         Catch ex As Exception
-
+            x.ERRlog(ex.Message, "8x2W1LD") ' ERROR LOG CODE
         End Try
-
-        txTotalSize.Text = zTotalSize
-        txTotalTons.Text = zTotalTons
 
 
 
@@ -105,19 +106,114 @@ Public Class FmultiCalc
         End If
 #End Region
 
-        sADJ = x.smpCalc(txCatDay.Text, txDistance.Text)
-        If txTotalTons.Text > sADJ Then
-            txResults.Text = "Your burn WILL exceed the guidelines."
-            txResults.BackColor = Color.LightPink
-        Else
-            txResults.Text = "Your burn WILL NOT exceed the guidelines."
-            txResults.BackColor = Color.White
-        End If
+        XGX = x.grs(5)
 
-        txAllowed.Text = sADJ
 
-        zTotalSize = 0
-        zTotalTons = 0
+        Try
+            sADJ = x.smpCalc(txCatDay.Text, txDistance.Text)
+            If txTotalTons.Text > sADJ Then
+                txResults.Text = "Your burn WILL exceed the guidelines."
+                txResults.BackColor = Color.LightPink
+            Else
+                txResults.Text = "Your burn WILL NOT exceed the guidelines."
+                txResults.BackColor = Color.White
+            End If
+
+            txAllowed.Text = sADJ
+
+            zTotalSize = 0
+            zTotalTons = 0
+        Catch ex As Exception
+            x.ERRlog(ex.Message, "8x9XBG5") ' ERROR LOG CODE
+        End Try
+
+
+        Try
+            'Session Log
+            DGtoCSV()
+
+            Dim cd, aw, ts, tt As Integer
+            Dim td As Double
+            Dim res As String
+            Dim b2 As String
+            Dim XL As String = "C:\SMTOOLZ\Multilog_" & XGX & ".csv"
+            cd = txCatDay.Text
+            aw = txAllowed.Text
+            ts = txTotalSize.Text
+            tt = txTotalTons.Text
+            td = txDistance.Text
+            res = txResults.Text
+
+            x.SESLog("MULTI FUELS CALCULATOR", "Log ID: " & XL & vbCrLf & "Category Day: " & cd & vbCrLf & "Target Distance: " & td & vbCrLf & "Total Size: " & ts _
+                     & vbCrLf & "Total Allowed: " & aw & vbCrLf & "Total Tons: " & tt & vbCrLf & "Results: " & res)
+
+
+            lbLabel001.Visible = True
+            lbLabel001.Text = XL
+
+        Catch ex As Exception
+            x.ERRlog(ex.Message, "8xXPEZ9") ' ERROR LOG CODE
+        End Try
+
+    End Sub
+
+    Function DGtoCSV()
+        Try
+            Dim LL As String = "C:\SMTOOLZ\Multilog_" & XGX & ".csv"
+            Dim StrExport As String = ""
+            For Each C As DataGridViewColumn In dgv1.Columns
+                StrExport &= """" & C.HeaderText & ""","
+            Next
+            StrExport = StrExport.Substring(0, StrExport.Length - 1)
+            StrExport &= Environment.NewLine
+
+            For Each R As DataGridViewRow In dgv1.Rows
+                For Each C As DataGridViewCell In R.Cells
+                    If Not C.Value Is Nothing Then
+                        StrExport &= """" & C.Value.ToString & ""","
+                    Else
+                        StrExport &= """" & "" & ""","
+                    End If
+                Next
+                StrExport = StrExport.Substring(0, StrExport.Length - 1)
+                StrExport &= Environment.NewLine
+            Next
+
+            Dim tw As IO.TextWriter = New IO.StreamWriter(LL)
+            tw.Write(StrExport)
+            tw.Close()
+        Catch ex As Exception
+            x.ERRlog(ex.Message, "8x9ECEV") ' ERROR LOG CODE
+        End Try
+
+    End Function
+
+
+    Private Sub dgv1_RowsAdded(sender As Object, e As DataGridViewRowsAddedEventArgs) Handles dgv1.RowsAdded
+
+        Try
+            Dim xA, xB As Double
+            For Each row As DataGridViewRow In dgv1.Rows
+                xA += row.Cells(0).Value
+                xB += row.Cells(4).Value
+            Next
+
+            'displays the results
+            txTotalSize.Text = xA
+            txTotalTons.Text = xB
+        Catch ex As Exception
+            x.ERRlog(ex.Message, "8x9WQCX") ' ERROR LOG CODE
+        End Try
+
+
+    End Sub
+
+    Private Sub lbLabel001_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lbLabel001.LinkClicked
+        Try
+            Diagnostics.Process.Start(lbLabel001.Text)
+        Catch ex As Exception
+            x.ERRlog(ex.Message, "8xFKB2K") ' ERROR LOG CODE
+        End Try
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
@@ -128,16 +224,17 @@ Public Class FmultiCalc
             txFload.SelectedIndex = -1
             txCatDay.Clear()
             txDistance.Clear()
-            fPan.Controls.Clear()
             txTotalSize.Text = 0
             txTotalTons.Text = 0
             txResults.Clear()
             txResults.BackColor = Color.White
             zTotalSize = 0
             zTotalTons = 0
+            lbLabel001.Visible = False
+            dgv1.Rows.Clear()
 
         Catch ex As Exception
-
+            x.ERRlog(ex.Message, "8xFPHKL") ' ERROR LOG CODE
         End Try
     End Sub
 

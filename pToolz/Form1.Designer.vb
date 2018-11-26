@@ -48,16 +48,19 @@ Partial Class Form1
         Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.xAFDSZ = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.cbSesLog = New System.Windows.Forms.CheckBox()
         Me.T1 = New System.Windows.Forms.Timer(Me.components)
-        Me.xAFDSZ = New System.Windows.Forms.Label()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.cbDelLogs30Days = New System.Windows.Forms.CheckBox()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -65,7 +68,7 @@ Partial Class Form1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.ToolStripMenuItem2, Me.TOOLSToolStripMenuItem, Me.ToolStripMenuItem3, Me.HELPToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(935, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1062, 24)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -187,7 +190,7 @@ Partial Class Form1
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsStat, Me.ToolStripStatusLabel1, Me.ToolStripStatusLabel2})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 686)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(935, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(1062, 22)
         Me.StatusStrip1.TabIndex = 2
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -219,7 +222,7 @@ Partial Class Form1
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 24)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(935, 47)
+        Me.Panel1.Size = New System.Drawing.Size(1062, 47)
         Me.Panel1.TabIndex = 4
         '
         'Panel3
@@ -227,10 +230,19 @@ Partial Class Form1
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel3.Controls.Add(Me.xAFDSZ)
         Me.Panel3.Controls.Add(Me.Button1)
-        Me.Panel3.Location = New System.Drawing.Point(109, 3)
+        Me.Panel3.Location = New System.Drawing.Point(258, 3)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(410, 36)
         Me.Panel3.TabIndex = 1
+        '
+        'xAFDSZ
+        '
+        Me.xAFDSZ.AutoSize = True
+        Me.xAFDSZ.Location = New System.Drawing.Point(150, 9)
+        Me.xAFDSZ.Name = "xAFDSZ"
+        Me.xAFDSZ.Size = New System.Drawing.Size(39, 13)
+        Me.xAFDSZ.TabIndex = 7
+        Me.xAFDSZ.Text = "Label1"
         '
         'Button1
         '
@@ -246,10 +258,11 @@ Partial Class Form1
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel2.Controls.Add(Me.Panel4)
         Me.Panel2.Controls.Add(Me.cbSesLog)
         Me.Panel2.Location = New System.Drawing.Point(3, 3)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(100, 36)
+        Me.Panel2.Size = New System.Drawing.Size(249, 36)
         Me.Panel2.TabIndex = 0
         '
         'cbSesLog
@@ -268,20 +281,34 @@ Partial Class Form1
         '
         Me.T1.Enabled = True
         '
-        'xAFDSZ
+        'Panel4
         '
-        Me.xAFDSZ.AutoSize = True
-        Me.xAFDSZ.Location = New System.Drawing.Point(150, 9)
-        Me.xAFDSZ.Name = "xAFDSZ"
-        Me.xAFDSZ.Size = New System.Drawing.Size(39, 13)
-        Me.xAFDSZ.TabIndex = 7
-        Me.xAFDSZ.Text = "Label1"
+        Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel4.Controls.Add(Me.cbDelLogs30Days)
+        Me.Panel4.Location = New System.Drawing.Point(98, 3)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(144, 26)
+        Me.Panel4.TabIndex = 1
+        '
+        'cbDelLogs30Days
+        '
+        Me.cbDelLogs30Days.AutoSize = True
+        Me.cbDelLogs30Days.Checked = Global.pToolz.My.MySettings.Default.cbDelLogs30Days
+        Me.cbDelLogs30Days.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.cbDelLogs30Days.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.pToolz.My.MySettings.Default, "cbDelLogs30Days", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.cbDelLogs30Days.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbDelLogs30Days.Location = New System.Drawing.Point(3, 2)
+        Me.cbDelLogs30Days.Name = "cbDelLogs30Days"
+        Me.cbDelLogs30Days.Size = New System.Drawing.Size(125, 16)
+        Me.cbDelLogs30Days.TabIndex = 0
+        Me.cbDelLogs30Days.Text = "Delete logs after 30 days"
+        Me.cbDelLogs30Days.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(935, 708)
+        Me.ClientSize = New System.Drawing.Size(1062, 708)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.MenuStrip1)
@@ -300,6 +327,8 @@ Partial Class Form1
         Me.Panel3.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -334,4 +363,6 @@ Partial Class Form1
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Button1 As Button
     Friend WithEvents xAFDSZ As Label
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents cbDelLogs30Days As CheckBox
 End Class

@@ -23,22 +23,22 @@ Partial Class Flvori
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txRH = New System.Windows.Forms.NumericUpDown()
-        Me.txADI = New System.Windows.Forms.NumericUpDown()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.txResult = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.rtb1 = New System.Windows.Forms.RichTextBox()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.txADI = New System.Windows.Forms.NumericUpDown()
+        Me.txRH = New System.Windows.Forms.NumericUpDown()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txResult = New System.Windows.Forms.TextBox()
+        Me.rtb1 = New System.Windows.Forms.RichTextBox()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel4 = New System.Windows.Forms.LinkLabel()
         Me.btnCalc = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
-        CType(Me.txRH, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txADI, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txRH, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -54,6 +54,34 @@ Partial Class Flvori
         Me.Panel1.Size = New System.Drawing.Size(258, 82)
         Me.Panel1.TabIndex = 0
         '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.Location = New System.Drawing.Point(3, 43)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(191, 16)
+        Me.LinkLabel1.TabIndex = 4
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "Atmospheric Dispersion Index:"
+        '
+        'txADI
+        '
+        Me.txADI.Location = New System.Drawing.Point(200, 41)
+        Me.txADI.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.txADI.Name = "txADI"
+        Me.txADI.Size = New System.Drawing.Size(42, 23)
+        Me.txADI.TabIndex = 3
+        Me.txADI.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'txRH
+        '
+        Me.txRH.Location = New System.Drawing.Point(200, 13)
+        Me.txRH.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.txRH.Name = "txRH"
+        Me.txRH.Size = New System.Drawing.Size(42, 23)
+        Me.txRH.TabIndex = 2
+        Me.txRH.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -62,20 +90,6 @@ Partial Class Flvori
         Me.Label1.Size = New System.Drawing.Size(122, 16)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Relative Humidity:"
-        '
-        'txRH
-        '
-        Me.txRH.Location = New System.Drawing.Point(200, 13)
-        Me.txRH.Name = "txRH"
-        Me.txRH.Size = New System.Drawing.Size(42, 23)
-        Me.txRH.TabIndex = 2
-        '
-        'txADI
-        '
-        Me.txADI.Location = New System.Drawing.Point(200, 41)
-        Me.txADI.Name = "txADI"
-        Me.txADI.Size = New System.Drawing.Size(42, 23)
-        Me.txADI.TabIndex = 3
         '
         'Panel2
         '
@@ -88,13 +102,15 @@ Partial Class Flvori
         Me.Panel2.Size = New System.Drawing.Size(258, 73)
         Me.Panel2.TabIndex = 4
         '
-        'txResult
+        'LinkLabel2
         '
-        Me.txResult.Font = New System.Drawing.Font("Century", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txResult.Location = New System.Drawing.Point(103, 6)
-        Me.txResult.Name = "txResult"
-        Me.txResult.Size = New System.Drawing.Size(49, 36)
-        Me.txResult.TabIndex = 1
+        Me.LinkLabel2.AutoSize = True
+        Me.LinkLabel2.Location = New System.Drawing.Point(43, 19)
+        Me.LinkLabel2.Name = "LinkLabel2"
+        Me.LinkLabel2.Size = New System.Drawing.Size(54, 16)
+        Me.LinkLabel2.TabIndex = 6
+        Me.LinkLabel2.TabStop = True
+        Me.LinkLabel2.Text = "LVORI:"
         '
         'Label4
         '
@@ -106,6 +122,14 @@ Partial Class Flvori
         Me.Label4.TabIndex = 5
         Me.Label4.Text = "Low Visibility Occurrence Risk Index"
         '
+        'txResult
+        '
+        Me.txResult.Font = New System.Drawing.Font("Century", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txResult.Location = New System.Drawing.Point(103, 6)
+        Me.txResult.Name = "txResult"
+        Me.txResult.Size = New System.Drawing.Size(49, 36)
+        Me.txResult.TabIndex = 1
+        '
         'rtb1
         '
         Me.rtb1.Location = New System.Drawing.Point(276, 76)
@@ -113,26 +137,6 @@ Partial Class Flvori
         Me.rtb1.Size = New System.Drawing.Size(198, 82)
         Me.rtb1.TabIndex = 6
         Me.rtb1.Text = "Poor to fair, stagnation may be indicated if accompanied by low wind speeds."
-        '
-        'LinkLabel1
-        '
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(3, 43)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(191, 16)
-        Me.LinkLabel1.TabIndex = 4
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "Atmospheric Dispersion Index:"
-        '
-        'LinkLabel2
-        '
-        Me.LinkLabel2.AutoSize = True
-        Me.LinkLabel2.Location = New System.Drawing.Point(43, 19)
-        Me.LinkLabel2.Name = "LinkLabel2"
-        Me.LinkLabel2.Size = New System.Drawing.Size(54, 16)
-        Me.LinkLabel2.TabIndex = 6
-        Me.LinkLabel2.TabStop = True
-        Me.LinkLabel2.Text = "LVORI:"
         '
         'RichTextBox1
         '
@@ -192,8 +196,8 @@ Partial Class Flvori
         Me.Text = "LVORI"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.txRH, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txADI, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txRH, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)

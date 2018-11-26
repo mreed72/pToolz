@@ -262,14 +262,19 @@ Public Class ClassFuels
 
 
         Try
-            Dim e, s As Boolean
+            Dim e, s, a As Boolean
             e = My.Computer.FileSystem.FileExists(DirName & "\elog.txt")
             s = My.Computer.FileSystem.FileExists(DirName & "\slog.txt")
+            a = My.Computer.FileSystem.DirectoryExists(DirName & "\Sessions\")
+
             If e = False Then
                 My.Computer.FileSystem.WriteAllText(DirName & "\elog.txt", "", False)
             End If
             If s = False Then
                 My.Computer.FileSystem.WriteAllText(DirName & "\slog.txt", "", False)
+            End If
+            If a = False Then
+                My.Computer.FileSystem.CreateDirectory(DirName & "\Sessions\")
             End If
             Return True
             Exit Function
@@ -1590,11 +1595,11 @@ Public Class ClassFuels
         file.Close()
     End Function
 
-    Public Function ERRlog(Code As String, MSG As String)
+    Public Function ERRlog(MSG As String, code As String)
         Dim LC As String = GetMyKey("ELOG")
         Dim file As System.IO.StreamWriter
         file = My.Computer.FileSystem.OpenTextFileWriter(LC, True)
-        file.WriteLine(Date.Now & "===" & Code & "===" & vbCrLf & MSG & vbCrLf)
+        file.WriteLine(Date.Now & "===" & code & "===" & vbCrLf & MSG & vbCrLf)
         file.Close()
     End Function
 
@@ -1792,29 +1797,32 @@ Public Class ClassFuels
         Return lgt & sizetype
     End Function
 
-    Function GetFolderSize(ByVal DirPath As String, Optional IncludeSubFolders As Boolean = True) As Long
+    Public Function GetFolderSize(ByVal DirPath As String, Optional IncludeSubFolders As Boolean = True) As Long
 
-        Dim lngDirSize As Long
-        Dim objFileInfo As FileInfo
-        Dim objDir As DirectoryInfo = New DirectoryInfo(DirPath)
-        Dim objSubFolder As DirectoryInfo
+        Try
+            Dim lngDirSize As Long
+            Dim objFileInfo As FileInfo
+            Dim objDir As DirectoryInfo = New DirectoryInfo(DirPath)
+            Dim objSubFolder As DirectoryInfo
 
-        'add length of each file
-        For Each objFileInfo In objDir.GetFiles()
-            lngDirSize += objFileInfo.Length
-        Next
 
-        'call recursively to get sub folders
-        'if you don't want this set optional
-        'parameter to false 
-        If IncludeSubFolders Then
-            For Each objSubFolder In objDir.GetDirectories()
-                lngDirSize += GetFolderSize(objSubFolder.FullName)
+            For Each objFileInfo In objDir.GetFiles()
+                lngDirSize += objFileInfo.Length
             Next
-        End If
+
+            If IncludeSubFolders Then
+                For Each objSubFolder In objDir.GetDirectories()
+                    lngDirSize += GetFolderSize(objSubFolder.FullName)
+                Next
+            End If
 
 
-        Return lngDirSize
+            Return lngDirSize
+        Catch ex As Exception
+            ERRlog(ex.Message, "8x89XZ7") ' ERROR LOG CODE
+        End Try
+
+
     End Function
 
     Function MergeAllTextFiles(xPath As String, xFileName As String)

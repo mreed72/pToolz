@@ -23,13 +23,16 @@ Partial Class FmultiCalc
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.bLog = New System.Windows.Forms.Label()
+        Me.pb = New System.Windows.Forms.PictureBox()
         Me.txDistance = New System.Windows.Forms.TextBox()
+        Me.btnClear = New System.Windows.Forms.Button()
         Me.txCatDay = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.btnClear = New System.Windows.Forms.Button()
+        Me.TrackBar1 = New System.Windows.Forms.TrackBar()
         Me.btnCalc = New System.Windows.Forms.Button()
         Me.btnAdd = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.txFload = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txFtype = New System.Windows.Forms.ComboBox()
@@ -43,15 +46,24 @@ Partial Class FmultiCalc
         Me.txResults = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txAllowed = New System.Windows.Forms.Label()
-        Me.TrackBar1 = New System.Windows.Forms.TrackBar()
-        Me.fPan = New System.Windows.Forms.FlowLayoutPanel()
+        Me.dgv1 = New System.Windows.Forms.DataGridView()
+        Me.zSize = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.zFtype = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.zFload = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.zAvFuels = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.zTotalTns = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lbLabel001 = New System.Windows.Forms.LinkLabel()
         Me.Panel1.SuspendLayout()
+        CType(Me.pb, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel1.Controls.Add(Me.bLog)
+        Me.Panel1.Controls.Add(Me.pb)
         Me.Panel1.Controls.Add(Me.txDistance)
         Me.Panel1.Controls.Add(Me.btnClear)
         Me.Panel1.Controls.Add(Me.txCatDay)
@@ -71,12 +83,40 @@ Partial Class FmultiCalc
         Me.Panel1.Size = New System.Drawing.Size(638, 95)
         Me.Panel1.TabIndex = 0
         '
+        'bLog
+        '
+        Me.bLog.AutoSize = True
+        Me.bLog.Location = New System.Drawing.Point(3, 72)
+        Me.bLog.Name = "bLog"
+        Me.bLog.Size = New System.Drawing.Size(56, 17)
+        Me.bLog.TabIndex = 17
+        Me.bLog.Text = "Logging"
+        '
+        'pb
+        '
+        Me.pb.Location = New System.Drawing.Point(18, 51)
+        Me.pb.Name = "pb"
+        Me.pb.Size = New System.Drawing.Size(18, 18)
+        Me.pb.TabIndex = 16
+        Me.pb.TabStop = False
+        '
         'txDistance
         '
         Me.txDistance.Location = New System.Drawing.Point(576, 58)
         Me.txDistance.Name = "txDistance"
         Me.txDistance.Size = New System.Drawing.Size(50, 22)
         Me.txDistance.TabIndex = 12
+        '
+        'btnClear
+        '
+        Me.btnClear.BackColor = System.Drawing.Color.FromArgb(CType(CType(209, Byte), Integer), CType(CType(178, Byte), Integer), CType(CType(107, Byte), Integer))
+        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnClear.Image = Global.pToolz.My.Resources.Resources.weIMAGE072
+        Me.btnClear.Location = New System.Drawing.Point(579, 3)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(47, 42)
+        Me.btnClear.TabIndex = 8
+        Me.btnClear.UseVisualStyleBackColor = False
         '
         'txCatDay
         '
@@ -94,25 +134,14 @@ Partial Class FmultiCalc
         Me.Label6.TabIndex = 10
         Me.Label6.Text = "Tar. Distance:"
         '
-        'Label5
+        'TrackBar1
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(341, 61)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(93, 17)
-        Me.Label5.TabIndex = 9
-        Me.Label5.Text = "Category Day:"
-        '
-        'btnClear
-        '
-        Me.btnClear.BackColor = System.Drawing.Color.FromArgb(CType(CType(209, Byte), Integer), CType(CType(178, Byte), Integer), CType(CType(107, Byte), Integer))
-        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnClear.Image = Global.pToolz.My.Resources.Resources.weIMAGE072
-        Me.btnClear.Location = New System.Drawing.Point(579, 3)
-        Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(47, 42)
-        Me.btnClear.TabIndex = 8
-        Me.btnClear.UseVisualStyleBackColor = False
+        Me.TrackBar1.Location = New System.Drawing.Point(92, 51)
+        Me.TrackBar1.Maximum = 14
+        Me.TrackBar1.Name = "TrackBar1"
+        Me.TrackBar1.Size = New System.Drawing.Size(243, 45)
+        Me.TrackBar1.TabIndex = 15
+        Me.TrackBar1.TickStyle = System.Windows.Forms.TickStyle.TopLeft
         '
         'btnCalc
         '
@@ -135,6 +164,15 @@ Partial Class FmultiCalc
         Me.btnAdd.Size = New System.Drawing.Size(44, 42)
         Me.btnAdd.TabIndex = 6
         Me.btnAdd.UseVisualStyleBackColor = False
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(341, 61)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(93, 17)
+        Me.Label5.TabIndex = 9
+        Me.Label5.Text = "Category Day:"
         '
         'txFload
         '
@@ -230,7 +268,7 @@ Partial Class FmultiCalc
         Me.txResults.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txResults.Location = New System.Drawing.Point(17, 435)
         Me.txResults.Name = "txResults"
-        Me.txResults.Size = New System.Drawing.Size(638, 22)
+        Me.txResults.Size = New System.Drawing.Size(633, 22)
         Me.txResults.TabIndex = 11
         Me.txResults.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -252,29 +290,65 @@ Partial Class FmultiCalc
         Me.txAllowed.TabIndex = 14
         Me.txAllowed.Text = "0"
         '
-        'TrackBar1
+        'dgv1
         '
-        Me.TrackBar1.Location = New System.Drawing.Point(92, 51)
-        Me.TrackBar1.Maximum = 14
-        Me.TrackBar1.Name = "TrackBar1"
-        Me.TrackBar1.Size = New System.Drawing.Size(243, 45)
-        Me.TrackBar1.TabIndex = 15
-        Me.TrackBar1.TickStyle = System.Windows.Forms.TickStyle.TopLeft
+        Me.dgv1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
+        Me.dgv1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(245, Byte), Integer))
+        Me.dgv1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.zSize, Me.zFtype, Me.zFload, Me.zAvFuels, Me.zTotalTns})
+        Me.dgv1.Location = New System.Drawing.Point(12, 116)
+        Me.dgv1.Name = "dgv1"
+        Me.dgv1.Size = New System.Drawing.Size(638, 275)
+        Me.dgv1.TabIndex = 15
         '
-        'fPan
+        'zSize
         '
-        Me.fPan.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.fPan.Location = New System.Drawing.Point(12, 116)
-        Me.fPan.Name = "fPan"
-        Me.fPan.Size = New System.Drawing.Size(638, 286)
-        Me.fPan.TabIndex = 15
+        Me.zSize.HeaderText = "Size"
+        Me.zSize.Name = "zSize"
+        Me.zSize.Width = 56
+        '
+        'zFtype
+        '
+        Me.zFtype.HeaderText = "Fuel Type"
+        Me.zFtype.Name = "zFtype"
+        Me.zFtype.Width = 87
+        '
+        'zFload
+        '
+        Me.zFload.HeaderText = "Fuel Load"
+        Me.zFload.Name = "zFload"
+        Me.zFload.Width = 90
+        '
+        'zAvFuels
+        '
+        Me.zAvFuels.HeaderText = "Avail Fuels"
+        Me.zAvFuels.Name = "zAvFuels"
+        Me.zAvFuels.Width = 96
+        '
+        'zTotalTns
+        '
+        Me.zTotalTns.HeaderText = "Total Tons"
+        Me.zTotalTns.Name = "zTotalTns"
+        Me.zTotalTns.Width = 90
+        '
+        'lbLabel001
+        '
+        Me.lbLabel001.AutoSize = True
+        Me.lbLabel001.Location = New System.Drawing.Point(9, 460)
+        Me.lbLabel001.Name = "lbLabel001"
+        Me.lbLabel001.Size = New System.Drawing.Size(70, 17)
+        Me.lbLabel001.TabIndex = 16
+        Me.lbLabel001.TabStop = True
+        Me.lbLabel001.Text = "LinkLabel1"
         '
         'FmultiCalc
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(245, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(675, 468)
-        Me.Controls.Add(Me.fPan)
+        Me.ClientSize = New System.Drawing.Size(660, 485)
+        Me.Controls.Add(Me.lbLabel001)
+        Me.Controls.Add(Me.dgv1)
         Me.Controls.Add(Me.txAllowed)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.txResults)
@@ -290,7 +364,9 @@ Partial Class FmultiCalc
         Me.Text = "Multiple Fuels Calculator"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.pb, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -317,5 +393,13 @@ Partial Class FmultiCalc
     Friend WithEvents txAllowed As Label
     Friend WithEvents TrackBar1 As TrackBar
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents fPan As FlowLayoutPanel
+    Friend WithEvents bLog As Label
+    Friend WithEvents pb As PictureBox
+    Friend WithEvents dgv1 As DataGridView
+    Friend WithEvents zSize As DataGridViewTextBoxColumn
+    Friend WithEvents zFtype As DataGridViewTextBoxColumn
+    Friend WithEvents zFload As DataGridViewTextBoxColumn
+    Friend WithEvents zAvFuels As DataGridViewTextBoxColumn
+    Friend WithEvents zTotalTns As DataGridViewTextBoxColumn
+    Friend WithEvents lbLabel001 As LinkLabel
 End Class

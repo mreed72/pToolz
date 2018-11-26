@@ -21,7 +21,16 @@ Public Class Form1
         Dim bkf As String = "C:\SMTOOLZ\Sessions\"
         xAFDSZ.Text = "Archived Session Directory Size: " & X1.finSize(X1.GetFolderSize(bkf, True))
 
+
+
     End Sub
+
+
+
+
+
+
+
 
     Private Sub EXITToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EXITToolStripMenuItem.Click
         Application.Exit()

@@ -31,6 +31,21 @@ Public Class Flvori
             X1.ERRlog(ex.Message, "6xMTIHN") ' ERROR LOG CODE
         End Try
 
+        'Session Log
+        Dim xR, xA As Integer
+        Dim res As String
+
+        xR = txRH.Value
+        xA = txADI.Value
+        res = txResult.Text
+
+
+        x.SESLog("LVORI", "Relative Humidity: " & xR & vbCrLf & "Atmospheric Dispersion Index: " & xA & vbCrLf & "Result: " & res)
+
+
+
+
+
     End Sub
 
     Function cdvalue()
