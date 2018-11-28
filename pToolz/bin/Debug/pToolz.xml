@@ -57,6 +57,11 @@ pToolz
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:pToolz.My.Resources.Resources.target163">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:pToolz.My.Resources.Resources.weIMAGE047">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -146,6 +151,12 @@ pToolz
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member>
+<member name="F:pToolz.FimgViewer.WM_NCHITTEST">
+ <summary>
+ This code snippett and all instances of it in this application were obtained from the following source:
+ (https://stackoverflow.com/questions/24449543/how-to-move-form-without-form-border-visual-studio)
+ </summary>
 </member>
 </members>
 </doc>

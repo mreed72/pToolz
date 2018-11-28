@@ -139,9 +139,10 @@ Public Class Form1
 
     End Sub
 
-
-
-
-
-
+    Private Sub DistanceBetween2PointsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DistanceBetween2PointsToolStripMenuItem.Click
+        Dim a As New FcalDistant With {
+                .MdiParent = Me
+            }
+        a.Show()
+    End Sub
 End Class

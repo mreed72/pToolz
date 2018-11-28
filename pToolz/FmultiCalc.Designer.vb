@@ -176,6 +176,8 @@ Partial Class FmultiCalc
         '
         'txFload
         '
+        Me.txFload.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txFload.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.txFload.FormattingEnabled = True
         Me.txFload.Items.AddRange(New Object() {"Low", "Moderate", "Heavy"})
         Me.txFload.Location = New System.Drawing.Point(341, 20)
@@ -194,6 +196,8 @@ Partial Class FmultiCalc
         '
         'txFtype
         '
+        Me.txFtype.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txFtype.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.txFtype.FormattingEnabled = True
         Me.txFtype.Items.AddRange(New Object() {"Shortleaf Pine with Oak", "Shortleaf Pine Regeneration", "Loblolly Pine with Oak", "Loblolly Pine Regeneration", "Hardwood Leaf Litter", "Grass or Brush", "Dispersed Slash", "Piled Debris", "Shortleaf Loblolly with Grass", "Corn", "Cotton", "Rice", "Soybean", "Wheat"})
         Me.txFtype.Location = New System.Drawing.Point(92, 20)

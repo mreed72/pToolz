@@ -82,6 +82,12 @@
     <Compile Include="Fabout.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FcalDistant.Designer.vb">
+      <DependentUpon>FcalDistant.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FcalDistant.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FimgViewer.Designer.vb">
       <DependentUpon>FimgViewer.vb</DependentUpon>
     </Compile>
@@ -151,6 +157,9 @@
     <EmbeddedResource Include="Fabout.resx">
       <DependentUpon>Fabout.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FcalDistant.resx">
+      <DependentUpon>FcalDistant.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FimgViewer.resx">
       <DependentUpon>FimgViewer.vb</DependentUpon>
     </EmbeddedResource>
@@ -211,6 +220,7 @@
     <Content Include="gpl.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\target163.png" />
     <None Include="Resources\weIMAGE072.png" />
     <None Include="Resources\weIMAGE048.png" />
     <None Include="Resources\weIMAGE096.png" />
