@@ -7,19 +7,9 @@
 '==============================================================================
 
 
-Imports xFuels
-
 Public NotInheritable Class SplashScreen
-    Private x As New xFuels.ClassFuels
 
-    Public Property X1 As ClassFuels
-        Get
-            Return x
-        End Get
-        Set(value As ClassFuels)
-            x = value
-        End Set
-    End Property
+    Public Property X1 As xFuels.ClassFuels
 
     Private Sub SplashScreen_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
@@ -48,6 +38,7 @@ Public NotInheritable Class SplashScreen
             X1.SetMyKey("SLOG", "C:\SMTOOLZ\slog.txt")
             X1.SetMyKey("SESS", "C:\SMTOOLZ\Sessions\")
         Catch ex As Exception
+
         End Try
 
 
@@ -72,7 +63,7 @@ Public NotInheritable Class SplashScreen
                 Exit Sub
             End If
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "8x1EWOV") ' ERROR LOG CODE
+
         End Try
 
 

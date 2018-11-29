@@ -22,5 +22,111 @@ xFuels
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="M:xFuels.ClassFuels.GetAvFuels(System.String,System.String)">
+ <summary>
+ Available Fuels
+ </summary>
+ <param name="cTypx">Fuel Type</param>
+ <param name="cLoad">Fuel Load</param>
+ <returns>DOUBLE: value represents the available fuels for a burn.</returns>
+</member>
+<member name="M:xFuels.ClassFuels.smpCalc(System.Int32@,System.Double@)">
+ <summary>
+ Main Smoke Guidelines Calculation Code
+ </summary>
+ <param name="xCatDay">INTEGER: 1-5, Category Day</param>
+ <param name="xDistance">DOUBLE: Distance to Target</param>
+ <returns>INTEGER: represents the total tons allowed for an airshed.</returns>
+</member>
+<member name="M:xFuels.ClassFuels.ChkLocations">
+ <summary>
+ Check Logfile directory and file locations
+ </summary>
+ <returns>NA</returns>
+</member>
+<member name="M:xFuels.ClassFuels.ProIgnCalc(System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Probability of Ignition Calculator
+ </summary>
+ <param name="xshad">Shading as a percentage</param>
+ <param name="xdry">Dry Bulb Temperature</param>
+ <param name="xfdfm">Fine Dead Fuel Moisture or 1hr FM</param>
+ <returns>INTEGER: as a percentage</returns>
+</member>
+<member name="M:xFuels.ClassFuels.GetMyKey(System.String)">
+ <summary>
+ Retrieves Registry Key Value
+ </summary>
+ <param name="keyValue">Key Value STRING</param>
+ <returns>Registry Key Value</returns>
+</member>
+<member name="M:xFuels.ClassFuels.SetMyKey(System.String,System.String)">
+ <summary>
+ Sets Registry Key Value
+ </summary>
+ <param name="keySub">SubKey name STRING</param>
+ <param name="keyValue">Key Value STRING</param>
+ <returns>NA</returns>
+</member>
+<member name="M:xFuels.ClassFuels.grs(System.Int32@)">
+ <summary>
+ Generates a random string of characters
+ </summary>
+ <param name="length">INTEGER: length of characters to generate</param>
+ <returns>a random string of characters</returns>
+</member>
+<member name="M:xFuels.ClassFuels.SESLog(System.String,System.String)">
+ <summary>
+ Session Log
+ </summary>
+ <param name="TTL">Title of section</param>
+ <param name="MSG">Message to write into log file</param>
+ <returns>NA</returns>
+</member>
+<member name="M:xFuels.ClassFuels.ERRlog(System.String,System.String)">
+ <summary>
+ Error Log
+ </summary>
+ <param name="MSG">Message to write into log file</param>
+ <param name="code">Unique ID</param>
+ <returns>NA</returns>
+</member>
+<member name="M:xFuels.ClassFuels.LVORI_day(System.Int32,System.Int32)">
+ <summary>
+ Low Visibility Occurence Risk Index
+ </summary>
+ <param name="xRelativeHumidity">Relative Humidity</param>
+ <param name="xDispersionIndex">Dispersion Index</param>
+ <returns>INTEGER: 1-10 that depicts the LVORI value.</returns>
+</member>
+<member name="M:xFuels.ClassFuels.CTFD">
+ <summary>
+ Counts the number of files in the session log directory
+ </summary>
+ <returns>INTEGER</returns>
+</member>
+<member name="M:xFuels.ClassFuels.finSize(System.Int64)">
+ <summary>
+ Returns the size of the file (in bytes) converts to proper form
+ </summary>
+ <param name="lgt">length of byte to convert</param>
+ <returns>STRING that shows the proper length (1024 bytes > 1 MB)</returns>
+</member>
+<member name="M:xFuels.ClassFuels.GetFolderSize(System.String,System.Boolean)">
+ <summary>
+ Gets the size of a folder (all files in folder)
+ </summary>
+ <param name="DirPath">Directory Path</param>
+ <param name="IncludeSubFolders">Boolean</param>
+ <returns>LONG</returns>
+</member>
+<member name="M:xFuels.ClassFuels.MergeAllTextFiles(System.String,System.String)">
+ <summary>
+ Merge all the text files in a directory
+ </summary>
+ <param name="xPath">Path to all the text files</param>
+ <param name="xFileName">file name</param>
+ <returns>NA</returns>
+</member>
 </members>
 </doc>

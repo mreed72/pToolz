@@ -11,6 +11,12 @@ Imports System.Text
 
 Public Class ClassFuels
 
+    ''' <summary>
+    ''' Available Fuels
+    ''' </summary>
+    ''' <param name="cTypx">Fuel Type</param>
+    ''' <param name="cLoad">Fuel Load</param>
+    ''' <returns>DOUBLE: value represents the available fuels for a burn.</returns>
     Public Function GetAvFuels(ByVal cTypx As String, ByVal cLoad As String)
         Select Case cTypx
             Case "Shortleaf Pine with Oak"
@@ -172,6 +178,12 @@ Public Class ClassFuels
         End Select
     End Function
 
+    ''' <summary>
+    ''' Main Smoke Guidelines Calculation Code
+    ''' </summary>
+    ''' <param name="xCatDay">INTEGER: 1-5, Category Day</param>
+    ''' <param name="xDistance">DOUBLE: Distance to Target</param>
+    ''' <returns>INTEGER: represents the total tons allowed for an airshed.</returns>
     Public Function smpCalc(ByRef xCatDay As Integer, ByRef xDistance As Double)
         Select Case xCatDay
             Case 1
@@ -241,6 +253,10 @@ Public Class ClassFuels
         End Select
     End Function
 
+    ''' <summary>
+    ''' Check Logfile directory and file locations
+    ''' </summary>
+    ''' <returns>NA</returns>
     Public Function ChkLocations() As Boolean
         Dim DirName As String
         DirName = "C:\SMTOOLZ\"
@@ -285,6 +301,13 @@ Public Class ClassFuels
 
     End Function
 
+    ''' <summary>
+    ''' Probability of Ignition Calculator
+    ''' </summary>
+    ''' <param name="xshad">Shading as a percentage</param>
+    ''' <param name="xdry">Dry Bulb Temperature</param>
+    ''' <param name="xfdfm">Fine Dead Fuel Moisture or 1hr FM</param>
+    ''' <returns>INTEGER: as a percentage</returns>
     Public Function ProIgnCalc(ByVal xshad As Integer, ByVal xdry As Integer, ByVal xfdfm As Integer)
 
         Select Case xshad
@@ -1566,6 +1589,11 @@ Public Class ClassFuels
 
     End Function
 
+    ''' <summary>
+    ''' Retrieves Registry Key Value
+    ''' </summary>
+    ''' <param name="keyValue">Key Value STRING</param>
+    ''' <returns>Registry Key Value</returns>
     Public Function GetMyKey(keyValue As String)
         Dim readValue As String
         readValue = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\SMTOOLZ\", keyValue, Nothing)
@@ -1573,10 +1601,21 @@ Public Class ClassFuels
 
     End Function
 
+    ''' <summary>
+    ''' Sets Registry Key Value
+    ''' </summary>
+    ''' <param name="keySub">SubKey name STRING</param>
+    ''' <param name="keyValue">Key Value STRING</param>
+    ''' <returns>NA</returns>
     Public Function SetMyKey(keySub As String, keyValue As String)
         My.Computer.Registry.SetValue("HKEY_CURRENT_USER\SMTOOLZ\", keySub, keyValue)
     End Function
 
+    ''' <summary>
+    ''' Generates a random string of characters
+    ''' </summary>
+    ''' <param name="length">INTEGER: length of characters to generate</param>
+    ''' <returns>a random string of characters</returns>
     Public Function grs(ByRef length As Integer) As String
         Randomize()
         Dim ac As String
@@ -1587,6 +1626,12 @@ Public Class ClassFuels
         Next
     End Function
 
+    ''' <summary>
+    ''' Session Log
+    ''' </summary>
+    ''' <param name="TTL">Title of section</param>
+    ''' <param name="MSG">Message to write into log file</param>
+    ''' <returns>NA</returns>
     Public Function SESLog(TTL As String, MSG As String)
         Dim LC As String = GetMyKey("SLOG")
         Dim file As System.IO.StreamWriter
@@ -1595,6 +1640,12 @@ Public Class ClassFuels
         file.Close()
     End Function
 
+    ''' <summary>
+    ''' Error Log
+    ''' </summary>
+    ''' <param name="MSG">Message to write into log file</param>
+    ''' <param name="code">Unique ID</param>
+    ''' <returns>NA</returns>
     Public Function ERRlog(MSG As String, code As String)
         Dim LC As String = GetMyKey("ELOG")
         Dim file As System.IO.StreamWriter
@@ -1603,6 +1654,12 @@ Public Class ClassFuels
         file.Close()
     End Function
 
+    ''' <summary>
+    ''' Low Visibility Occurence Risk Index
+    ''' </summary>
+    ''' <param name="xRelativeHumidity">Relative Humidity</param>
+    ''' <param name="xDispersionIndex">Dispersion Index</param>
+    ''' <returns>INTEGER: 1-10 that depicts the LVORI value.</returns>
     Public Function LVORI_day(xRelativeHumidity As Integer, xDispersionIndex As Integer)
         Select Case xRelativeHumidity
             Case 0 To 55
@@ -1767,6 +1824,10 @@ Public Class ClassFuels
         End Select
     End Function
 
+    ''' <summary>
+    ''' Counts the number of files in the session log directory
+    ''' </summary>
+    ''' <returns>INTEGER</returns>
     Public Function CTFD()
         Dim sld As String = GetMyKey("SESS")
         Dim d As New System.IO.DirectoryInfo(sld)
@@ -1777,6 +1838,11 @@ Public Class ClassFuels
         Return cnt
     End Function
 
+    ''' <summary>
+    ''' Returns the size of the file (in bytes) converts to proper form
+    ''' </summary>
+    ''' <param name="lgt">length of byte to convert</param>
+    ''' <returns>STRING that shows the proper length (1024 bytes > 1 MB)</returns>
     Public Function finSize(lgt As Long)
         Dim sizetype As String
         If lgt < 1000 Then
@@ -1797,6 +1863,12 @@ Public Class ClassFuels
         Return lgt & sizetype
     End Function
 
+    ''' <summary>
+    ''' Gets the size of a folder (all files in folder)
+    ''' </summary>
+    ''' <param name="DirPath">Directory Path</param>
+    ''' <param name="IncludeSubFolders">Boolean</param>
+    ''' <returns>LONG</returns>
     Public Function GetFolderSize(ByVal DirPath As String, Optional IncludeSubFolders As Boolean = True) As Long
 
         Try
@@ -1825,7 +1897,13 @@ Public Class ClassFuels
 
     End Function
 
-    Function MergeAllTextFiles(xPath As String, xFileName As String)
+    ''' <summary>
+    ''' Merge all the text files in a directory
+    ''' </summary>
+    ''' <param name="xPath">Path to all the text files</param>
+    ''' <param name="xFileName">file name</param>
+    ''' <returns>NA</returns>
+    Public Function MergeAllTextFiles(xPath As String, xFileName As String)
         Dim Paths() As String = Directory.GetFiles(xPath, "*.txt")
         For Each Path As String In Paths
             File.AppendAllText(xFileName, File.ReadAllText(Path), Encoding.Default)
