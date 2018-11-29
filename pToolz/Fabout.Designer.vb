@@ -39,6 +39,8 @@ Partial Class Fabout
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txDayUsing = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.LinkLabel5 = New System.Windows.Forms.LinkLabel()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -217,11 +219,35 @@ Partial Class Fabout
         Me.txDayUsing.TabIndex = 5
         Me.txDayUsing.Text = "x"
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(19, 502)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(133, 14)
+        Me.Label8.TabIndex = 8
+        Me.Label8.Text = "Special thanks to:"
+        '
+        'LinkLabel5
+        '
+        Me.LinkLabel5.AutoSize = True
+        Me.LinkLabel5.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel5.LinkColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.LinkLabel5.Location = New System.Drawing.Point(152, 501)
+        Me.LinkLabel5.Name = "LinkLabel5"
+        Me.LinkLabel5.Size = New System.Drawing.Size(126, 14)
+        Me.LinkLabel5.TabIndex = 9
+        Me.LinkLabel5.TabStop = True
+        Me.LinkLabel5.Text = "GeoDataSource.com"
+        '
         'Fabout
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(626, 500)
+        Me.ClientSize = New System.Drawing.Size(626, 525)
+        Me.Controls.Add(Me.LinkLabel5)
+        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.txDayUsing)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.LinkLabel2)
@@ -266,4 +292,6 @@ Partial Class Fabout
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents txDayUsing As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents LinkLabel5 As LinkLabel
 End Class

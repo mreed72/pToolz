@@ -84,4 +84,12 @@ Public Class Fabout
             X1.ERRlog(ex.Message, "6xQ8ADK") ' ERROR LOG CODE
         End Try
     End Sub
+
+    Private Sub LinkLabel5_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel5.LinkClicked
+        Try
+            Diagnostics.Process.Start("https://www.geodatasource.com/")
+        Catch ex As Exception
+            X1.ERRlog(ex.Message, "6XCV9LQZ")
+        End Try
+    End Sub
 End Class

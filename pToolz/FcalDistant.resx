@@ -117,4 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="RichTextBox1.Text" xml:space="preserve">
+    <value>This will calculate the distance between two points (given the latitude/longitude of those points). It is being used to calculate the distance between two locations using GeoDataSource (TM) prodducts
+
+South latitudes are negative, east longitudes are positive   </value>
+  </data>
 </root>

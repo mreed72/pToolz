@@ -22,6 +22,7 @@ Partial Class FcalDistant
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FcalDistant))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lat1 = New System.Windows.Forms.MaskedTextBox()
         Me.long1 = New System.Windows.Forms.MaskedTextBox()
@@ -33,6 +34,10 @@ Partial Class FcalDistant
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txResult2 = New System.Windows.Forms.TextBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -112,7 +117,7 @@ Partial Class FcalDistant
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(21, 9)
+        Me.Label3.Location = New System.Drawing.Point(48, 9)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(48, 17)
         Me.Label3.TabIndex = 8
@@ -121,7 +126,7 @@ Partial Class FcalDistant
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(265, 9)
+        Me.Label4.Location = New System.Drawing.Point(294, 9)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(48, 17)
         Me.Label4.TabIndex = 9
@@ -135,10 +140,41 @@ Partial Class FcalDistant
         Me.txResult2.TabIndex = 10
         Me.txResult2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
+        'Panel1
+        '
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel1.Controls.Add(Me.LinkLabel1)
+        Me.Panel1.Controls.Add(Me.RichTextBox1)
+        Me.Panel1.Location = New System.Drawing.Point(8, 170)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(380, 165)
+        Me.Panel1.TabIndex = 11
+        '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.BackColor = System.Drawing.SystemColors.Control
+        Me.RichTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.RichTextBox1.Location = New System.Drawing.Point(29, 3)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.Size = New System.Drawing.Size(329, 122)
+        Me.RichTextBox1.TabIndex = 0
+        Me.RichTextBox1.Text = resources.GetString("RichTextBox1.Text")
+        '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.Location = New System.Drawing.Point(72, 138)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(207, 17)
+        Me.LinkLabel1.TabIndex = 1
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "https://www.geodatasource.com"
+        '
         'FcalDistant
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.ClientSize = New System.Drawing.Size(396, 176)
+        Me.ClientSize = New System.Drawing.Size(396, 342)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.txResult2)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
@@ -155,6 +191,8 @@ Partial Class FcalDistant
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "FcalDistant"
         Me.Text = "Calculate distance between two points"
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -171,4 +209,7 @@ Partial Class FcalDistant
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents txResult2 As TextBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents LinkLabel1 As LinkLabel
+    Friend WithEvents RichTextBox1 As RichTextBox
 End Class
