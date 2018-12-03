@@ -216,7 +216,9 @@
     <None Include="Resources\weIMAGE047.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="cXY0098.ico" />
+    <Content Include="cXY0098.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="gpl.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

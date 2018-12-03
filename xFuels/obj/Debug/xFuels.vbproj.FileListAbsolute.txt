@@ -7,4 +7,3 @@ C:\GITHUB REPOS\pToolz\xFuels\obj\Debug\xFuels.vbproj.CoreCompileInputs.cache
 C:\GITHUB REPOS\pToolz\xFuels\obj\Debug\xFuels.dll
 C:\GITHUB REPOS\pToolz\xFuels\obj\Debug\xFuels.xml
 C:\GITHUB REPOS\pToolz\xFuels\obj\Debug\xFuels.pdb
-C:\GITHUB REPOS\pToolz\xFuels\obj\Debug\xFuels.vbprojAssemblyReference.cache

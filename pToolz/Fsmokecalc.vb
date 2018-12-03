@@ -202,6 +202,10 @@ Public Class Fsmokecalc
 
                 X1.SESLog("Smoke Calculator", "Burn Size: " & bs & vbCrLf & "Category Day: " & cd & vbCrLf & "Target Distance: " & td & vbCrLf & "Allowed Tonnage: " & at & vbCrLf & "Total Tons: " & tt _
                      & vbCrLf & "Available Fuels: " & av & vbCrLf & "Fuel Type: " & ft & vbCrLf & "Fuel Load: " & fl & vbCrLf & "Results: " & res & vbCrLf & "Recommend Size: " & rec)
+
+                Form1.myicon.ShowBalloonTip(2000, "Smoke Calculator", "Session log has been saved!", ToolTipIcon.Info)
+
+
             End If
         Catch ex As Exception
             X1.ERRlog(ex.Message, "6xVSXKH") ' ERROR LOG CODE

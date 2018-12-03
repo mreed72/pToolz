@@ -151,6 +151,8 @@ Public Class FmultiCalc
             lbLabel001.Visible = True
             lbLabel001.Text = XL
 
+            Form1.myicon.ShowBalloonTip(2000, "Smoke Calculator", "Session log has been saved!", ToolTipIcon.Info)
+
         Catch ex As Exception
             x.ERRlog(ex.Message, "8xXPEZ9") ' ERROR LOG CODE
         End Try

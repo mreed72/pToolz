@@ -13,7 +13,7 @@ Public Class Form1
 
     Public Property X1 As New xFuels.ClassFuels
     Dim SesLogSize As Integer
-
+    Public WithEvents myicon As New NotifyIcon
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Text = "Smoke Tools - " & X1.GetMyKey("REGKEY")
@@ -37,6 +37,9 @@ Public Class Form1
             X1.ERRlog(ex.Message, "8xN711H") ' ERROR LOG CODE
         End Try
 
+        myicon.Icon = Icon.ExtractAssociatedIcon("cXY0098.ico")
+        myicon.Text = "pToolz" & vbNewLine & "Prescribed Burn Tools!"
+        myicon.Visible = True
 
     End Sub
 
