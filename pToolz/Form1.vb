@@ -16,8 +16,18 @@ Public Class Form1
     Public WithEvents myicon As New NotifyIcon
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Text = "Smoke Tools - " & X1.GetMyKey("REGKEY")
+        Dim k As String = X1.GetMyKey("REGKEY")
+        Dim t As String = X1.GetMyKey("DECVALUE")
+        Dim total As String
+        total = Dcypt(k)
+        If t = total Then
+            Me.Icon = My.Resources.x5120076_raM_icon
+        Else
+            Me.Icon = My.Resources.x5120076b_lLl_icon
 
+        End If
+
+        Text = "Smoke Tools - " & k
         Try
             'Archived Folder Size
             Dim bkf As String = "C:\SMTOOLZ\Sessions\"
@@ -42,6 +52,17 @@ Public Class Form1
         myicon.Visible = True
 
     End Sub
+
+
+    Public Function Dcypt(r As String)
+        Dim tot() As String = r.Split("-"c)
+        Dim total As Integer
+        For Each t As Integer In tot
+            total += CType(t, Integer)
+        Next
+        Return total
+    End Function
+
 
     Private Sub EXITToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EXITToolStripMenuItem.Click
         Application.Exit()

@@ -30,12 +30,12 @@ Partial Class Fpoi
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.lkb = New System.Windows.Forms.LinkLabel()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.bLog = New System.Windows.Forms.Label()
         Me.pb = New System.Windows.Forms.PictureBox()
         Me.btnCalc = New System.Windows.Forms.Button()
         Me.txResult = New System.Windows.Forms.TextBox()
-        Me.lkb = New System.Windows.Forms.LinkLabel()
         Me.Panel1.SuspendLayout()
         CType(Me.txFDFM, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txDryBulb, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -126,6 +126,16 @@ Partial Class Fpoi
         Me.Panel2.Size = New System.Drawing.Size(251, 100)
         Me.Panel2.TabIndex = 1
         '
+        'lkb
+        '
+        Me.lkb.AutoSize = True
+        Me.lkb.Location = New System.Drawing.Point(11, 67)
+        Me.lkb.Name = "lkb"
+        Me.lkb.Size = New System.Drawing.Size(35, 17)
+        Me.lkb.TabIndex = 6
+        Me.lkb.TabStop = True
+        Me.lkb.Text = "POI?"
+        '
         'btnClear
         '
         Me.btnClear.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(148, Byte), Integer))
@@ -177,16 +187,6 @@ Partial Class Fpoi
         Me.txResult.TabStop = False
         Me.txResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'lkb
-        '
-        Me.lkb.AutoSize = True
-        Me.lkb.Location = New System.Drawing.Point(11, 67)
-        Me.lkb.Name = "lkb"
-        Me.lkb.Size = New System.Drawing.Size(35, 17)
-        Me.lkb.TabIndex = 6
-        Me.lkb.TabStop = True
-        Me.lkb.Text = "POI?"
-        '
         'Fpoi
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -196,6 +196,7 @@ Partial Class Fpoi
         Me.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "Fpoi"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Probability of Ignition"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

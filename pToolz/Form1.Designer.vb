@@ -26,8 +26,17 @@ Partial Class Form1
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LogViewerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.EXITToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TOOLSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DistanceBetween2PointsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.SmokeCalculatorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SmokeCalcMultiFuelsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProbabilityOfIgnitionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LVORIToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.HELPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SmokeCalculatrHelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -48,15 +57,6 @@ Partial Class Form1
         Me.cbDelLogs30Days = New System.Windows.Forms.CheckBox()
         Me.cbSesLog = New System.Windows.Forms.CheckBox()
         Me.T1 = New System.Windows.Forms.Timer(Me.components)
-        Me.LogViewerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EXITToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TOOLSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DistanceBetween2PointsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
-        Me.SmokeCalculatorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SmokeCalcMultiFuelsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ProbabilityOfIgnitionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LVORIToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -81,16 +81,78 @@ Partial Class Form1
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(40, 20)
         Me.ToolStripMenuItem1.Text = "FILE"
         '
+        'LogViewerToolStripMenuItem
+        '
+        Me.LogViewerToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.x320303
+        Me.LogViewerToolStripMenuItem.Name = "LogViewerToolStripMenuItem"
+        Me.LogViewerToolStripMenuItem.Size = New System.Drawing.Size(132, 22)
+        Me.LogViewerToolStripMenuItem.Text = "Log Viewer"
+        '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         Me.ToolStripSeparator1.Size = New System.Drawing.Size(129, 6)
+        '
+        'EXITToolStripMenuItem
+        '
+        Me.EXITToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.x320040
+        Me.EXITToolStripMenuItem.Name = "EXITToolStripMenuItem"
+        Me.EXITToolStripMenuItem.Size = New System.Drawing.Size(132, 22)
+        Me.EXITToolStripMenuItem.Text = "EXIT"
         '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
         Me.ToolStripMenuItem2.Size = New System.Drawing.Size(22, 20)
         Me.ToolStripMenuItem2.Text = "|"
+        '
+        'TOOLSToolStripMenuItem
+        '
+        Me.TOOLSToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DistanceBetween2PointsToolStripMenuItem, Me.ToolStripSeparator3, Me.SmokeCalculatorToolStripMenuItem, Me.SmokeCalcMultiFuelsToolStripMenuItem, Me.ProbabilityOfIgnitionToolStripMenuItem, Me.LVORIToolStripMenuItem})
+        Me.TOOLSToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.weIMAGE061
+        Me.TOOLSToolStripMenuItem.Name = "TOOLSToolStripMenuItem"
+        Me.TOOLSToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
+        Me.TOOLSToolStripMenuItem.Text = "TOOLS"
+        '
+        'DistanceBetween2PointsToolStripMenuItem
+        '
+        Me.DistanceBetween2PointsToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.target163
+        Me.DistanceBetween2PointsToolStripMenuItem.Name = "DistanceBetween2PointsToolStripMenuItem"
+        Me.DistanceBetween2PointsToolStripMenuItem.Size = New System.Drawing.Size(212, 22)
+        Me.DistanceBetween2PointsToolStripMenuItem.Text = "Distance between 2 points"
+        '
+        'ToolStripSeparator3
+        '
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(209, 6)
+        '
+        'SmokeCalculatorToolStripMenuItem
+        '
+        Me.SmokeCalculatorToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.weIMAGE079
+        Me.SmokeCalculatorToolStripMenuItem.Name = "SmokeCalculatorToolStripMenuItem"
+        Me.SmokeCalculatorToolStripMenuItem.Size = New System.Drawing.Size(212, 22)
+        Me.SmokeCalculatorToolStripMenuItem.Text = "Smoke Calculator"
+        '
+        'SmokeCalcMultiFuelsToolStripMenuItem
+        '
+        Me.SmokeCalcMultiFuelsToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.x321021
+        Me.SmokeCalcMultiFuelsToolStripMenuItem.Name = "SmokeCalcMultiFuelsToolStripMenuItem"
+        Me.SmokeCalcMultiFuelsToolStripMenuItem.Size = New System.Drawing.Size(212, 22)
+        Me.SmokeCalcMultiFuelsToolStripMenuItem.Text = "Smoke Calc Multi-Fuels"
+        '
+        'ProbabilityOfIgnitionToolStripMenuItem
+        '
+        Me.ProbabilityOfIgnitionToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.x321355
+        Me.ProbabilityOfIgnitionToolStripMenuItem.Name = "ProbabilityOfIgnitionToolStripMenuItem"
+        Me.ProbabilityOfIgnitionToolStripMenuItem.Size = New System.Drawing.Size(212, 22)
+        Me.ProbabilityOfIgnitionToolStripMenuItem.Text = "Probability of Ignition"
+        '
+        'LVORIToolStripMenuItem
+        '
+        Me.LVORIToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.x320005
+        Me.LVORIToolStripMenuItem.Name = "LVORIToolStripMenuItem"
+        Me.LVORIToolStripMenuItem.Size = New System.Drawing.Size(212, 22)
+        Me.LVORIToolStripMenuItem.Text = "LVORI "
         '
         'ToolStripMenuItem3
         '
@@ -255,68 +317,6 @@ Partial Class Form1
         'T1
         '
         Me.T1.Enabled = True
-        '
-        'LogViewerToolStripMenuItem
-        '
-        Me.LogViewerToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.x320303
-        Me.LogViewerToolStripMenuItem.Name = "LogViewerToolStripMenuItem"
-        Me.LogViewerToolStripMenuItem.Size = New System.Drawing.Size(132, 22)
-        Me.LogViewerToolStripMenuItem.Text = "Log Viewer"
-        '
-        'EXITToolStripMenuItem
-        '
-        Me.EXITToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.x320040
-        Me.EXITToolStripMenuItem.Name = "EXITToolStripMenuItem"
-        Me.EXITToolStripMenuItem.Size = New System.Drawing.Size(132, 22)
-        Me.EXITToolStripMenuItem.Text = "EXIT"
-        '
-        'TOOLSToolStripMenuItem
-        '
-        Me.TOOLSToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DistanceBetween2PointsToolStripMenuItem, Me.ToolStripSeparator3, Me.SmokeCalculatorToolStripMenuItem, Me.SmokeCalcMultiFuelsToolStripMenuItem, Me.ProbabilityOfIgnitionToolStripMenuItem, Me.LVORIToolStripMenuItem})
-        Me.TOOLSToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.weIMAGE061
-        Me.TOOLSToolStripMenuItem.Name = "TOOLSToolStripMenuItem"
-        Me.TOOLSToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
-        Me.TOOLSToolStripMenuItem.Text = "TOOLS"
-        '
-        'DistanceBetween2PointsToolStripMenuItem
-        '
-        Me.DistanceBetween2PointsToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.target163
-        Me.DistanceBetween2PointsToolStripMenuItem.Name = "DistanceBetween2PointsToolStripMenuItem"
-        Me.DistanceBetween2PointsToolStripMenuItem.Size = New System.Drawing.Size(212, 22)
-        Me.DistanceBetween2PointsToolStripMenuItem.Text = "Distance between 2 points"
-        '
-        'ToolStripSeparator3
-        '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(209, 6)
-        '
-        'SmokeCalculatorToolStripMenuItem
-        '
-        Me.SmokeCalculatorToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.weIMAGE079
-        Me.SmokeCalculatorToolStripMenuItem.Name = "SmokeCalculatorToolStripMenuItem"
-        Me.SmokeCalculatorToolStripMenuItem.Size = New System.Drawing.Size(212, 22)
-        Me.SmokeCalculatorToolStripMenuItem.Text = "Smoke Calculator"
-        '
-        'SmokeCalcMultiFuelsToolStripMenuItem
-        '
-        Me.SmokeCalcMultiFuelsToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.x321021
-        Me.SmokeCalcMultiFuelsToolStripMenuItem.Name = "SmokeCalcMultiFuelsToolStripMenuItem"
-        Me.SmokeCalcMultiFuelsToolStripMenuItem.Size = New System.Drawing.Size(212, 22)
-        Me.SmokeCalcMultiFuelsToolStripMenuItem.Text = "Smoke Calc Multi-Fuels"
-        '
-        'ProbabilityOfIgnitionToolStripMenuItem
-        '
-        Me.ProbabilityOfIgnitionToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.x321355
-        Me.ProbabilityOfIgnitionToolStripMenuItem.Name = "ProbabilityOfIgnitionToolStripMenuItem"
-        Me.ProbabilityOfIgnitionToolStripMenuItem.Size = New System.Drawing.Size(212, 22)
-        Me.ProbabilityOfIgnitionToolStripMenuItem.Text = "Probability of Ignition"
-        '
-        'LVORIToolStripMenuItem
-        '
-        Me.LVORIToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.x320005
-        Me.LVORIToolStripMenuItem.Name = "LVORIToolStripMenuItem"
-        Me.LVORIToolStripMenuItem.Size = New System.Drawing.Size(212, 22)
-        Me.LVORIToolStripMenuItem.Text = "LVORI "
         '
         'Form1
         '

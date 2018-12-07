@@ -152,6 +152,16 @@ pToolz
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:pToolz.My.Resources.Resources.x5120076_raM_icon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:pToolz.My.Resources.Resources.x5120076b_lLl_icon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
 <member name="F:pToolz.FimgViewer.WM_NCHITTEST">
  <summary>
  This code snippett and all instances of it in this application were obtained from the following source:

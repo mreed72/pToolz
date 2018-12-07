@@ -1619,11 +1619,12 @@ Public Class ClassFuels
     Public Function grs(ByRef length As Integer) As String
         Randomize()
         Dim ac As String
-        ac = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        ac = "123456789"
         Dim i As Integer
         For i = 1 To length
             grs = grs & Mid(ac, Int(Rnd() * Len(ac) + 1), 1)
         Next
+        Return grs
     End Function
 
     ''' <summary>

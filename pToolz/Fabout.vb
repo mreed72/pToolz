@@ -22,6 +22,7 @@ Public Class Fabout
     End Property
 
     Private Sub Fabout_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Try
             Label2.Text = CType("RKEY: " & X1.GetMyKey("REGKEY"), String)
             Label3.Text = "RDATE: " & CDate(X1.GetMyKey("REGDATE"))
@@ -33,6 +34,16 @@ Public Class Fabout
         Catch ex As Exception
             X1.ERRlog(ex.Message, "6x92HI9") ' ERROR LOG CODE
         End Try
+
+
+        Dim r As String = Dcypt(x.GetMyKey("REGKEY"))
+        Dim t As String = x.GetMyKey("DECVALUE")
+        If r = t Then
+            Label2.BackColor = Color.LightGreen
+            Label2.ForeColor = Color.Black
+        Else
+            Label2.BackColor = Color.LightPink
+        End If
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
@@ -92,4 +103,15 @@ Public Class Fabout
             X1.ERRlog(ex.Message, "6XCV9LQZ")
         End Try
     End Sub
+
+    Public Function Dcypt(r As String)
+        Dim tot() As String = r.Split("-"c)
+        Dim total As Integer
+        For Each t As Integer In tot
+            total += CType(t, Integer)
+        Next
+        Return total
+    End Function
+
+
 End Class
