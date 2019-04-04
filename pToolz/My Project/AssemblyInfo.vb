@@ -12,7 +12,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("Prescribed Fire Managers tools and gadgets")>
 <Assembly: AssemblyCompany("SimonCoder Software")>
 <Assembly: AssemblyProduct("pToolz")>
-<Assembly: AssemblyCopyright("Copyright ©  2018")>
+<Assembly: AssemblyCopyright("Copyright ©  2018-2019")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>

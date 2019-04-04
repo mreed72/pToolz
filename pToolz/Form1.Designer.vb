@@ -26,7 +26,6 @@ Partial Class Form1
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LogViewerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.EXITToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
@@ -37,10 +36,10 @@ Partial Class Form1
         Me.SmokeCalcMultiFuelsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProbabilityOfIgnitionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LVORIToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
+        Me.LogViewerToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.HELPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SmokeCalculatrHelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ProbabilityOfIgnitionHelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LVORIHelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -57,6 +56,7 @@ Partial Class Form1
         Me.cbDelLogs30Days = New System.Windows.Forms.CheckBox()
         Me.cbSesLog = New System.Windows.Forms.CheckBox()
         Me.T1 = New System.Windows.Forms.Timer(Me.components)
+        Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -76,28 +76,21 @@ Partial Class Form1
         '
         'ToolStripMenuItem1
         '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LogViewerToolStripMenuItem, Me.ToolStripSeparator1, Me.EXITToolStripMenuItem})
+        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripTextBox1, Me.ToolStripSeparator1, Me.EXITToolStripMenuItem})
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(40, 20)
         Me.ToolStripMenuItem1.Text = "FILE"
         '
-        'LogViewerToolStripMenuItem
-        '
-        Me.LogViewerToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.x320303
-        Me.LogViewerToolStripMenuItem.Name = "LogViewerToolStripMenuItem"
-        Me.LogViewerToolStripMenuItem.Size = New System.Drawing.Size(132, 22)
-        Me.LogViewerToolStripMenuItem.Text = "Log Viewer"
-        '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(129, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(177, 6)
         '
         'EXITToolStripMenuItem
         '
         Me.EXITToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.x320040
         Me.EXITToolStripMenuItem.Name = "EXITToolStripMenuItem"
-        Me.EXITToolStripMenuItem.Size = New System.Drawing.Size(132, 22)
+        Me.EXITToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.EXITToolStripMenuItem.Text = "EXIT"
         '
         'ToolStripMenuItem2
@@ -108,7 +101,7 @@ Partial Class Form1
         '
         'TOOLSToolStripMenuItem
         '
-        Me.TOOLSToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DistanceBetween2PointsToolStripMenuItem, Me.ToolStripSeparator3, Me.SmokeCalculatorToolStripMenuItem, Me.SmokeCalcMultiFuelsToolStripMenuItem, Me.ProbabilityOfIgnitionToolStripMenuItem, Me.LVORIToolStripMenuItem})
+        Me.TOOLSToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DistanceBetween2PointsToolStripMenuItem, Me.ToolStripSeparator3, Me.SmokeCalculatorToolStripMenuItem, Me.SmokeCalcMultiFuelsToolStripMenuItem, Me.ProbabilityOfIgnitionToolStripMenuItem, Me.LVORIToolStripMenuItem, Me.ToolStripSeparator4, Me.LogViewerToolStripMenuItem1})
         Me.TOOLSToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.weIMAGE061
         Me.TOOLSToolStripMenuItem.Name = "TOOLSToolStripMenuItem"
         Me.TOOLSToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
@@ -154,6 +147,18 @@ Partial Class Form1
         Me.LVORIToolStripMenuItem.Size = New System.Drawing.Size(212, 22)
         Me.LVORIToolStripMenuItem.Text = "LVORI "
         '
+        'ToolStripSeparator4
+        '
+        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(209, 6)
+        '
+        'LogViewerToolStripMenuItem1
+        '
+        Me.LogViewerToolStripMenuItem1.Image = Global.pToolz.My.Resources.Resources.x320062
+        Me.LogViewerToolStripMenuItem1.Name = "LogViewerToolStripMenuItem1"
+        Me.LogViewerToolStripMenuItem1.Size = New System.Drawing.Size(212, 22)
+        Me.LogViewerToolStripMenuItem1.Text = "Log Viewer"
+        '
         'ToolStripMenuItem3
         '
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
@@ -162,41 +167,27 @@ Partial Class Form1
         '
         'HELPToolStripMenuItem
         '
-        Me.HELPToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SmokeCalculatrHelpToolStripMenuItem, Me.ProbabilityOfIgnitionHelpToolStripMenuItem, Me.LVORIHelpToolStripMenuItem, Me.ToolStripSeparator2, Me.AboutToolStripMenuItem})
+        Me.HELPToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LVORIHelpToolStripMenuItem, Me.ToolStripSeparator2, Me.AboutToolStripMenuItem})
         Me.HELPToolStripMenuItem.Name = "HELPToolStripMenuItem"
         Me.HELPToolStripMenuItem.Size = New System.Drawing.Size(47, 20)
         Me.HELPToolStripMenuItem.Text = "HELP"
         '
-        'SmokeCalculatrHelpToolStripMenuItem
-        '
-        Me.SmokeCalculatrHelpToolStripMenuItem.Enabled = False
-        Me.SmokeCalculatrHelpToolStripMenuItem.Name = "SmokeCalculatrHelpToolStripMenuItem"
-        Me.SmokeCalculatrHelpToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
-        Me.SmokeCalculatrHelpToolStripMenuItem.Text = "Smoke Calculatr Help"
-        '
-        'ProbabilityOfIgnitionHelpToolStripMenuItem
-        '
-        Me.ProbabilityOfIgnitionHelpToolStripMenuItem.Enabled = False
-        Me.ProbabilityOfIgnitionHelpToolStripMenuItem.Name = "ProbabilityOfIgnitionHelpToolStripMenuItem"
-        Me.ProbabilityOfIgnitionHelpToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
-        Me.ProbabilityOfIgnitionHelpToolStripMenuItem.Text = "Probability of Ignition Help"
-        '
         'LVORIHelpToolStripMenuItem
         '
-        Me.LVORIHelpToolStripMenuItem.Enabled = False
+        Me.LVORIHelpToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.weIMAGE080
         Me.LVORIHelpToolStripMenuItem.Name = "LVORIHelpToolStripMenuItem"
-        Me.LVORIHelpToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
-        Me.LVORIHelpToolStripMenuItem.Text = "LVORI Help"
+        Me.LVORIHelpToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.LVORIHelpToolStripMenuItem.Text = "Help"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(214, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(177, 6)
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'StatusStrip1
@@ -318,6 +309,16 @@ Partial Class Form1
         '
         Me.T1.Enabled = True
         '
+        'ToolStripTextBox1
+        '
+        Me.ToolStripTextBox1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.ToolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.ToolStripTextBox1.ForeColor = System.Drawing.Color.Olive
+        Me.ToolStripTextBox1.Name = "ToolStripTextBox1"
+        Me.ToolStripTextBox1.Size = New System.Drawing.Size(100, 16)
+        Me.ToolStripTextBox1.Tag = ""
+        Me.ToolStripTextBox1.Text = "©2019 Scott Reed"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -361,14 +362,11 @@ Partial Class Form1
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents cbSesLog As CheckBox
-    Friend WithEvents LogViewerToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents tsStat As ToolStripStatusLabel
     Friend WithEvents T1 As Timer
     Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
     Friend WithEvents HELPToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SmokeCalculatrHelpToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ProbabilityOfIgnitionHelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LVORIHelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
@@ -381,4 +379,7 @@ Partial Class Form1
     Friend WithEvents cbDelLogs30Days As CheckBox
     Friend WithEvents DistanceBetween2PointsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
+    Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
+    Friend WithEvents LogViewerToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ToolStripTextBox1 As ToolStripTextBox
 End Class

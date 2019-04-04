@@ -22,6 +22,7 @@ Partial Class Fsmokecalc
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.txResults = New System.Windows.Forms.TextBox()
@@ -50,6 +51,7 @@ Partial Class Fsmokecalc
         Me.Button1 = New System.Windows.Forms.Button()
         Me.pb1 = New System.Windows.Forms.PictureBox()
         Me.k7 = New System.Windows.Forms.Label()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -174,6 +176,7 @@ Partial Class Fsmokecalc
         Me.txFload.Name = "txFload"
         Me.txFload.Size = New System.Drawing.Size(121, 21)
         Me.txFload.TabIndex = 1
+        Me.ToolTip1.SetToolTip(Me.txFload, "Select the amount of fuel loading")
         '
         'Label5
         '
@@ -194,6 +197,7 @@ Partial Class Fsmokecalc
         Me.txFtype.Name = "txFtype"
         Me.txFtype.Size = New System.Drawing.Size(184, 21)
         Me.txFtype.TabIndex = 0
+        Me.ToolTip1.SetToolTip(Me.txFtype, "Select the type of fuel")
         '
         'Label4
         '
@@ -233,6 +237,7 @@ Partial Class Fsmokecalc
         Me.txDistance.Name = "txDistance"
         Me.txDistance.Size = New System.Drawing.Size(32, 20)
         Me.txDistance.TabIndex = 2
+        Me.ToolTip1.SetToolTip(Me.txDistance, "Target distance in MILES (decimals okay)")
         '
         'txBurnSize
         '
@@ -240,6 +245,7 @@ Partial Class Fsmokecalc
         Me.txBurnSize.Name = "txBurnSize"
         Me.txBurnSize.Size = New System.Drawing.Size(61, 20)
         Me.txBurnSize.TabIndex = 0
+        Me.ToolTip1.SetToolTip(Me.txBurnSize, "Size of the burn (in acres) no decimals")
         '
         'Label3
         '
@@ -265,6 +271,7 @@ Partial Class Fsmokecalc
         Me.txCatDay.Name = "txCatDay"
         Me.txCatDay.Size = New System.Drawing.Size(32, 20)
         Me.txCatDay.TabIndex = 1
+        Me.ToolTip1.SetToolTip(Me.txCatDay, "A Number 1 through 5")
         '
         'txRecSize
         '
@@ -295,6 +302,7 @@ Partial Class Fsmokecalc
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(36, 25)
         Me.btnClear.TabIndex = 2
+        Me.ToolTip1.SetToolTip(Me.btnClear, "CLEAR ALL FIELDS")
         Me.btnClear.UseVisualStyleBackColor = False
         '
         'btnCalc
@@ -309,6 +317,7 @@ Partial Class Fsmokecalc
         Me.btnCalc.TabIndex = 1
         Me.btnCalc.Text = "Calculate"
         Me.btnCalc.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ToolTip1.SetToolTip(Me.btnCalc, "Calculate Smoke Mgmt")
         Me.btnCalc.UseVisualStyleBackColor = False
         '
         'Button1
@@ -320,6 +329,7 @@ Partial Class Fsmokecalc
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(25, 25)
         Me.Button1.TabIndex = 3
+        Me.ToolTip1.SetToolTip(Me.Button1, "Close this form")
         Me.Button1.UseVisualStyleBackColor = False
         '
         'pb1
@@ -400,4 +410,5 @@ Partial Class Fsmokecalc
     Friend WithEvents btnClear As Button
     Friend WithEvents pb1 As PictureBox
     Friend WithEvents k7 As Label
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

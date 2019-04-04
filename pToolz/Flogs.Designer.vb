@@ -22,6 +22,7 @@ Partial Class Flogs
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Flogs))
         Me.rtb = New System.Windows.Forms.RichTextBox()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
@@ -36,12 +37,16 @@ Partial Class Flogs
         Me.lgbtn = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.txSTA = New System.Windows.Forms.TextBox()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.COPYALLTEXTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip1.SuspendLayout()
+        Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'rtb
         '
         Me.rtb.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.rtb.ContextMenuStrip = Me.ContextMenuStrip1
         Me.rtb.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.rtb.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rtb.Location = New System.Drawing.Point(0, 57)
@@ -142,6 +147,18 @@ Partial Class Flogs
         Me.txSTA.Size = New System.Drawing.Size(451, 13)
         Me.txSTA.TabIndex = 2
         '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.COPYALLTEXTToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(159, 26)
+        '
+        'COPYALLTEXTToolStripMenuItem
+        '
+        Me.COPYALLTEXTToolStripMenuItem.Name = "COPYALLTEXTToolStripMenuItem"
+        Me.COPYALLTEXTToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.COPYALLTEXTToolStripMenuItem.Text = "COPY ALL TEXT"
+        '
         'Flogs
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -156,6 +173,7 @@ Partial Class Flogs
         Me.Text = "Logs"
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
+        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -174,4 +192,6 @@ Partial Class Flogs
     Friend WithEvents txSTA As TextBox
     Friend WithEvents exlg As ToolStripLabel
     Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents COPYALLTEXTToolStripMenuItem As ToolStripMenuItem
 End Class

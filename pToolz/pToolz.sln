@@ -7,6 +7,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "pToolz", "pToolz.vbproj", "
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "xFuels", "..\xFuels\xFuels.vbproj", "{C08D1F28-53CC-4777-83F4-45179C0A61D1}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup pToolz", "..\Setup pToolz\Setup pToolz.vdproj", "{721B2A61-141E-4BB3-A323-4AF19531FCD8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,8 @@ Global
 		{C08D1F28-53CC-4777-83F4-45179C0A61D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C08D1F28-53CC-4777-83F4-45179C0A61D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C08D1F28-53CC-4777-83F4-45179C0A61D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{721B2A61-141E-4BB3-A323-4AF19531FCD8}.Debug|Any CPU.ActiveCfg = Debug
+		{721B2A61-141E-4BB3-A323-4AF19531FCD8}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -77,14 +77,6 @@ Public Class Form1
 
     End Sub
 
-    Private Sub LogViewerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LogViewerToolStripMenuItem.Click
-        Dim a As New Flogs With {
-            .MdiParent = Me
-        }
-        a.Show()
-
-    End Sub
-
     Private Sub ProbabilityOfIgnitionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProbabilityOfIgnitionToolStripMenuItem.Click
         Dim a As New Fpoi With {
             .MdiParent = Me
@@ -167,6 +159,13 @@ Public Class Form1
         Dim a As New FcalDistant With {
                 .MdiParent = Me
             }
+        a.Show()
+    End Sub
+
+    Private Sub LogViewerToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles LogViewerToolStripMenuItem1.Click
+        Dim a As New Flogs With {
+          .MdiParent = Me
+      }
         a.Show()
     End Sub
 End Class

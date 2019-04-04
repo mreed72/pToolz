@@ -22,6 +22,7 @@ Partial Class FmultiCalc
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.bLog = New System.Windows.Forms.Label()
         Me.pb = New System.Windows.Forms.PictureBox()
@@ -53,6 +54,7 @@ Partial Class FmultiCalc
         Me.zAvFuels = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.zTotalTns = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lbLabel001 = New System.Windows.Forms.LinkLabel()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel1.SuspendLayout()
         CType(Me.pb, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -106,6 +108,7 @@ Partial Class FmultiCalc
         Me.txDistance.Name = "txDistance"
         Me.txDistance.Size = New System.Drawing.Size(50, 22)
         Me.txDistance.TabIndex = 12
+        Me.ToolTip1.SetToolTip(Me.txDistance, "Target Distance in Miles (Decimals okay)")
         '
         'btnClear
         '
@@ -124,6 +127,7 @@ Partial Class FmultiCalc
         Me.txCatDay.Name = "txCatDay"
         Me.txCatDay.Size = New System.Drawing.Size(39, 22)
         Me.txCatDay.TabIndex = 11
+        Me.ToolTip1.SetToolTip(Me.txCatDay, "Category day (1 through 5)")
         '
         'Label6
         '
@@ -152,6 +156,7 @@ Partial Class FmultiCalc
         Me.btnCalc.Name = "btnCalc"
         Me.btnCalc.Size = New System.Drawing.Size(47, 42)
         Me.btnCalc.TabIndex = 7
+        Me.ToolTip1.SetToolTip(Me.btnCalc, "Calculate")
         Me.btnCalc.UseVisualStyleBackColor = False
         '
         'btnAdd
@@ -163,6 +168,7 @@ Partial Class FmultiCalc
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(44, 42)
         Me.btnAdd.TabIndex = 6
+        Me.ToolTip1.SetToolTip(Me.btnAdd, "Add this block to the Queue")
         Me.btnAdd.UseVisualStyleBackColor = False
         '
         'Label5
@@ -184,6 +190,7 @@ Partial Class FmultiCalc
         Me.txFload.Name = "txFload"
         Me.txFload.Size = New System.Drawing.Size(113, 25)
         Me.txFload.TabIndex = 5
+        Me.ToolTip1.SetToolTip(Me.txFload, "Fuel Loading")
         '
         'Label3
         '
@@ -204,6 +211,7 @@ Partial Class FmultiCalc
         Me.txFtype.Name = "txFtype"
         Me.txFtype.Size = New System.Drawing.Size(243, 25)
         Me.txFtype.TabIndex = 3
+        Me.ToolTip1.SetToolTip(Me.txFtype, "Select the type of fuel for this block")
         '
         'Label2
         '
@@ -220,6 +228,7 @@ Partial Class FmultiCalc
         Me.txBlockSize.Name = "txBlockSize"
         Me.txBlockSize.Size = New System.Drawing.Size(63, 22)
         Me.txBlockSize.TabIndex = 1
+        Me.ToolTip1.SetToolTip(Me.txBlockSize, "Size of block to be burned in Acres (No Decimals)")
         '
         'Label1
         '
@@ -305,6 +314,7 @@ Partial Class FmultiCalc
         Me.dgv1.Name = "dgv1"
         Me.dgv1.Size = New System.Drawing.Size(638, 275)
         Me.dgv1.TabIndex = 15
+        Me.ToolTip1.SetToolTip(Me.dgv1, "Add blocks to this Queue before calculating smoke mgmt.")
         '
         'zSize
         '
@@ -406,4 +416,5 @@ Partial Class FmultiCalc
     Friend WithEvents zAvFuels As DataGridViewTextBoxColumn
     Friend WithEvents zTotalTns As DataGridViewTextBoxColumn
     Friend WithEvents lbLabel001 As LinkLabel
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

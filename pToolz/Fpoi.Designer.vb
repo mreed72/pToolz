@@ -22,6 +22,7 @@ Partial Class Fpoi
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.txFDFM = New System.Windows.Forms.NumericUpDown()
         Me.txDryBulb = New System.Windows.Forms.NumericUpDown()
@@ -36,6 +37,7 @@ Partial Class Fpoi
         Me.pb = New System.Windows.Forms.PictureBox()
         Me.btnCalc = New System.Windows.Forms.Button()
         Me.txResult = New System.Windows.Forms.TextBox()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel1.SuspendLayout()
         CType(Me.txFDFM, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txDryBulb, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,6 +67,7 @@ Partial Class Fpoi
         Me.txFDFM.Name = "txFDFM"
         Me.txFDFM.Size = New System.Drawing.Size(51, 22)
         Me.txFDFM.TabIndex = 2
+        Me.ToolTip1.SetToolTip(Me.txFDFM, "Fine Dead Fuel Moisture content")
         Me.txFDFM.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'txDryBulb
@@ -74,6 +77,7 @@ Partial Class Fpoi
         Me.txDryBulb.Name = "txDryBulb"
         Me.txDryBulb.Size = New System.Drawing.Size(51, 22)
         Me.txDryBulb.TabIndex = 1
+        Me.ToolTip1.SetToolTip(Me.txDryBulb, "Dry Bulb Temperature")
         Me.txDryBulb.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'txShading
@@ -83,6 +87,7 @@ Partial Class Fpoi
         Me.txShading.Name = "txShading"
         Me.txShading.Size = New System.Drawing.Size(51, 22)
         Me.txShading.TabIndex = 0
+        Me.ToolTip1.SetToolTip(Me.txShading, "Enter the amount of shading as a percentage")
         Me.txShading.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'Label3
@@ -224,4 +229,5 @@ Partial Class Fpoi
     Friend WithEvents pb As PictureBox
     Friend WithEvents btnClear As Button
     Friend WithEvents lkb As LinkLabel
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

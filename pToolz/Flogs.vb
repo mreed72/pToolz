@@ -81,6 +81,14 @@ Public Class Flogs
         Catch ex As Exception
             X1.ERRlog("1X1XHJZP", ex.Message) ' ERROR LOG CODE
         End Try
+
+        If rtb.Text > String.Empty Then
+            txSTA.Text = "Copy and Send error message to:  mreed1972@gmail.com"
+        End If
+
+
+
+
     End Sub
 
     Private Sub ToolStripButton3_Click(sender As Object, e As EventArgs) Handles ToolStripButton3.Click
@@ -151,6 +159,14 @@ Public Class Flogs
         Catch ex As Exception
             X1.ERRlog("1XSPITDB", ex.Message) ' ERROR LOG CODE
         End Try
+
+    End Sub
+
+    Private Sub COPYALLTEXTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles COPYALLTEXTToolStripMenuItem.Click
+        Clipboard.Clear()
+        rtb.SelectAll()
+        Clipboard.SetText(rtb.Text)
+
 
     End Sub
 End Class
