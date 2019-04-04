@@ -34,7 +34,7 @@ Public Class Fpoi
                 bLog.Text = "Logging Disabled!"
             End If
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "6xS9P8D") ' ERROR LOG CODE
+            X1.ERRlog("1XUZQX4N", ex.Message) ' ERROR LOG CODE
         End Try
 
         Try
@@ -42,7 +42,7 @@ Public Class Fpoi
             txDryBulb.Maximum = 125
             txFDFM.Maximum = 17
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "6xW3NPE") ' ERROR LOG CODE
+            X1.ERRlog("1X330YT4", ex.Message) ' ERROR LOG CODE
         End Try
 
 
@@ -67,7 +67,7 @@ Public Class Fpoi
                 Exit Sub
             End If
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "6xLIDF2") ' ERROR LOG CODE
+            X1.ERRlog("1XP5K2FA", ex.Message) ' ERROR LOG CODE
         End Try
 
 
@@ -82,7 +82,7 @@ Public Class Fpoi
             txFDFM.Value = 1
             txResult.Clear()
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "6xFHFG9") ' ERROR LOG CODE
+            X1.ERRlog("1X6F1M6K", ex.Message) ' ERROR LOG CODE
         End Try
 
     End Sub

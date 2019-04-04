@@ -28,7 +28,7 @@ Public Class Flvori
             txResult.Text = X1.LVORI_day(txRH.Value, txADI.Value)
             rtb1.Text = cdvalue()
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "6xMTIHN") ' ERROR LOG CODE
+            X1.ERRlog("1X23ZD64", ex.Message) ' ERROR LOG CODE
         End Try
 
         Try
@@ -43,7 +43,7 @@ Public Class Flvori
 
             x.SESLog("LVORI", "Relative Humidity: " & xR & vbCrLf & "Atmospheric Dispersion Index: " & xA & vbCrLf & "Result: " & res)
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "8x44GKB") ' ERROR LOG CODE
+            X1.ERRlog("1X36RVM5", ex.Message) ' ERROR LOG CODE
         End Try
 
 
@@ -66,7 +66,7 @@ Public Class Flvori
                     Return "Excellent dispersion, Control problems expected."
             End Select
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "6xBBIY7") ' ERROR LOG CODE
+            X1.ERRlog("1XZ9J7X0", ex.Message) ' ERROR LOG CODE
         End Try
 
 
@@ -83,7 +83,7 @@ Public Class Flvori
             MessageBox.Show("Lavdas Atmospheric Dispersion Index (ADI) was designed to estimate the atmosphere's ability to disperse smoke from a prescribed fire. The ADI forecast is computed from the 20-foot wind speed, mixing height, transport wind, and cloud cover." _
                         & "Values of ADI range from <= 6 indicating very poor dispersion to >=100 indicating very good dispersion", "ADI", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "8xP686S") ' ERROR LOG CODE
+            X1.ERRlog("1XYJCP3H", ex.Message) ' ERROR LOG CODE
         End Try
 
     End Sub
@@ -93,7 +93,7 @@ Public Class Flvori
             MessageBox.Show("Low Visibility Occurrence Risk Index (LVORI) Is derived from the Lavdas ADI and the relative humidity, which gages the probability of visibility restrictions in fog or smoke. There are 10 LVORI categories; ranging from 1" _
             & "(indicating the lowest probability of visibility restrictions) to 10 (indicating the highest probability of visibility restrictions).", "LVORI", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "8x2PKAB") ' ERROR LOG CODE
+            X1.ERRlog("1XI05Q1B", ex.Message) ' ERROR LOG CODE
         End Try
 
     End Sub
@@ -108,7 +108,7 @@ Public Class Flvori
                 a.pbox.Image = i1
             End If
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "6xJIGLU") ' ERROR LOG CODE
+            X1.ERRlog("1X34I83F", ex.Message) ' ERROR LOG CODE
         End Try
     End Sub
 
@@ -123,7 +123,7 @@ Public Class Flvori
 
             End If
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "6xFT44Y") ' ERROR LOG CODE
+            X1.ERRlog("1XGJ6FC3", ex.Message) ' ERROR LOG CODE
         End Try
     End Sub
 End Class

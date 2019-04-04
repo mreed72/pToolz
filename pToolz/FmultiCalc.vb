@@ -25,7 +25,7 @@ Public Class FmultiCalc
                 pb.Image = My.Resources.weIMAGE118
             End If
         Catch ex As Exception
-            x.ERRlog(ex.Message, "8x9JUKR") ' ERROR LOG CODE
+            x.ERRlog("1XAR2ULI", ex.Message) ' ERROR LOG CODE
         End Try
 
         lbLabel001.Visible = False
@@ -78,7 +78,7 @@ Public Class FmultiCalc
             txFload.SelectedIndex = -1
             txBlockSize.Focus()
         Catch ex As Exception
-            x.ERRlog(ex.Message, "8x2W1LD") ' ERROR LOG CODE
+            x.ERRlog("1X3R483Y", ex.Message) ' ERROR LOG CODE
         End Try
 
 
@@ -124,7 +124,7 @@ Public Class FmultiCalc
             zTotalSize = 0
             zTotalTons = 0
         Catch ex As Exception
-            x.ERRlog(ex.Message, "8x9XBG5") ' ERROR LOG CODE
+            x.ERRlog("1X0IQTO7", ex.Message) ' ERROR LOG CODE
         End Try
 
 
@@ -154,7 +154,7 @@ Public Class FmultiCalc
             Form1.myicon.ShowBalloonTip(2000, "Smoke Calculator", "Session log has been saved!", ToolTipIcon.Info)
 
         Catch ex As Exception
-            x.ERRlog(ex.Message, "8xXPEZ9") ' ERROR LOG CODE
+            x.ERRlog("1XERY3DD", ex.Message) ' ERROR LOG CODE
         End Try
 
     End Sub
@@ -185,7 +185,7 @@ Public Class FmultiCalc
             tw.Write(StrExport)
             tw.Close()
         Catch ex As Exception
-            x.ERRlog(ex.Message, "8x9ECEV") ' ERROR LOG CODE
+            x.ERRlog("1XXTGJCB", ex.Message) ' ERROR LOG CODE
         End Try
 
     End Function
@@ -236,7 +236,7 @@ Public Class FmultiCalc
             dgv1.Rows.Clear()
 
         Catch ex As Exception
-            x.ERRlog(ex.Message, "8xFPHKL") ' ERROR LOG CODE
+            x.ERRlog("1XGDPQBL", ex.Message) ' ERROR LOG CODE
         End Try
     End Sub
 
@@ -279,7 +279,7 @@ Public Class FmultiCalc
 
             txFtype.SelectedIndex = x
         Catch ex As Exception
-            x.ERRlog(ex.Message, "8x6M28E") ' ERROR LOG CODE
+            x.ERRlog("1XZV9YEZ", ex.Message) ' ERROR LOG CODE
         End Try
     End Sub
 End Class

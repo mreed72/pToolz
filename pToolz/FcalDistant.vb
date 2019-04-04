@@ -72,7 +72,7 @@ Public Class FcalDistant
                 Return dist
             End If
         Catch ex As Exception
-            x.ERRlog(ex.Message, "6XCJDK6C")
+            x.ERRlog("1XDU417H", ex.Message)
         End Try
     End Function
 
@@ -88,7 +88,7 @@ Public Class FcalDistant
         Try
             Diagnostics.Process.Start("https://www.geodatasource.com")
         Catch ex As Exception
-            x.ERRlog(ex.Message, "6XUXEAGE")
+            x.ERRlog("1XP08MYF", ex.Message)
         End Try
 
     End Sub

@@ -1647,7 +1647,7 @@ Public Class ClassFuels
     ''' <param name="MSG">Message to write into log file</param>
     ''' <param name="code">Unique ID</param>
     ''' <returns>NA</returns>
-    Public Function ERRlog(MSG As String, code As String)
+    Public Function ERRlog(code As String, MSG As String)
         Dim LC As String = GetMyKey("ELOG")
         Dim file As System.IO.StreamWriter
         file = My.Computer.FileSystem.OpenTextFileWriter(LC, True)
@@ -1892,7 +1892,7 @@ Public Class ClassFuels
 
             Return lngDirSize
         Catch ex As Exception
-            ERRlog(ex.Message, "8x89XZ7") ' ERROR LOG CODE
+            ERRlog("1XKI8X17", ex.Message) ' ERROR LOG CODE
         End Try
 
 

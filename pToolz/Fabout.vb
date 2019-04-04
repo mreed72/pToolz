@@ -32,7 +32,7 @@ Public Class Fabout
             txDayUsing.Text = "You have been using this program for: " & DDY & " days."
 
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "6x92HI9") ' ERROR LOG CODE
+            X1.ERRlog("1XFB4MYF", ex.Message) ' ERROR LOG CODE
         End Try
 
 
@@ -50,7 +50,7 @@ Public Class Fabout
         Try
             Process.Start("mailto:mreed1972@gmail.com?subject=SmokeToolsApp")
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "6xPDEG1") ' ERROR LOG CODE
+            X1.ERRlog("1XMUJ80H", ex.Message) ' ERROR LOG CODE
         End Try
 
     End Sub
@@ -64,7 +64,7 @@ Public Class Fabout
         Try
             Process.Start("https://www.gnu.org/licenses/gpl.html")
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "6xXPDOD") ' ERROR LOG CODE
+            X1.ERRlog("1X83SHPW", ex.Message) ' ERROR LOG CODE
         End Try
 
     End Sub
@@ -73,7 +73,7 @@ Public Class Fabout
         Try
             Process.Start("https://github.com/mreed72/pToolz")
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "6xC1FB4") ' ERROR LOG CODE
+            X1.ERRlog("1X5DDCLV", ex.Message) ' ERROR LOG CODE
         End Try
     End Sub
 
@@ -82,7 +82,7 @@ Public Class Fabout
         Try
             Process.Start("https://graphical.weather.gov/definitions/defineADI.html")
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "6x9M9YV") ' ERROR LOG CODE
+            X1.ERRlog("1XRGTN0D", ex.Message) ' ERROR LOG CODE
         End Try
 
     End Sub
@@ -92,7 +92,7 @@ Public Class Fabout
         Try
             Process.Start("https://graphical.weather.gov/definitions/defineLVORI.html")
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "6xQ8ADK") ' ERROR LOG CODE
+            X1.ERRlog("1XR388C6", ex.Message) ' ERROR LOG CODE
         End Try
     End Sub
 
@@ -100,7 +100,7 @@ Public Class Fabout
         Try
             Diagnostics.Process.Start("https://www.geodatasource.com/")
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "6XCV9LQZ")
+            X1.ERRlog("1XQHNAPC", ex.Message) ' ERROR LOG CODE
         End Try
     End Sub
 

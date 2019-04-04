@@ -33,7 +33,7 @@ Public Class Form1
             Dim bkf As String = "C:\SMTOOLZ\Sessions\"
             xAFDSZ.Text = "Archived Session Directory Size: " & X1.finSize(X1.GetFolderSize(bkf, True))
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "8xXC3DL") ' ERROR LOG CODE
+            X1.ERRlog("1XWDTCYJ", ex.Message) ' ERROR LOG CODE
         End Try
 
 
@@ -44,7 +44,7 @@ Public Class Form1
 
             tsSesLogSize.Text = "SLFS: " & SesLogSize
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "8xN711H") ' ERROR LOG CODE
+            X1.ERRlog("1XTFXBKW", ex.Message) ' ERROR LOG CODE
         End Try
 
         myicon.Icon = Icon.ExtractAssociatedIcon("cXY0098.ico")
@@ -129,7 +129,7 @@ Public Class Form1
                     FileName = "SessionLog_" & Date.Now.Month & "_" & Date.Now.Day & "_" & Date.Now.Year & "_" & CInt(X1.CTFD) & ".txt"
                     My.Computer.FileSystem.CopyFile("C:\SMTOOLZ\slog.txt", "C:\SMTOOLZ\Sessions\" & FileName)
                 Catch ex As Exception
-                    X1.ERRlog(ex.Message, "6xRSQ8E") ' ERROR LOG CODE
+                    X1.ERRlog("1XHEBZJ3", ex.Message) ' ERROR LOG CODE
                 End Try
             Else
                 Exit Sub
@@ -139,7 +139,7 @@ Public Class Form1
                 My.Computer.FileSystem.DeleteFile("C:\SMTOOLZ\slog.txt")
                 My.Computer.FileSystem.WriteAllText("C:\SMTOOLZ\slog.txt", "", False)
             Catch ex As Exception
-                X1.ERRlog(ex.Message, "8xU8VLJ") ' ERROR LOG CODE
+                X1.ERRlog("1X9EOP7H", ex.Message) ' ERROR LOG CODE
             End Try
         Else
             Exit Sub
@@ -153,7 +153,7 @@ Public Class Form1
         Try
             Process.Start("C:\SMTOOLZ\Sessions\")
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "6xB1JF2") ' ERROR LOG CODE
+            X1.ERRlog("1XDTQ23D", ex.Message) ' ERROR LOG CODE
         End Try
 
     End Sub

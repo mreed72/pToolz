@@ -38,7 +38,7 @@ Public Class Flogs
                 lgbtn.Text = "Disabled!"
             End If
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "6xUN8IS") ' ERROR LOG CODE
+            X1.ERRlog("1XF4JXYO", ex.Message) ' ERROR LOG CODE
         End Try
 
         Try
@@ -50,7 +50,7 @@ Public Class Flogs
                 exlg.BackColor = Color.FromArgb(249, 170, 166)
             End If
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "6x6HI4C") ' ERROR LOG CODE
+            X1.ERRlog("1X46E3JL", ex.Message)
         End Try
 
 
@@ -65,7 +65,7 @@ Public Class Flogs
                 rtb.Text = srg
             End If
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "6x7MO14") ' ERROR LOG CODE
+            X1.ERRlog("1XDBU3ZR", ex.Message) ' ERROR LOG CODE
         End Try
     End Sub
 
@@ -79,7 +79,7 @@ Public Class Flogs
                 rtb.Text = srg
             End If
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "6xWFWLK") ' ERROR LOG CODE
+            X1.ERRlog("1X1XHJZP", ex.Message) ' ERROR LOG CODE
         End Try
     End Sub
 
@@ -104,7 +104,7 @@ Public Class Flogs
                 txSTA.Text = svLocation
             Catch ex As Exception
                 txSTA.Text = "error..."
-                X1.ERRlog(ex.Message, "6xGIG7E") ' ERROR LOG CODE
+                X1.ERRlog("1XHFK6HM", ex.Message) ' ERROR LOG CODE
             End Try
         End If
     End Sub
@@ -120,7 +120,7 @@ Public Class Flogs
             End If
             MessageBox.Show("Session Log Cleared!", "Session Log", MessageBoxButtons.OK)
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "6xWDADE") ' ERROR LOG CODE
+            X1.ERRlog("1XFI44GF", ex.Message) ' ERROR LOG CODE
         End Try
 
 
@@ -134,7 +134,7 @@ Public Class Flogs
             Dim xv As String = txSTA.Text
             Diagnostics.Process.Start(xv)
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "6x5CP29") ' ERROR LOG CODE
+            X1.ERRlog("1XIS2S5U", ex.Message) ' ERROR LOG CODE
         End Try
 
     End Sub
@@ -149,7 +149,7 @@ Public Class Flogs
             My.Settings.Save()
             ChkSets()
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "6xVZIPA") ' ERROR LOG CODE
+            X1.ERRlog("1XSPITDB", ex.Message) ' ERROR LOG CODE
         End Try
 
     End Sub

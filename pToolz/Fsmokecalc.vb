@@ -50,7 +50,7 @@ Public Class Fsmokecalc
                 k7.Text = "Log Disabled!"
             End If
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "6xZEHVF") ' ERROR LOG CODE
+            X1.ERRlog("1XSQ8IMY", ex.Message) ' ERROR LOG CODE
         End Try
     End Sub
 
@@ -95,7 +95,7 @@ Public Class Fsmokecalc
             SNEW1 = 0
             txResults.BackColor = Color.FromArgb(238, 242, 245)
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "6xAKRNF") ' ERROR LOG CODE
+            X1.ERRlog("1XB7DV1N", ex.Message) ' ERROR LOG CODE
         End Try
     End Sub
 
@@ -109,7 +109,7 @@ Public Class Fsmokecalc
                 txCatDay.BackColor = Color.FromArgb(238, 242, 245)
             End If
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "6xPB9YE") ' ERROR LOG CODE
+            X1.ERRlog("1X8SXMUD", ex.Message) ' ERROR LOG CODE
         End Try
     End Sub
 
@@ -155,7 +155,7 @@ Public Class Fsmokecalc
                 txFload.BackColor = Color.FromArgb(238, 242, 245)
             End If
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "6x9XTN3") ' ERROR LOG CODE
+            X1.ERRlog("1XFLQ6GC", ex.Message) ' ERROR LOG CODE
         End Try
 
 #End Region
@@ -177,7 +177,7 @@ Public Class Fsmokecalc
                 txRecSize.Text = 0
             End If
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "6xYKZK4") ' ERROR LOG CODE
+            X1.ERRlog("1XF0ZD0S", ex.Message) ' ERROR LOG CODE
         End Try
 
         'SESSION LOG
@@ -208,7 +208,7 @@ Public Class Fsmokecalc
 
             End If
         Catch ex As Exception
-            X1.ERRlog(ex.Message, "6xVSXKH") ' ERROR LOG CODE
+            X1.ERRlog("1XYNZOS9", ex.Message) ' ERROR LOG CODE
         End Try
 
     End Sub
