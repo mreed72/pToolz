@@ -17,3 +17,5 @@ https://www.screencast.com/t/cy5XDsCy
 # LVORI
 https://www.screencast.com/t/jMg4qa1tV6Wv
 
+# **NEWEST FEATURE**  Calculate distance between two points
+https://www.screencast.com/t/dZrI0PbcP0Q
