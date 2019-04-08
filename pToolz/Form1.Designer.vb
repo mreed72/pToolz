@@ -26,7 +26,6 @@ Partial Class Form1
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.EXITToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.TOOLSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -38,6 +37,7 @@ Partial Class Form1
         Me.LVORIToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.LogViewerToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CLOSEALLTOOLSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.HELPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LVORIHelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -48,6 +48,11 @@ Partial Class Form1
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.tsSesLogSize = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.xAFDSZ = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -56,7 +61,7 @@ Partial Class Form1
         Me.cbDelLogs30Days = New System.Windows.Forms.CheckBox()
         Me.cbSesLog = New System.Windows.Forms.CheckBox()
         Me.T1 = New System.Windows.Forms.Timer(Me.components)
-        Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -76,15 +81,10 @@ Partial Class Form1
         '
         'ToolStripMenuItem1
         '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripTextBox1, Me.ToolStripSeparator1, Me.EXITToolStripMenuItem})
+        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EXITToolStripMenuItem})
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(40, 20)
         Me.ToolStripMenuItem1.Text = "FILE"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(177, 6)
         '
         'EXITToolStripMenuItem
         '
@@ -101,7 +101,7 @@ Partial Class Form1
         '
         'TOOLSToolStripMenuItem
         '
-        Me.TOOLSToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DistanceBetween2PointsToolStripMenuItem, Me.ToolStripSeparator3, Me.SmokeCalculatorToolStripMenuItem, Me.SmokeCalcMultiFuelsToolStripMenuItem, Me.ProbabilityOfIgnitionToolStripMenuItem, Me.LVORIToolStripMenuItem, Me.ToolStripSeparator4, Me.LogViewerToolStripMenuItem1})
+        Me.TOOLSToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DistanceBetween2PointsToolStripMenuItem, Me.ToolStripSeparator3, Me.SmokeCalculatorToolStripMenuItem, Me.SmokeCalcMultiFuelsToolStripMenuItem, Me.ProbabilityOfIgnitionToolStripMenuItem, Me.LVORIToolStripMenuItem, Me.ToolStripSeparator4, Me.LogViewerToolStripMenuItem1, Me.CLOSEALLTOOLSToolStripMenuItem})
         Me.TOOLSToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.weIMAGE061
         Me.TOOLSToolStripMenuItem.Name = "TOOLSToolStripMenuItem"
         Me.TOOLSToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
@@ -159,6 +159,13 @@ Partial Class Form1
         Me.LogViewerToolStripMenuItem1.Size = New System.Drawing.Size(212, 22)
         Me.LogViewerToolStripMenuItem1.Text = "Log Viewer"
         '
+        'CLOSEALLTOOLSToolStripMenuItem
+        '
+        Me.CLOSEALLTOOLSToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.weIMAGE091
+        Me.CLOSEALLTOOLSToolStripMenuItem.Name = "CLOSEALLTOOLSToolStripMenuItem"
+        Me.CLOSEALLTOOLSToolStripMenuItem.Size = New System.Drawing.Size(212, 22)
+        Me.CLOSEALLTOOLSToolStripMenuItem.Text = "CLOSE ALL TOOLS"
+        '
         'ToolStripMenuItem3
         '
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
@@ -177,7 +184,7 @@ Partial Class Form1
         Me.LVORIHelpToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.weIMAGE080
         Me.LVORIHelpToolStripMenuItem.Name = "LVORIHelpToolStripMenuItem"
         Me.LVORIHelpToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.LVORIHelpToolStripMenuItem.Text = "Help"
+        Me.LVORIHelpToolStripMenuItem.Text = "Help (Online Wiki)"
         '
         'ToolStripSeparator2
         '
@@ -186,6 +193,7 @@ Partial Class Form1
         '
         'AboutToolStripMenuItem
         '
+        Me.AboutToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.weIMAGE087
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
         Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.AboutToolStripMenuItem.Text = "About"
@@ -222,6 +230,11 @@ Partial Class Form1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(245, Byte), Integer))
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel1.Controls.Add(Me.Button6)
+        Me.Panel1.Controls.Add(Me.Button5)
+        Me.Panel1.Controls.Add(Me.Button4)
+        Me.Panel1.Controls.Add(Me.Button3)
+        Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.Panel3)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
@@ -229,6 +242,56 @@ Partial Class Form1
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1062, 47)
         Me.Panel1.TabIndex = 4
+        '
+        'Button6
+        '
+        Me.Button6.Image = Global.pToolz.My.Resources.Resources.target163
+        Me.Button6.Location = New System.Drawing.Point(874, 3)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(44, 36)
+        Me.Button6.TabIndex = 6
+        Me.ToolTip1.SetToolTip(Me.Button6, "Distance between 2 points")
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.Image = Global.pToolz.My.Resources.Resources.x320005
+        Me.Button5.Location = New System.Drawing.Point(824, 3)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(44, 36)
+        Me.Button5.TabIndex = 5
+        Me.ToolTip1.SetToolTip(Me.Button5, "LVORI Calculator")
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Image = Global.pToolz.My.Resources.Resources.x321355
+        Me.Button4.Location = New System.Drawing.Point(774, 3)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(44, 36)
+        Me.Button4.TabIndex = 4
+        Me.ToolTip1.SetToolTip(Me.Button4, "Probability of Ignition")
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Image = Global.pToolz.My.Resources.Resources.x321021
+        Me.Button3.Location = New System.Drawing.Point(724, 3)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(44, 36)
+        Me.Button3.TabIndex = 3
+        Me.ToolTip1.SetToolTip(Me.Button3, "Multi-Fuels Calculator")
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Image = Global.pToolz.My.Resources.Resources.weIMAGE079
+        Me.Button2.Location = New System.Drawing.Point(674, 3)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(44, 36)
+        Me.Button2.TabIndex = 2
+        Me.ToolTip1.SetToolTip(Me.Button2, "Single Fuels Calculator")
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'Panel3
         '
@@ -309,16 +372,6 @@ Partial Class Form1
         '
         Me.T1.Enabled = True
         '
-        'ToolStripTextBox1
-        '
-        Me.ToolStripTextBox1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ToolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.ToolStripTextBox1.ForeColor = System.Drawing.Color.Olive
-        Me.ToolStripTextBox1.Name = "ToolStripTextBox1"
-        Me.ToolStripTextBox1.Size = New System.Drawing.Size(100, 16)
-        Me.ToolStripTextBox1.Tag = ""
-        Me.ToolStripTextBox1.Text = "©2019 Scott Reed"
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -362,7 +415,6 @@ Partial Class Form1
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents cbSesLog As CheckBox
-    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents tsStat As ToolStripStatusLabel
     Friend WithEvents T1 As Timer
     Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
@@ -381,5 +433,11 @@ Partial Class Form1
     Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
     Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
     Friend WithEvents LogViewerToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents ToolStripTextBox1 As ToolStripTextBox
+    Friend WithEvents Button6 As Button
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents CLOSEALLTOOLSToolStripMenuItem As ToolStripMenuItem
 End Class

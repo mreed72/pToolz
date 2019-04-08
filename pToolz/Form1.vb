@@ -69,19 +69,32 @@ Public Class Form1
 
     End Sub
 
-    Private Sub SmokeCalculatorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SmokeCalculatorToolStripMenuItem.Click
-        Dim a As New Fsmokecalc With {
-            .MdiParent = Me
-        }
-        a.Show()
+    Private Sub SmokeCalculatorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SmokeCalculatorToolStripMenuItem.Click, Button2.Click
+        Dim a As New Form
+        a = Fsmokecalc
+        If a.Visible = True Then
+            a.TopMost = True
+            a.Focus()
+            Exit Sub
+        Else
+            a.MdiParent = Me
+            a.Show()
+        End If
+
 
     End Sub
 
-    Private Sub ProbabilityOfIgnitionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProbabilityOfIgnitionToolStripMenuItem.Click
-        Dim a As New Fpoi With {
-            .MdiParent = Me
-        }
-        a.Show()
+    Private Sub ProbabilityOfIgnitionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProbabilityOfIgnitionToolStripMenuItem.Click, Button4.Click
+        Dim a As New Form
+        a = Fpoi
+        If a.Visible = True Then
+            a.TopMost = True
+            a.Focus()
+            Exit Sub
+        Else
+            a.MdiParent = Me
+            a.Show()
+        End If
 
     End Sub
 
@@ -93,19 +106,31 @@ Public Class Form1
 
     End Sub
 
-    Private Sub LVORIToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LVORIToolStripMenuItem.Click
-        Dim a As New Flvori With {
-            .MdiParent = Me
-        }
-        a.Show()
+    Private Sub LVORIToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LVORIToolStripMenuItem.Click, Button5.Click
+        Dim a As New Form
+        a = Flvori
+        If a.Visible = True Then
+            a.TopMost = True
+            a.Focus()
+            Exit Sub
+        Else
+            a.MdiParent = Me
+            a.Show()
+        End If
 
     End Sub
 
-    Private Sub SmokeCalcMultiFuelsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SmokeCalcMultiFuelsToolStripMenuItem.Click
-        Dim a As New FmultiCalc With {
-            .MdiParent = Me
-        }
-        a.Show()
+    Private Sub SmokeCalcMultiFuelsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SmokeCalcMultiFuelsToolStripMenuItem.Click, Button3.Click
+        Dim a As New Form
+        a = FmultiCalc
+        If a.Visible = True Then
+            a.TopMost = True
+            a.Focus()
+            Exit Sub
+        Else
+            a.MdiParent = Me
+            a.Show()
+        End If
 
     End Sub
 
@@ -155,11 +180,17 @@ Public Class Form1
 
     End Sub
 
-    Private Sub DistanceBetween2PointsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DistanceBetween2PointsToolStripMenuItem.Click
-        Dim a As New FcalDistant With {
-                .MdiParent = Me
-            }
-        a.Show()
+    Private Sub DistanceBetween2PointsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DistanceBetween2PointsToolStripMenuItem.Click, Button6.Click
+        Dim a As New Form
+        a = FcalDistant
+        If a.Visible = True Then
+            a.TopMost = True
+            a.Focus()
+            Exit Sub
+        Else
+            a.MdiParent = Me
+            a.Show()
+        End If
     End Sub
 
     Private Sub LogViewerToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles LogViewerToolStripMenuItem1.Click
@@ -167,5 +198,21 @@ Public Class Form1
           .MdiParent = Me
       }
         a.Show()
+    End Sub
+
+    Private Sub LVORIHelpToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LVORIHelpToolStripMenuItem.Click
+        Try
+            Dim xv As String = "https://github.com/mreed72/pToolz/wiki"
+            Diagnostics.Process.Start(xv)
+        Catch ex As Exception
+        End Try
+
+    End Sub
+
+    Private Sub CLOSEALLTOOLSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CLOSEALLTOOLSToolStripMenuItem.Click
+        For Each Childform In Me.MdiChildren
+            Childform.Close()
+
+        Next
     End Sub
 End Class

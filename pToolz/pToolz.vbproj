@@ -222,6 +222,8 @@
     <Content Include="gpl.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\weIMAGE087.png" />
+    <None Include="Resources\weIMAGE091.png" />
     <None Include="Resources\weIMAGE080.png" />
     <None Include="Resources\x5120076b_lLl_icon.ico" />
     <None Include="Resources\x5120076_raM_icon.ico" />
