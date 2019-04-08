@@ -25,3 +25,9 @@ https://www.screencast.com/t/jMg4qa1tV6Wv
 
 # **NEWEST FEATURE**  Calculate distance between two points
 https://www.screencast.com/t/dZrI0PbcP0Q
+
+
+<hr>
+# Some future updates will include...
+* A way for burn managers to keep data for each burn (Burn location Lat & Long, Unique ID for each burn, etc...)
+* Buttons on the main toolbar for each tool for easier access.
