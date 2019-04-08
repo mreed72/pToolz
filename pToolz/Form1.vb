@@ -167,11 +167,10 @@ Public Class Form1
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Try
-            Process.Start("C:\SMTOOLZ\Sessions\")
-        Catch ex As Exception
-            X1.ERRlog("1XDTQ23D", ex.Message) ' ERROR LOG CODE
-        End Try
+        Dim a As New FarchiveChoose With {
+            .MdiParent = Me
+            }
+        a.Show()
 
     End Sub
 
@@ -215,4 +214,11 @@ Public Class Form1
 
         Next
     End Sub
+
+    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        Application.Exit()
+
+    End Sub
+
+
 End Class

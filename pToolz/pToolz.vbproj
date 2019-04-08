@@ -82,6 +82,12 @@
     <Compile Include="Fabout.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FarchiveChoose.Designer.vb">
+      <DependentUpon>FarchiveChoose.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FarchiveChoose.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FcalDistant.Designer.vb">
       <DependentUpon>FcalDistant.vb</DependentUpon>
     </Compile>
@@ -157,6 +163,9 @@
     <EmbeddedResource Include="Fabout.resx">
       <DependentUpon>Fabout.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FarchiveChoose.resx">
+      <DependentUpon>FarchiveChoose.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FcalDistant.resx">
       <DependentUpon>FcalDistant.vb</DependentUpon>
     </EmbeddedResource>
@@ -222,6 +231,7 @@
     <Content Include="gpl.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\psdImages111.png" />
     <None Include="Resources\weIMAGE087.png" />
     <None Include="Resources\weIMAGE091.png" />
     <None Include="Resources\weIMAGE080.png" />

@@ -6,7 +6,6 @@
 'You should have received a copy of the GNU General Public License along with this program.  If not, see <https://www.gnu.org/licenses/>
 '==============================================================================
 
-'TODO: Does this need to be logged to the session log?
 
 
 Imports xFuels

@@ -48,6 +48,7 @@ Partial Class Form1
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.tsSesLogSize = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnExit = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
@@ -90,7 +91,7 @@ Partial Class Form1
         '
         Me.EXITToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.x320040
         Me.EXITToolStripMenuItem.Name = "EXITToolStripMenuItem"
-        Me.EXITToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EXITToolStripMenuItem.Size = New System.Drawing.Size(97, 22)
         Me.EXITToolStripMenuItem.Text = "EXIT"
         '
         'ToolStripMenuItem2
@@ -183,19 +184,19 @@ Partial Class Form1
         '
         Me.LVORIHelpToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.weIMAGE080
         Me.LVORIHelpToolStripMenuItem.Name = "LVORIHelpToolStripMenuItem"
-        Me.LVORIHelpToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.LVORIHelpToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
         Me.LVORIHelpToolStripMenuItem.Text = "Help (Online Wiki)"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(168, 6)
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.weIMAGE087
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'StatusStrip1
@@ -230,6 +231,7 @@ Partial Class Form1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(245, Byte), Integer))
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel1.Controls.Add(Me.btnExit)
         Me.Panel1.Controls.Add(Me.Button6)
         Me.Panel1.Controls.Add(Me.Button5)
         Me.Panel1.Controls.Add(Me.Button4)
@@ -242,6 +244,19 @@ Partial Class Form1
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1062, 47)
         Me.Panel1.TabIndex = 4
+        '
+        'btnExit
+        '
+        Me.btnExit.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnExit.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnExit.Image = Global.pToolz.My.Resources.Resources.x320040
+        Me.btnExit.Location = New System.Drawing.Point(1011, 3)
+        Me.btnExit.Name = "btnExit"
+        Me.btnExit.Size = New System.Drawing.Size(44, 36)
+        Me.btnExit.TabIndex = 7
+        Me.ToolTip1.SetToolTip(Me.btnExit, "Distance between 2 points")
+        Me.btnExit.UseVisualStyleBackColor = False
         '
         'Button6
         '
@@ -376,10 +391,14 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = Global.pToolz.My.Resources.Resources.psdImages111
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(1062, 708)
+        Me.ControlBox = False
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.DoubleBuffered = True
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
@@ -440,4 +459,5 @@ Partial Class Form1
     Friend WithEvents Button2 As Button
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents CLOSEALLTOOLSToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents btnExit As Button
 End Class

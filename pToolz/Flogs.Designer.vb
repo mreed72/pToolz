@@ -25,6 +25,8 @@ Partial Class Flogs
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Flogs))
         Me.rtb = New System.Windows.Forms.RichTextBox()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.COPYALLTEXTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
@@ -37,10 +39,9 @@ Partial Class Flogs
         Me.lgbtn = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.txSTA = New System.Windows.Forms.TextBox()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.COPYALLTEXTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStrip1.SuspendLayout()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ContextMenuStrip1.SuspendLayout()
+        Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'rtb
@@ -54,6 +55,18 @@ Partial Class Flogs
         Me.rtb.Size = New System.Drawing.Size(451, 531)
         Me.rtb.TabIndex = 0
         Me.rtb.Text = ""
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.COPYALLTEXTToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(159, 26)
+        '
+        'COPYALLTEXTToolStripMenuItem
+        '
+        Me.COPYALLTEXTToolStripMenuItem.Name = "COPYALLTEXTToolStripMenuItem"
+        Me.COPYALLTEXTToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.COPYALLTEXTToolStripMenuItem.Text = "COPY ALL TEXT"
         '
         'ToolStrip1
         '
@@ -139,25 +152,15 @@ Partial Class Flogs
         '
         'txSTA
         '
-        Me.txSTA.BackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(245, Byte), Integer))
+        Me.txSTA.BackColor = System.Drawing.Color.FromArgb(CType(CType(237, Byte), Integer), CType(CType(237, Byte), Integer), CType(CType(237, Byte), Integer))
         Me.txSTA.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txSTA.Dock = System.Windows.Forms.DockStyle.Top
+        Me.txSTA.ForeColor = System.Drawing.Color.Black
         Me.txSTA.Location = New System.Drawing.Point(0, 38)
         Me.txSTA.Name = "txSTA"
         Me.txSTA.Size = New System.Drawing.Size(451, 13)
         Me.txSTA.TabIndex = 2
-        '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.COPYALLTEXTToolStripMenuItem})
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(159, 26)
-        '
-        'COPYALLTEXTToolStripMenuItem
-        '
-        Me.COPYALLTEXTToolStripMenuItem.Name = "COPYALLTEXTToolStripMenuItem"
-        Me.COPYALLTEXTToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.COPYALLTEXTToolStripMenuItem.Text = "COPY ALL TEXT"
+        Me.ToolTip1.SetToolTip(Me.txSTA, "Double-Click to open")
         '
         'Flogs
         '
@@ -171,9 +174,9 @@ Partial Class Flogs
         Me.Name = "Flogs"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Logs"
+        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
-        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -194,4 +197,5 @@ Partial Class Flogs
     Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents COPYALLTEXTToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

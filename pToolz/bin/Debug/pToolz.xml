@@ -57,6 +57,11 @@ pToolz
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:pToolz.My.Resources.Resources.psdImages111">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:pToolz.My.Resources.Resources.target163">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
