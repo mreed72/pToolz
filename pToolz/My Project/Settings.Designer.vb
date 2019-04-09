@@ -80,25 +80,25 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
-        Public Property cbDelLogs30Days() As Boolean
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property CurrentSessionID() As Integer
             Get
-                Return CType(Me("cbDelLogs30Days"),Boolean)
+                Return CType(Me("CurrentSessionID"),Integer)
             End Get
             Set
-                Me("cbDelLogs30Days") = value
+                Me("CurrentSessionID") = value
             End Set
         End Property
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
-        Public Property SessionLogFileSize() As Integer
+        Public Property PreviousSessionID() As Integer
             Get
-                Return CType(Me("SessionLogFileSize"),Integer)
+                Return CType(Me("PreviousSessionID"),Integer)
             End Get
             Set
-                Me("SessionLogFileSize") = value
+                Me("PreviousSessionID") = value
             End Set
         End Property
     End Class

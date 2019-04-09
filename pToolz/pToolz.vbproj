@@ -231,6 +231,11 @@
     <Content Include="gpl.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\3305206 - cactus desert hot nature sky sun.png" />
+    <None Include="Resources\3305209 - environment fall forest nature rock stone tree.png" />
+    <None Include="Resources\3305214 - lake land nature river wet.png" />
+    <None Include="Resources\183628.png" />
+    <None Include="Resources\weIMAGE038.png" />
     <None Include="Resources\psdImages111.png" />
     <None Include="Resources\weIMAGE087.png" />
     <None Include="Resources\weIMAGE091.png" />

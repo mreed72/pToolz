@@ -8,10 +8,10 @@
     <Setting Name="ExLogAppend" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="cbDelLogs30Days" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+    <Setting Name="CurrentSessionID" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="SessionLogFileSize" Type="System.Int32" Scope="User">
+    <Setting Name="PreviousSessionID" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
   </Settings>

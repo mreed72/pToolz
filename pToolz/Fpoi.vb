@@ -24,18 +24,7 @@ Public Class Fpoi
     End Property
 
     Private Sub Fpoi_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Try
-            Dim t As Boolean = My.Settings.cbLogSession
-            If t = True Then
-                pb.Image = My.Resources.weIMAGE124
-                bLog.Text = "Logging Enabled!"
-            Else
-                pb.Image = My.Resources.weIMAGE118
-                bLog.Text = "Logging Disabled!"
-            End If
-        Catch ex As Exception
-            X1.ERRlog("1XUZQX4N", ex.Message) ' ERROR LOG CODE
-        End Try
+
 
         Try
             txShading.Maximum = 100
@@ -89,6 +78,11 @@ Public Class Fpoi
 
     Private Sub lkb_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lkb.LinkClicked
         MessageBox.Show("The chance that a firebrand will cause an ignition when it lands on receptive fuels.", "POI", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Close()
 
     End Sub
 End Class

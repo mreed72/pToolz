@@ -24,8 +24,6 @@ Partial Class FmultiCalc
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.bLog = New System.Windows.Forms.Label()
-        Me.pb = New System.Windows.Forms.PictureBox()
         Me.txDistance = New System.Windows.Forms.TextBox()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.txCatDay = New System.Windows.Forms.TextBox()
@@ -55,8 +53,8 @@ Partial Class FmultiCalc
         Me.zTotalTns = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lbLabel001 = New System.Windows.Forms.LinkLabel()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
-        CType(Me.pb, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -64,8 +62,6 @@ Partial Class FmultiCalc
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel1.Controls.Add(Me.bLog)
-        Me.Panel1.Controls.Add(Me.pb)
         Me.Panel1.Controls.Add(Me.txDistance)
         Me.Panel1.Controls.Add(Me.btnClear)
         Me.Panel1.Controls.Add(Me.txCatDay)
@@ -84,23 +80,6 @@ Partial Class FmultiCalc
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(638, 95)
         Me.Panel1.TabIndex = 0
-        '
-        'bLog
-        '
-        Me.bLog.AutoSize = True
-        Me.bLog.Location = New System.Drawing.Point(3, 72)
-        Me.bLog.Name = "bLog"
-        Me.bLog.Size = New System.Drawing.Size(56, 17)
-        Me.bLog.TabIndex = 17
-        Me.bLog.Text = "Logging"
-        '
-        'pb
-        '
-        Me.pb.Location = New System.Drawing.Point(18, 51)
-        Me.pb.Name = "pb"
-        Me.pb.Size = New System.Drawing.Size(18, 18)
-        Me.pb.TabIndex = 16
-        Me.pb.TabStop = False
         '
         'txDistance
         '
@@ -356,11 +335,24 @@ Partial Class FmultiCalc
         Me.lbLabel001.TabStop = True
         Me.lbLabel001.Text = "LinkLabel1"
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button1.Image = Global.pToolz.My.Resources.Resources.weIMAGE118
+        Me.Button1.Location = New System.Drawing.Point(614, 399)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(36, 30)
+        Me.Button1.TabIndex = 17
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'FmultiCalc
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(245, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(660, 485)
+        Me.ControlBox = False
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.lbLabel001)
         Me.Controls.Add(Me.dgv1)
         Me.Controls.Add(Me.txAllowed)
@@ -378,7 +370,6 @@ Partial Class FmultiCalc
         Me.Text = "Multiple Fuels Calculator"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.pb, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgv1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -407,8 +398,6 @@ Partial Class FmultiCalc
     Friend WithEvents txAllowed As Label
     Friend WithEvents TrackBar1 As TrackBar
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents bLog As Label
-    Friend WithEvents pb As PictureBox
     Friend WithEvents dgv1 As DataGridView
     Friend WithEvents zSize As DataGridViewTextBoxColumn
     Friend WithEvents zFtype As DataGridViewTextBoxColumn
@@ -417,4 +406,5 @@ Partial Class FmultiCalc
     Friend WithEvents zTotalTns As DataGridViewTextBoxColumn
     Friend WithEvents lbLabel001 As LinkLabel
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents Button1 As Button
 End Class

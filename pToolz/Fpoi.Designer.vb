@@ -31,10 +31,9 @@ Partial Class Fpoi
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.lkb = New System.Windows.Forms.LinkLabel()
         Me.btnClear = New System.Windows.Forms.Button()
-        Me.bLog = New System.Windows.Forms.Label()
-        Me.pb = New System.Windows.Forms.PictureBox()
         Me.btnCalc = New System.Windows.Forms.Button()
         Me.txResult = New System.Windows.Forms.TextBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
@@ -43,7 +42,6 @@ Partial Class Fpoi
         CType(Me.txDryBulb, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txShading, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
-        CType(Me.pb, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -120,16 +118,26 @@ Partial Class Fpoi
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Controls.Add(Me.lkb)
         Me.Panel2.Controls.Add(Me.btnClear)
-        Me.Panel2.Controls.Add(Me.bLog)
-        Me.Panel2.Controls.Add(Me.pb)
         Me.Panel2.Controls.Add(Me.btnCalc)
         Me.Panel2.Controls.Add(Me.txResult)
         Me.Panel2.Location = New System.Drawing.Point(12, 118)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(251, 100)
         Me.Panel2.TabIndex = 1
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button1.Image = Global.pToolz.My.Resources.Resources.weIMAGE118
+        Me.Button1.Location = New System.Drawing.Point(201, 67)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(34, 23)
+        Me.Button1.TabIndex = 2
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'lkb
         '
@@ -146,37 +154,20 @@ Partial Class Fpoi
         Me.btnClear.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(148, Byte), Integer))
         Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnClear.Image = Global.pToolz.My.Resources.Resources._92055
-        Me.btnClear.Location = New System.Drawing.Point(201, 13)
+        Me.btnClear.Location = New System.Drawing.Point(201, 39)
         Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(34, 30)
+        Me.btnClear.Size = New System.Drawing.Size(34, 22)
         Me.btnClear.TabIndex = 5
         Me.btnClear.UseVisualStyleBackColor = False
-        '
-        'bLog
-        '
-        Me.bLog.AutoSize = True
-        Me.bLog.Location = New System.Drawing.Point(125, 67)
-        Me.bLog.Name = "bLog"
-        Me.bLog.Size = New System.Drawing.Size(110, 17)
-        Me.bLog.TabIndex = 4
-        Me.bLog.Text = "Logging Enabled!"
-        '
-        'pb
-        '
-        Me.pb.Location = New System.Drawing.Point(101, 66)
-        Me.pb.Name = "pb"
-        Me.pb.Size = New System.Drawing.Size(18, 18)
-        Me.pb.TabIndex = 3
-        Me.pb.TabStop = False
         '
         'btnCalc
         '
         Me.btnCalc.BackColor = System.Drawing.Color.FromArgb(CType(CType(148, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.btnCalc.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnCalc.Image = Global.pToolz.My.Resources.Resources._56260
-        Me.btnCalc.Location = New System.Drawing.Point(157, 13)
+        Me.btnCalc.Location = New System.Drawing.Point(201, 3)
         Me.btnCalc.Name = "btnCalc"
-        Me.btnCalc.Size = New System.Drawing.Size(38, 30)
+        Me.btnCalc.Size = New System.Drawing.Size(34, 30)
         Me.btnCalc.TabIndex = 0
         Me.btnCalc.UseVisualStyleBackColor = False
         '
@@ -184,7 +175,7 @@ Partial Class Fpoi
         '
         Me.txResult.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txResult.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txResult.Location = New System.Drawing.Point(46, 13)
+        Me.txResult.Location = New System.Drawing.Point(14, 13)
         Me.txResult.Name = "txResult"
         Me.txResult.ReadOnly = True
         Me.txResult.Size = New System.Drawing.Size(100, 30)
@@ -196,6 +187,7 @@ Partial Class Fpoi
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.ClientSize = New System.Drawing.Size(275, 231)
+        Me.ControlBox = False
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -210,7 +202,6 @@ Partial Class Fpoi
         CType(Me.txShading, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.pb, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -225,9 +216,8 @@ Partial Class Fpoi
     Friend WithEvents Panel2 As Panel
     Friend WithEvents txResult As TextBox
     Friend WithEvents btnCalc As Button
-    Friend WithEvents bLog As Label
-    Friend WithEvents pb As PictureBox
     Friend WithEvents btnClear As Button
     Friend WithEvents lkb As LinkLabel
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents Button1 As Button
 End Class

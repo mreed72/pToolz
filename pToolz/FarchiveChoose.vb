@@ -11,7 +11,7 @@
 
 Public Class FarchiveChoose
     Private Sub FarchiveChoose_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        For Each f As String In My.Computer.FileSystem.GetFiles("C:\SMTOOLZ\Sessions\")
+        For Each f As String In My.Computer.FileSystem.GetDirectories("C:\SMTOOLZ\Sessions\")
             bx1.Items.Add(f)
         Next
     End Sub

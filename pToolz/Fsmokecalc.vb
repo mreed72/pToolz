@@ -41,17 +41,11 @@ Public Class Fsmokecalc
     End Property
 
     Private Sub Fsmokecalc_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Try
-            If My.Settings.cbLogSession = True Then
-                pb1.Image = My.Resources.weIMAGE124
-                k7.Text = "Log Enabled!"
-            Else
-                pb1.Image = My.Resources.weIMAGE118
-                k7.Text = "Log Disabled!"
-            End If
-        Catch ex As Exception
-            X1.ERRlog("1XSQ8IMY", ex.Message) ' ERROR LOG CODE
-        End Try
+
+
+
+
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -182,10 +176,8 @@ Public Class Fsmokecalc
 
         'SESSION LOG
         Try
-            If My.Settings.cbLogSession = False Then
-                Exit Sub
-            Else
-                Dim bs, tt, cd, at, rec As Integer
+
+            Dim bs, tt, cd, at, rec As Integer
                 Dim td, av As Double
                 Dim ft, fl, res As String
 
@@ -206,7 +198,7 @@ Public Class Fsmokecalc
                 Form1.myicon.ShowBalloonTip(2000, "Smoke Calculator", "Session log has been saved!", ToolTipIcon.Info)
 
 
-            End If
+
         Catch ex As Exception
             X1.ERRlog("1XYNZOS9", ex.Message) ' ERROR LOG CODE
         End Try

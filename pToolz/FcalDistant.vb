@@ -12,7 +12,6 @@ Imports System
 
 Public Class FcalDistant
     Dim x As New xFuels.ClassFuels
-
     Private Sub FcalDistant_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
@@ -21,8 +20,14 @@ Public Class FcalDistant
         txResult.Text = Math.Round(distance(lat1.Text, long1.Text, lat2.Text, long2.Text, "M"), 1) & " miles."
         txResult2.Text = Math.Round(distance(lat1.Text, long1.Text, lat2.Text, long2.Text, "K"), 1) & " kilometers."
 
+        x.SESLog("Distance Calculator", "RESULTS: " & txResult.Text & " / " & txResult2.Text)
+
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Close()
+
+    End Sub
 
 #Region "Distance Calculation Functions"
 
@@ -92,6 +97,8 @@ Public Class FcalDistant
         End Try
 
     End Sub
+
+
 
 
 

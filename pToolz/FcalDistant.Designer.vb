@@ -37,6 +37,7 @@ Partial Class FcalDistant
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -170,10 +171,23 @@ Partial Class FcalDistant
         Me.RichTextBox1.TabIndex = 0
         Me.RichTextBox1.Text = resources.GetString("RichTextBox1.Text")
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button1.Image = Global.pToolz.My.Resources.Resources.x320040
+        Me.Button1.Location = New System.Drawing.Point(344, 341)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(44, 35)
+        Me.Button1.TabIndex = 12
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'FcalDistant
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.ClientSize = New System.Drawing.Size(396, 342)
+        Me.ClientSize = New System.Drawing.Size(396, 377)
+        Me.ControlBox = False
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.txResult2)
         Me.Controls.Add(Me.Label4)
@@ -213,4 +227,5 @@ Partial Class FcalDistant
     Friend WithEvents Panel1 As Panel
     Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents Button1 As Button
 End Class

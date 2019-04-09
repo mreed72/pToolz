@@ -16,36 +16,33 @@ Public Class Form1
     Public WithEvents myicon As New NotifyIcon
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim k As String = X1.GetMyKey("REGKEY")
-        Dim t As String = X1.GetMyKey("DECVALUE")
-        Dim total As String
-        total = Dcypt(k)
-        If t = total Then
-            Me.Icon = My.Resources.x5120076_raM_icon
+        Dim k As String = My.Application.Info.Version.ToString
+        Text = "pToolz - " & k
+        lbPrevSesId.Text = My.Settings.PreviousSessionID
+        If My.Settings.CurrentSessionID = 0 Then
+            Label4.Text = "NO CURRENT SESSION, click the button to create a session"
         Else
-            Me.Icon = My.Resources.x5120076b_lLl_icon
-
+            Label4.Text = "CURRENT SESSION: " & My.Settings.CurrentSessionID
         End If
 
-        Text = "Smoke Tools - " & k
-        Try
-            'Archived Folder Size
-            Dim bkf As String = "C:\SMTOOLZ\Sessions\"
-            xAFDSZ.Text = "Archived Session Directory Size: " & X1.finSize(X1.GetFolderSize(bkf, True))
-        Catch ex As Exception
-            X1.ERRlog("1XWDTCYJ", ex.Message) ' ERROR LOG CODE
-        End Try
+        'Try
+        '    'Archived Folder Size
+        '    Dim bkf As String = "C:\SMTOOLZ\Sessions\"
+        '    xAFDSZ.Text = "Archived Session Directory Size: " & X1.finSize(X1.GetFolderSize(bkf, True))
+        'Catch ex As Exception
+        '    X1.ERRlog("1XWDTCYJ", ex.Message) ' ERROR LOG CODE
+        'End Try
 
 
-        Try
-            SesLogSize = My.Computer.FileSystem.GetFileInfo("C:\SMTOOLZ\slog.txt").Length
-            My.Settings.SessionLogFileSize = SesLogSize
-            My.Settings.Save()
+        'Try
+        '    SesLogSize = My.Computer.FileSystem.GetFileInfo("C:\SMTOOLZ\slog.txt").Length
+        '    My.Settings.SessionLogFileSize = SesLogSize
+        '    My.Settings.Save()
 
-            tsSesLogSize.Text = "SLFS: " & SesLogSize
-        Catch ex As Exception
-            X1.ERRlog("1XTFXBKW", ex.Message) ' ERROR LOG CODE
-        End Try
+        '    tsSesLogSize.Text = "SLFS: " & SesLogSize
+        'Catch ex As Exception
+        '    X1.ERRlog("1XTFXBKW", ex.Message) ' ERROR LOG CODE
+        'End Try
 
         myicon.Icon = Icon.ExtractAssociatedIcon("cXY0098.ico")
         myicon.Text = "pToolz" & vbNewLine & "Prescribed Burn Tools!"
@@ -53,15 +50,6 @@ Public Class Form1
 
     End Sub
 
-
-    Public Function Dcypt(r As String)
-        Dim tot() As String = r.Split("-"c)
-        Dim total As Integer
-        For Each t As Integer In tot
-            total += CType(t, Integer)
-        Next
-        Return total
-    End Function
 
 
     Private Sub EXITToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EXITToolStripMenuItem.Click
@@ -135,44 +123,17 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-
-        Dim ss As Integer
-        ss = My.Computer.FileSystem.GetFileInfo("C:\SMTOOLZ\slog.txt").Length
-
-        If ss > My.Settings.SessionLogFileSize Then
-            If My.Settings.cbLogSession = True Then
-                Try
-                    Dim FileName As String
-                    FileName = "SessionLog_" & Date.Now.Month & "_" & Date.Now.Day & "_" & Date.Now.Year & "_" & CInt(X1.CTFD) & ".txt"
-                    My.Computer.FileSystem.CopyFile("C:\SMTOOLZ\slog.txt", "C:\SMTOOLZ\Sessions\" & FileName)
-                Catch ex As Exception
-                    X1.ERRlog("1XHEBZJ3", ex.Message) ' ERROR LOG CODE
-                End Try
-            Else
-                Exit Sub
-            End If
-
-            Try
-                My.Computer.FileSystem.DeleteFile("C:\SMTOOLZ\slog.txt")
-                My.Computer.FileSystem.WriteAllText("C:\SMTOOLZ\slog.txt", "", False)
-            Catch ex As Exception
-                X1.ERRlog("1X9EOP7H", ex.Message) ' ERROR LOG CODE
-            End Try
-        Else
+        If My.Settings.CurrentSessionID = 0 Then
             Exit Sub
+        Else
+            My.Settings.PreviousSessionID = My.Settings.CurrentSessionID
+            My.Settings.CurrentSessionID = 0
+            My.Settings.Save()
         End If
 
 
-
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim a As New FarchiveChoose With {
-            .MdiParent = Me
-            }
-        a.Show()
-
-    End Sub
 
     Private Sub T1_Tick(sender As Object, e As EventArgs) Handles T1.Tick
         tsStat.Text = Date.Now
@@ -216,9 +177,65 @@ Public Class Form1
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
-        Application.Exit()
+        If MessageBox.Show("You will close your current session and you will have to create a new session, is this okay?", "CLOSE SESSION", MessageBoxButtons.YesNo) = DialogResult.Yes Then
+            Application.Exit()
+        End If
+
+
+
+
 
     End Sub
 
 
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+
+        Threading.Thread.Sleep(1000)
+        ProgressBar1.PerformStep()
+
+        Threading.Thread.Sleep(1000)
+        ProgressBar1.PerformStep()
+
+
+        Threading.Thread.Sleep(1000)
+        ProgressBar1.PerformStep()
+
+
+        Threading.Thread.Sleep(1000)
+        ProgressBar1.PerformStep()
+
+
+        ProgressBar1.PerformStep()
+        Label1.Text = "Session Created"
+
+        CreateNewSession()
+
+
+    End Sub
+
+    Function CreateNewSession()
+        Dim SesID As Integer
+        SesID = X1.grs(6)
+        My.Settings.CurrentSessionID = SesID
+        My.Settings.Save()
+        csSesID.Text = SesID
+        Label4.Text = SesID
+
+        My.Computer.FileSystem.CreateDirectory("C:\SMTOOLZ\Sessions\" & SesID & "\")
+        My.Computer.FileSystem.WriteAllText("C:\SMTOOLZ\Sessions\" & SesID & "\sessionlog.txt", "", False)
+
+        X1.SetMyKey("CurSes", "C:\SMTOOLZ\Sessions\" & SesID & "\sessionlog.txt")
+
+
+
+
+    End Function
+
+    Private Sub ViewSessionsFolderToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewSessionsFolderToolStripMenuItem.Click
+        Dim a As New FarchiveChoose With {
+             .MdiParent = Me
+             }
+        a.Show()
+    End Sub
 End Class

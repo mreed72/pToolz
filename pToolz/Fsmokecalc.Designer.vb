@@ -49,14 +49,11 @@ Partial Class Fsmokecalc
         Me.btnClear = New System.Windows.Forms.Button()
         Me.btnCalc = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.pb1 = New System.Windows.Forms.PictureBox()
-        Me.k7 = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        CType(Me.pb1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -332,24 +329,6 @@ Partial Class Fsmokecalc
         Me.ToolTip1.SetToolTip(Me.Button1, "Close this form")
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'pb1
-        '
-        Me.pb1.Location = New System.Drawing.Point(300, 15)
-        Me.pb1.Name = "pb1"
-        Me.pb1.Size = New System.Drawing.Size(18, 18)
-        Me.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.pb1.TabIndex = 5
-        Me.pb1.TabStop = False
-        '
-        'k7
-        '
-        Me.k7.AutoSize = True
-        Me.k7.Location = New System.Drawing.Point(324, 18)
-        Me.k7.Name = "k7"
-        Me.k7.Size = New System.Drawing.Size(65, 13)
-        Me.k7.TabIndex = 6
-        Me.k7.Text = "Session Log"
-        '
         'Fsmokecalc
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -357,8 +336,6 @@ Partial Class Fsmokecalc
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(215, Byte), Integer), CType(CType(234, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(615, 193)
         Me.ControlBox = False
-        Me.Controls.Add(Me.k7)
-        Me.Controls.Add(Me.pb1)
         Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.btnCalc)
         Me.Controls.Add(Me.txRecSize)
@@ -376,7 +353,6 @@ Partial Class Fsmokecalc
         Me.Panel3.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.pb1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -408,7 +384,5 @@ Partial Class Fsmokecalc
     Friend WithEvents Label13 As Label
     Friend WithEvents btnCalc As Button
     Friend WithEvents btnClear As Button
-    Friend WithEvents pb1 As PictureBox
-    Friend WithEvents k7 As Label
     Friend WithEvents ToolTip1 As ToolTip
 End Class

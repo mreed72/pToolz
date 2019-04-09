@@ -16,17 +16,7 @@ Public Class FmultiCalc
     Private XGX As String
 
     Private Sub FmultiCalc_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Try
-            Dim t As Boolean
-            t = My.Settings.cbLogSession
-            If t = True Then
-                pb.Image = My.Resources.weIMAGE124
-            Else
-                pb.Image = My.Resources.weIMAGE118
-            End If
-        Catch ex As Exception
-            x.ERRlog("1XAR2ULI", ex.Message) ' ERROR LOG CODE
-        End Try
+
 
         lbLabel001.Visible = False
 
@@ -135,8 +125,9 @@ Public Class FmultiCalc
             Dim cd, aw, ts, tt As Integer
             Dim td As Double
             Dim res As String
-            Dim b2 As String
-            Dim XL As String = "C:\SMTOOLZ\Multilog_" & XGX & ".csv"
+            Dim SesID As Integer
+            SesID = My.Settings.CurrentSessionID
+            Dim XL As String = "C:\SMTOOLZ\Sessions\" & SesID & "\Multilog_" & XGX & ".csv"
             cd = txCatDay.Text
             aw = txAllowed.Text
             ts = txTotalSize.Text
@@ -161,7 +152,9 @@ Public Class FmultiCalc
 
     Function DGtoCSV()
         Try
-            Dim LL As String = "C:\SMTOOLZ\Multilog_" & XGX & ".csv"
+            Dim SesID As Integer
+            SesID = My.Settings.CurrentSessionID
+            Dim LL As String = "C:\SMTOOLZ\Sessions\" & SesID & "\Multilog_" & XGX & ".csv"
             Dim StrExport As String = ""
             For Each C As DataGridViewColumn In dgv1.Columns
                 StrExport &= """" & C.HeaderText & ""","
@@ -216,6 +209,11 @@ Public Class FmultiCalc
         Catch ex As Exception
             x.ERRlog(ex.Message, "8xFKB2K") ' ERROR LOG CODE
         End Try
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Close()
+
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click

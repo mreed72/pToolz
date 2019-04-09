@@ -27,6 +27,26 @@ pToolz
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:pToolz.My.Resources.Resources._183628">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:pToolz.My.Resources.Resources._3305206___cactus_desert_hot_nature_sky_sun">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:pToolz.My.Resources.Resources._3305209___environment_fall_forest_nature_rock_stone_tree">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:pToolz.My.Resources.Resources._3305214___lake_land_nature_river_wet">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:pToolz.My.Resources.Resources._56260">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -63,6 +83,11 @@ pToolz
 </summary>
 </member>
 <member name="P:pToolz.My.Resources.Resources.target163">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:pToolz.My.Resources.Resources.weIMAGE038">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

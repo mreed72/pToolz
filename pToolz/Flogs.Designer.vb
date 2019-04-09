@@ -40,6 +40,7 @@ Partial Class Flogs
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.txSTA = New System.Windows.Forms.TextBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ToolStripButton5 = New System.Windows.Forms.ToolStripButton()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -70,7 +71,7 @@ Partial Class Flogs
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripSeparator1, Me.ToolStripButton3, Me.exlg, Me.ToolStripSeparator2, Me.ToolStripButton4, Me.ToolStripSeparator3, Me.lgbtn, Me.ToolStripSeparator4})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripSeparator1, Me.ToolStripButton3, Me.exlg, Me.ToolStripSeparator2, Me.ToolStripButton4, Me.ToolStripSeparator3, Me.lgbtn, Me.ToolStripSeparator4, Me.ToolStripButton5})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
@@ -162,11 +163,22 @@ Partial Class Flogs
         Me.txSTA.TabIndex = 2
         Me.ToolTip1.SetToolTip(Me.txSTA, "Double-Click to open")
         '
+        'ToolStripButton5
+        '
+        Me.ToolStripButton5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ToolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton5.Image = Global.pToolz.My.Resources.Resources.weIMAGE118
+        Me.ToolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton5.Name = "ToolStripButton5"
+        Me.ToolStripButton5.Size = New System.Drawing.Size(23, 35)
+        Me.ToolStripButton5.Text = "ToolStripButton5"
+        '
         'Flogs
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(451, 588)
+        Me.ControlBox = False
         Me.Controls.Add(Me.txSTA)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.rtb)
@@ -198,4 +210,5 @@ Partial Class Flogs
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents COPYALLTEXTToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents ToolStripButton5 As ToolStripButton
 End Class

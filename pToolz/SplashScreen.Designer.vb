@@ -24,10 +24,8 @@ Partial Class SplashScreen
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.pb3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        CType(Me.pb3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -51,15 +49,6 @@ Partial Class SplashScreen
         Me.Label2.Size = New System.Drawing.Size(80, 13)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "XXXXX-XXXXX"
-        '
-        'pb3
-        '
-        Me.pb3.Location = New System.Drawing.Point(7, 212)
-        Me.pb3.Name = "pb3"
-        Me.pb3.Size = New System.Drawing.Size(18, 18)
-        Me.pb3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.pb3.TabIndex = 4
-        Me.pb3.TabStop = False
         '
         'PictureBox2
         '
@@ -88,7 +77,6 @@ Partial Class SplashScreen
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(496, 240)
         Me.ControlBox = False
-        Me.Controls.Add(Me.pb3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Label1)
@@ -100,7 +88,6 @@ Partial Class SplashScreen
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.TopMost = True
-        CType(Me.pb3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -112,5 +99,4 @@ Partial Class SplashScreen
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents pb3 As PictureBox
 End Class

@@ -1634,7 +1634,7 @@ Public Class ClassFuels
     ''' <param name="MSG">Message to write into log file</param>
     ''' <returns>NA</returns>
     Public Function SESLog(TTL As String, MSG As String)
-        Dim LC As String = GetMyKey("SLOG")
+        Dim LC As String = GetMyKey("CurSes")
         Dim file As System.IO.StreamWriter
         file = My.Computer.FileSystem.OpenTextFileWriter(LC, True)
         file.WriteLine(Date.Now & "===" & TTL & "===" & vbCrLf & MSG & vbCrLf)
