@@ -14,7 +14,7 @@ GET HELP: https://github.com/mreed72/pToolz/wiki
 # Smoke Calculator
 https://www.screencast.com/t/Gtp62LZh
 
-# Multi-Fuels Smoke Calculator
+# Multi-Fuels Calculator
 https://www.screencast.com/t/pZQj7pFmJEPK
 
 # Probability of Ignition
@@ -23,8 +23,8 @@ https://www.screencast.com/t/cy5XDsCy
 # LVORI
 https://www.screencast.com/t/jMg4qa1tV6Wv
 
-# **NEWEST FEATURE**  Calculate distance between two points
-https://www.screencast.com/t/dZrI0PbcP0Q
+# **NEWEST FEATURE**  
+Calculate distance between two points -- https://www.screencast.com/t/dZrI0PbcP0Q
 
 ## Some future updates will include
 1) A way for burn managers to keep data for each burn (Burn location Lat & Long, Unique ID for each burn, etc...)
