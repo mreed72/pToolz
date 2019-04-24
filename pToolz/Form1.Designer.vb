@@ -51,10 +51,9 @@ Partial Class Form1
         Me.tsStat = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.tsSesLogSize = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.tsLabSessions = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -74,7 +73,6 @@ Partial Class Form1
         Me.Label3 = New System.Windows.Forms.Label()
         Me.csSesID = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -243,7 +241,7 @@ Partial Class Form1
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsStat, Me.ToolStripStatusLabel1, Me.tsSesLogSize, Me.ToolStripStatusLabel2, Me.tsLabSessions})
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsStat, Me.ToolStripStatusLabel1, Me.tsSesLogSize})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 686)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(1062, 22)
@@ -266,20 +264,8 @@ Partial Class Form1
         'tsSesLogSize
         '
         Me.tsSesLogSize.Name = "tsSesLogSize"
-        Me.tsSesLogSize.Size = New System.Drawing.Size(120, 17)
-        Me.tsSesLogSize.Text = "ToolStripStatusLabel2"
-        '
-        'ToolStripStatusLabel2
-        '
-        Me.ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
-        Me.ToolStripStatusLabel2.Size = New System.Drawing.Size(10, 17)
-        Me.ToolStripStatusLabel2.Text = "|"
-        '
-        'tsLabSessions
-        '
-        Me.tsLabSessions.Name = "tsLabSessions"
-        Me.tsLabSessions.Size = New System.Drawing.Size(120, 17)
-        Me.tsLabSessions.Text = "ToolStripStatusLabel3"
+        Me.tsSesLogSize.Size = New System.Drawing.Size(13, 17)
+        Me.tsSesLogSize.Text = "0"
         '
         'Panel1
         '
@@ -305,6 +291,15 @@ Partial Class Form1
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(710, 49)
         Me.Panel4.TabIndex = 8
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(310, 22)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(39, 13)
+        Me.Label4.TabIndex = 2
+        Me.Label4.Text = "Label4"
         '
         'Button1
         '
@@ -488,15 +483,6 @@ Partial Class Form1
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Current Session ID:"
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(310, 22)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(39, 13)
-        Me.Label4.TabIndex = 2
-        Me.Label4.Text = "Label4"
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -570,8 +556,6 @@ Partial Class Form1
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents SESSIONSToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem4 As ToolStripMenuItem
-    Friend WithEvents ToolStripStatusLabel2 As ToolStripStatusLabel
-    Friend WithEvents tsLabSessions As ToolStripStatusLabel
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Button1 As Button

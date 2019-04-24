@@ -41,6 +41,12 @@ Public Class Flvori
 
 
             x.SESLog("LVORI", "Relative Humidity: " & xR & vbCrLf & "Atmospheric Dispersion Index: " & xA & vbCrLf & "Result: " & res)
+
+            If My.Settings.CurrentSessionID = String.Empty Then
+                Form1.myicon.ShowBalloonTip(2000, "LVORI", "NO SESSION LOG CREATED!", ToolTipIcon.Info)
+            Else
+                Form1.myicon.ShowBalloonTip(2000, "LVORI", "Session log has been saved!", ToolTipIcon.Info)
+            End If
         Catch ex As Exception
             X1.ERRlog("1X36RVM5", ex.Message) ' ERROR LOG CODE
         End Try

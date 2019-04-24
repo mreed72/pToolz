@@ -142,7 +142,11 @@ Public Class FmultiCalc
             lbLabel001.Visible = True
             lbLabel001.Text = XL
 
-            Form1.myicon.ShowBalloonTip(2000, "Smoke Calculator", "Session log has been saved!", ToolTipIcon.Info)
+            If My.Settings.CurrentSessionID = String.Empty Then
+                Form1.myicon.ShowBalloonTip(2000, "Smoke Calculator", "NO SESSION LOG CREATED!", ToolTipIcon.Info)
+            Else
+                Form1.myicon.ShowBalloonTip(2000, "Smoke Calculator", "Session log has been saved!", ToolTipIcon.Info)
+            End If
 
         Catch ex As Exception
             x.ERRlog("1XERY3DD", ex.Message) ' ERROR LOG CODE

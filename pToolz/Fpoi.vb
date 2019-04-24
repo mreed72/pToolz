@@ -48,13 +48,14 @@ Public Class Fpoi
 
             txResult.Text = a4 & "%"
 
+            X1.SESLog("Probability of Ignition", "Shading: " & a1 & vbCrLf & "Dry Bulb Temp: " & a2 & vbCrLf & "Fuel Moisture: " & a3 & vbCrLf & "Result: " & a4 & "%")
 
-            If My.Settings.cbLogSession = True Then
-                'LOG
-                X1.SESLog("Probability of Ignition", "Shading: " & a1 & vbCrLf & "Dry Bulb Temp: " & a2 & vbCrLf & "Fuel Moisture: " & a3 & vbCrLf & "Result: " & a4 & "%")
+            If My.Settings.CurrentSessionID = String.Empty Then
+                Form1.myicon.ShowBalloonTip(2000, "POI", "NO SESSION LOG CREATED!", ToolTipIcon.Info)
             Else
-                Exit Sub
+                Form1.myicon.ShowBalloonTip(2000, "POI", "Session log has been saved!", ToolTipIcon.Info)
             End If
+
         Catch ex As Exception
             X1.ERRlog("1XP5K2FA", ex.Message) ' ERROR LOG CODE
         End Try

@@ -33,12 +33,12 @@ Partial Class SplashScreen
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.ForeColor = System.Drawing.SystemColors.AppWorkspace
-        Me.Label1.Location = New System.Drawing.Point(178, 215)
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(204, 215)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(148, 13)
+        Me.Label1.Size = New System.Drawing.Size(100, 13)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "© 2018 SimonCoder Software"
+        Me.Label1.Text = "© 2018 Scott Reed"
         '
         'Label2
         '
@@ -53,7 +53,7 @@ Partial Class SplashScreen
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.pToolz.My.Resources.Resources.weIMAGE047
-        Me.PictureBox2.Location = New System.Drawing.Point(357, 179)
+        Me.PictureBox2.Location = New System.Drawing.Point(357, 161)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(127, 51)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize

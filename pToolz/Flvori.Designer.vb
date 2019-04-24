@@ -142,9 +142,10 @@ Partial Class Flvori
         'RichTextBox1
         '
         Me.RichTextBox1.BackColor = System.Drawing.SystemColors.Control
+        Me.RichTextBox1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RichTextBox1.Location = New System.Drawing.Point(12, 12)
         Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(258, 58)
+        Me.RichTextBox1.Size = New System.Drawing.Size(213, 58)
         Me.RichTextBox1.TabIndex = 7
         Me.RichTextBox1.Text = "To use this, you must have your Dispersion Index and Relative Humidity handy"
         '

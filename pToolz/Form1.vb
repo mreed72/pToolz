@@ -25,24 +25,13 @@ Public Class Form1
             Label4.Text = "CURRENT SESSION: " & My.Settings.CurrentSessionID
         End If
 
-        'Try
-        '    'Archived Folder Size
-        '    Dim bkf As String = "C:\SMTOOLZ\Sessions\"
-        '    xAFDSZ.Text = "Archived Session Directory Size: " & X1.finSize(X1.GetFolderSize(bkf, True))
-        'Catch ex As Exception
-        '    X1.ERRlog("1XWDTCYJ", ex.Message) ' ERROR LOG CODE
-        'End Try
-
-
-        'Try
-        '    SesLogSize = My.Computer.FileSystem.GetFileInfo("C:\SMTOOLZ\slog.txt").Length
-        '    My.Settings.SessionLogFileSize = SesLogSize
-        '    My.Settings.Save()
-
-        '    tsSesLogSize.Text = "SLFS: " & SesLogSize
-        'Catch ex As Exception
-        '    X1.ERRlog("1XTFXBKW", ex.Message) ' ERROR LOG CODE
-        'End Try
+        Try
+            'Archived Folder Size
+            Dim bkf As String = "C:\SMTOOLZ\Sessions\"
+            tsSesLogSize.Text = "Archived Session Directory Size: " & X1.finSize(X1.GetFolderSize(bkf, True))
+        Catch ex As Exception
+            X1.ERRlog("1XWDTCYJ", ex.Message) ' ERROR LOG CODE
+        End Try
 
         myicon.Icon = Icon.ExtractAssociatedIcon("cXY0098.ico")
         myicon.Text = "pToolz" & vbNewLine & "Prescribed Burn Tools!"
@@ -50,75 +39,8 @@ Public Class Form1
 
     End Sub
 
-
-
     Private Sub EXITToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EXITToolStripMenuItem.Click
         Application.Exit()
-
-    End Sub
-
-    Private Sub SmokeCalculatorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SmokeCalculatorToolStripMenuItem.Click, Button2.Click
-        Dim a As New Form
-        a = Fsmokecalc
-        If a.Visible = True Then
-            a.TopMost = True
-            a.Focus()
-            Exit Sub
-        Else
-            a.MdiParent = Me
-            a.Show()
-        End If
-
-
-    End Sub
-
-    Private Sub ProbabilityOfIgnitionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProbabilityOfIgnitionToolStripMenuItem.Click, Button4.Click
-        Dim a As New Form
-        a = Fpoi
-        If a.Visible = True Then
-            a.TopMost = True
-            a.Focus()
-            Exit Sub
-        Else
-            a.MdiParent = Me
-            a.Show()
-        End If
-
-    End Sub
-
-    Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
-        Dim a As New Fabout With {
-            .MdiParent = Me
-        }
-        a.Show()
-
-    End Sub
-
-    Private Sub LVORIToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LVORIToolStripMenuItem.Click, Button5.Click
-        Dim a As New Form
-        a = Flvori
-        If a.Visible = True Then
-            a.TopMost = True
-            a.Focus()
-            Exit Sub
-        Else
-            a.MdiParent = Me
-            a.Show()
-        End If
-
-    End Sub
-
-    Private Sub SmokeCalcMultiFuelsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SmokeCalcMultiFuelsToolStripMenuItem.Click, Button3.Click
-        Dim a As New Form
-        a = FmultiCalc
-        If a.Visible = True Then
-            a.TopMost = True
-            a.Focus()
-            Exit Sub
-        Else
-            a.MdiParent = Me
-            a.Show()
-        End If
 
     End Sub
 
@@ -134,30 +56,9 @@ Public Class Form1
 
     End Sub
 
-
     Private Sub T1_Tick(sender As Object, e As EventArgs) Handles T1.Tick
         tsStat.Text = Date.Now
 
-    End Sub
-
-    Private Sub DistanceBetween2PointsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DistanceBetween2PointsToolStripMenuItem.Click, Button6.Click
-        Dim a As New Form
-        a = FcalDistant
-        If a.Visible = True Then
-            a.TopMost = True
-            a.Focus()
-            Exit Sub
-        Else
-            a.MdiParent = Me
-            a.Show()
-        End If
-    End Sub
-
-    Private Sub LogViewerToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles LogViewerToolStripMenuItem1.Click
-        Dim a As New Flogs With {
-          .MdiParent = Me
-      }
-        a.Show()
     End Sub
 
     Private Sub LVORIHelpToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LVORIHelpToolStripMenuItem.Click
@@ -165,6 +66,7 @@ Public Class Form1
             Dim xv As String = "https://github.com/mreed72/pToolz/wiki"
             Diagnostics.Process.Start(xv)
         Catch ex As Exception
+            X1.ERRlog("2XA4V9OH", ex.Message)
         End Try
 
     End Sub
@@ -181,13 +83,7 @@ Public Class Form1
             Application.Exit()
         End If
 
-
-
-
-
     End Sub
-
-
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
 
@@ -211,7 +107,6 @@ Public Class Form1
 
         CreateNewSession()
 
-
     End Sub
 
     Function CreateNewSession()
@@ -227,15 +122,63 @@ Public Class Form1
 
         X1.SetMyKey("CurSes", "C:\SMTOOLZ\Sessions\" & SesID & "\sessionlog.txt")
 
-
-
-
     End Function
 
-    Private Sub ViewSessionsFolderToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewSessionsFolderToolStripMenuItem.Click
-        Dim a As New FarchiveChoose With {
-             .MdiParent = Me
-             }
-        a.Show()
+    Public Sub Open_MDI(Of T As {New, Form})(bMultipleInstances As Boolean)
+        'USE: Open_MDI(Of FORM)(False)
+
+        If bMultipleInstances = False Then
+            For Each f As Form In Me.MdiChildren
+                If TypeOf f Is T Then
+                    If (f.WindowState = FormWindowState.Minimized) Then
+                        f.WindowState = FormWindowState.Maximized
+                    End If
+
+                    f.Activate()
+                    Exit Sub
+                End If
+            Next
+        End If
+
+        Dim myChild As New T()
+        myChild.MdiParent = Me
+        myChild.Show()
     End Sub
+
+#Region "MDI CHILD FORM OPEN WITHOUT DUPLICATES"
+
+    Private Sub SmokeCalculatorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SmokeCalculatorToolStripMenuItem.Click, Button2.Click
+        Open_MDI(Of Fsmokecalc)(False)
+    End Sub
+
+    Private Sub ProbabilityOfIgnitionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProbabilityOfIgnitionToolStripMenuItem.Click, Button4.Click
+        Open_MDI(Of Fpoi)(False)
+    End Sub
+
+    Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
+        Open_MDI(Of Fabout)(False)
+    End Sub
+
+    Private Sub LVORIToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LVORIToolStripMenuItem.Click, Button5.Click
+        Open_MDI(Of Flvori)(False)
+    End Sub
+
+    Private Sub SmokeCalcMultiFuelsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SmokeCalcMultiFuelsToolStripMenuItem.Click, Button3.Click
+        Open_MDI(Of FmultiCalc)(False)
+    End Sub
+
+    Private Sub DistanceBetween2PointsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DistanceBetween2PointsToolStripMenuItem.Click, Button6.Click
+        Open_MDI(Of FcalDistant)(False)
+    End Sub
+
+    Private Sub LogViewerToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles LogViewerToolStripMenuItem1.Click
+        Open_MDI(Of Flogs)(False)
+    End Sub
+
+    Private Sub ViewSessionsFolderToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewSessionsFolderToolStripMenuItem.Click
+        Open_MDI(Of FarchiveChoose)(False)
+    End Sub
+#End Region
+
+
 End Class

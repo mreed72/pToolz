@@ -24,6 +24,8 @@ Partial Class FarchiveChoose
     Private Sub InitializeComponent()
         Me.bx1 = New System.Windows.Forms.ListBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.BtnDelete = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'bx1
@@ -44,11 +46,35 @@ Partial Class FarchiveChoose
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Double-Click selected archive to open"
         '
+        'BtnDelete
+        '
+        Me.BtnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(52, Byte), Integer))
+        Me.BtnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtnDelete.ForeColor = System.Drawing.Color.White
+        Me.BtnDelete.Location = New System.Drawing.Point(205, 267)
+        Me.BtnDelete.Name = "BtnDelete"
+        Me.BtnDelete.Size = New System.Drawing.Size(174, 23)
+        Me.BtnDelete.TabIndex = 2
+        Me.BtnDelete.Text = "Delete Selected Session"
+        Me.BtnDelete.UseVisualStyleBackColor = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.ForeColor = System.Drawing.SystemColors.AppWorkspace
+        Me.Label2.Location = New System.Drawing.Point(12, 295)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(16, 13)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "..."
+        '
         'FarchiveChoose
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(379, 289)
+        Me.ClientSize = New System.Drawing.Size(379, 315)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.BtnDelete)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.bx1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
@@ -61,4 +87,6 @@ Partial Class FarchiveChoose
 
     Friend WithEvents bx1 As ListBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents BtnDelete As Button
+    Friend WithEvents Label2 As Label
 End Class

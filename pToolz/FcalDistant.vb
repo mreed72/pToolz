@@ -22,10 +22,15 @@ Public Class FcalDistant
 
         x.SESLog("Distance Calculator", "RESULTS: " & txResult.Text & " / " & txResult2.Text)
 
+        If My.Settings.CurrentSessionID = String.Empty Then
+            Form1.myicon.ShowBalloonTip(2000, "Distance Calculator", "NO SESSION LOG CREATED!", ToolTipIcon.Info)
+        Else
+            Form1.myicon.ShowBalloonTip(2000, "Distance Calculator", "Session log has been saved!", ToolTipIcon.Info)
+        End If
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Me.Close()
+        Close()
 
     End Sub
 

@@ -38,9 +38,9 @@ Partial Class Flogs
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.lgbtn = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripButton5 = New System.Windows.Forms.ToolStripButton()
         Me.txSTA = New System.Windows.Forms.TextBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.ToolStripButton5 = New System.Windows.Forms.ToolStripButton()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -81,6 +81,7 @@ Partial Class Flogs
         '
         'ToolStripButton1
         '
+        Me.ToolStripButton1.Enabled = False
         Me.ToolStripButton1.Image = Global.pToolz.My.Resources.Resources.x320062
         Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton1.Name = "ToolStripButton1"
@@ -104,6 +105,7 @@ Partial Class Flogs
         '
         'ToolStripButton3
         '
+        Me.ToolStripButton3.Enabled = False
         Me.ToolStripButton3.Image = Global.pToolz.My.Resources.Resources.MSWORD001
         Me.ToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton3.Name = "ToolStripButton3"
@@ -125,6 +127,7 @@ Partial Class Flogs
         '
         'ToolStripButton4
         '
+        Me.ToolStripButton4.Enabled = False
         Me.ToolStripButton4.Image = Global.pToolz.My.Resources.Resources.x320375
         Me.ToolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton4.Name = "ToolStripButton4"
@@ -151,6 +154,16 @@ Partial Class Flogs
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
         Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 38)
         '
+        'ToolStripButton5
+        '
+        Me.ToolStripButton5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ToolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton5.Image = Global.pToolz.My.Resources.Resources.weIMAGE118
+        Me.ToolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton5.Name = "ToolStripButton5"
+        Me.ToolStripButton5.Size = New System.Drawing.Size(23, 35)
+        Me.ToolStripButton5.Text = "ToolStripButton5"
+        '
         'txSTA
         '
         Me.txSTA.BackColor = System.Drawing.Color.FromArgb(CType(CType(237, Byte), Integer), CType(CType(237, Byte), Integer), CType(CType(237, Byte), Integer))
@@ -162,16 +175,6 @@ Partial Class Flogs
         Me.txSTA.Size = New System.Drawing.Size(451, 13)
         Me.txSTA.TabIndex = 2
         Me.ToolTip1.SetToolTip(Me.txSTA, "Double-Click to open")
-        '
-        'ToolStripButton5
-        '
-        Me.ToolStripButton5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ToolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripButton5.Image = Global.pToolz.My.Resources.Resources.weIMAGE118
-        Me.ToolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton5.Name = "ToolStripButton5"
-        Me.ToolStripButton5.Size = New System.Drawing.Size(23, 35)
-        Me.ToolStripButton5.Text = "ToolStripButton5"
         '
         'Flogs
         '

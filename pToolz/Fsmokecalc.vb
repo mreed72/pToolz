@@ -192,10 +192,15 @@ Public Class Fsmokecalc
                 res = txResults.Text
                 rec = txRecSize.Text
 
-                X1.SESLog("Smoke Calculator", "Burn Size: " & bs & vbCrLf & "Category Day: " & cd & vbCrLf & "Target Distance: " & td & vbCrLf & "Allowed Tonnage: " & at & vbCrLf & "Total Tons: " & tt _
-                     & vbCrLf & "Available Fuels: " & av & vbCrLf & "Fuel Type: " & ft & vbCrLf & "Fuel Load: " & fl & vbCrLf & "Results: " & res & vbCrLf & "Recommend Size: " & rec)
 
+            X1.SESLog("Smoke Calculator", "Burn Size: " & bs & vbCrLf & "Category Day: " & cd & vbCrLf & "Target Distance: " & td & vbCrLf & "Allowed Tonnage: " & at & vbCrLf & "Total Tons: " & tt _
+                     & vbCrLf & "Available Fuels: " & av & vbCrLf & "Fuel Type: " & ft & vbCrLf & "Fuel Load: " & fl & vbCrLf & "Results: " & res & vbCrLf & "Recommend Size: " & rec)
+            If My.Settings.CurrentSessionID = String.Empty Then
+                Form1.myicon.ShowBalloonTip(2000, "Smoke Calculator", "NO SESSION LOG CREATED!", ToolTipIcon.Info)
+            Else
                 Form1.myicon.ShowBalloonTip(2000, "Smoke Calculator", "Session log has been saved!", ToolTipIcon.Info)
+            End If
+
 
 
 
