@@ -72,7 +72,7 @@ Public Class Form1
     End Sub
 
     Private Sub CLOSEALLTOOLSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CLOSEALLTOOLSToolStripMenuItem.Click
-        For Each Childform In Me.MdiChildren
+        For Each Childform In MdiChildren
             Childform.Close()
 
         Next
@@ -128,7 +128,7 @@ Public Class Form1
         'USE: Open_MDI(Of FORM)(False)
 
         If bMultipleInstances = False Then
-            For Each f As Form In Me.MdiChildren
+            For Each f As Form In MdiChildren
                 If TypeOf f Is T Then
                     If (f.WindowState = FormWindowState.Minimized) Then
                         f.WindowState = FormWindowState.Maximized
@@ -177,6 +177,28 @@ Public Class Form1
 
     Private Sub ViewSessionsFolderToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewSessionsFolderToolStripMenuItem.Click
         Open_MDI(Of FarchiveChoose)(False)
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        Open_MDI(Of FrmSafeChecklist)(False)
+    End Sub
+
+    Private Sub IndustryGuidelinesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IndustryGuidelinesToolStripMenuItem.Click
+        Dim x As String = My.Application.Info.DirectoryPath & "\SMG.pdf"
+        Dim a As Boolean
+        a = My.Computer.FileSystem.FileExists(x)
+        If a = True Then
+            Diagnostics.Process.Start(x)
+        End If
+    End Sub
+
+    Private Sub RowCropGuidelinesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RowCropGuidelinesToolStripMenuItem.Click
+        Dim x As String = My.Application.Info.DirectoryPath & "\RSMG.pdf"
+        Dim a As Boolean
+        a = My.Computer.FileSystem.FileExists(x)
+        If a = True Then
+            Diagnostics.Process.Start(x)
+        End If
     End Sub
 #End Region
 

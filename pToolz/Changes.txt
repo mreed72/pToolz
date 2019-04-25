@@ -1,0 +1,6 @@
+﻿Prescribed Fire Tools
+-----------------------------
+25 APRIL 2019
+	Added SAFE BURNING CHECKLISTS to make it easier for the end use.
+	Added both of the Guideline manuals (Industry and Row Crop).
+	Fixed an issue where multiple tools could be opened at the same time.

@@ -10,7 +10,7 @@
 Imports xFuels
 
 Public Class Flogs
-    Private x As New xFuels.ClassFuels
+    Private x As New ClassFuels
     Private eg As String = X1.GetMyKey("ELOG")
     Private sg As String = X1.GetMyKey("SLOG")
 
@@ -25,7 +25,6 @@ Public Class Flogs
 
     Private Sub Flogs_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ChkSets()
-
     End Sub
 
     Public Function ChkSets()
@@ -172,7 +171,7 @@ Public Class Flogs
     End Sub
 
     Private Sub ToolStripButton5_Click(sender As Object, e As EventArgs) Handles ToolStripButton5.Click
-        Me.Close()
+        Close()
 
     End Sub
 End Class

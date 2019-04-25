@@ -50,6 +50,7 @@
     <ApplicationIcon>cXY0098.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -131,6 +132,12 @@
     <Compile Include="Fpoi.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmSafeChecklist.Designer.vb">
+      <DependentUpon>FrmSafeChecklist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSafeChecklist.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Fsmokecalc.Designer.vb">
       <DependentUpon>Fsmokecalc.vb</DependentUpon>
     </Compile>
@@ -151,6 +158,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PDFVIEWER.Designer.vb">
+      <DependentUpon>PDFVIEWER.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PDFVIEWER.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="SplashScreen.Designer.vb">
       <DependentUpon>SplashScreen.vb</DependentUpon>
@@ -187,6 +200,9 @@
     <EmbeddedResource Include="Fpoi.resx">
       <DependentUpon>Fpoi.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmSafeChecklist.resx">
+      <DependentUpon>FrmSafeChecklist.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fsmokecalc.resx">
       <DependentUpon>Fsmokecalc.vb</DependentUpon>
     </EmbeddedResource>
@@ -195,6 +211,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDFVIEWER.resx">
+      <DependentUpon>PDFVIEWER.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.vb</DependentUpon>
@@ -211,6 +230,15 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="Resources\pdficon.png" />
+    <None Include="Resources\pdficonSMALL.png" />
+    <Content Include="Changes.txt" />
+    <Content Include="SMG.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="RSMG.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\x320042.png" />
@@ -231,6 +259,8 @@
     <Content Include="gpl.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\print-icon %281%29.png" />
+    <None Include="Resources\Before You Burn.png" />
     <None Include="Resources\3305206 - cactus desert hot nature sky sun.png" />
     <None Include="Resources\3305209 - environment fall forest nature rock stone tree.png" />
     <None Include="Resources\3305214 - lake land nature river wet.png" />
@@ -270,6 +300,25 @@
       <Project>{c08d1f28-53cc-4777-83f4-45179c0a61d1}</Project>
       <Name>xFuels</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

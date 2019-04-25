@@ -23,14 +23,7 @@ Public NotInheritable Class SplashScreen
 
         Label2.Text = rk
 
-
-
         SetMyKey("ELOG", "C:\SMTOOLZ\elog.txt")
-
-
-
-
-
 
     End Sub
 
@@ -43,7 +36,6 @@ Public NotInheritable Class SplashScreen
         For i = 1 To length
             grs = grs & Mid(ac, Int(Rnd() * Len(ac) + 1), 1)
         Next
-
     End Function
 
 
@@ -55,7 +47,6 @@ Public NotInheritable Class SplashScreen
         Dim readValue As String
         readValue = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\SMTOOLZ\", keyValue, Nothing)
         Return readValue
-
     End Function
 
     Public Function ChkLocations() As Boolean

@@ -26,3 +26,14 @@ C:\GITHUB REPOS\pToolz\pToolz\obj\Debug\pToolz.FmultiCalc.resources
 C:\GITHUB REPOS\pToolz\pToolz\obj\Debug\pToolz.FcalDistant.resources
 C:\GITHUB REPOS\pToolz\pToolz\bin\Debug\cXY0098.ico
 C:\GITHUB REPOS\pToolz\pToolz\obj\Debug\pToolz.FarchiveChoose.resources
+C:\GITHUB REPOS\pToolz\pToolz\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
+C:\GITHUB REPOS\pToolz\pToolz\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.xml
+C:\GITHUB REPOS\pToolz\pToolz\obj\Debug\pToolz.FrmSafeChecklist.resources
+C:\GITHUB REPOS\pToolz\pToolz\bin\Debug\Interop.AcroPDFLib.dll
+C:\GITHUB REPOS\pToolz\pToolz\bin\Debug\AxInterop.AcroPDFLib.dll
+C:\GITHUB REPOS\pToolz\pToolz\obj\Debug\Interop.AcroPDFLib.dll
+C:\GITHUB REPOS\pToolz\pToolz\obj\Debug\AxInterop.AcroPDFLib.dll
+C:\GITHUB REPOS\pToolz\pToolz\obj\Debug\pToolz.vbproj.ResolveComReference.cache
+C:\GITHUB REPOS\pToolz\pToolz\obj\Debug\pToolz.PDFVIEWER.resources
+C:\GITHUB REPOS\pToolz\pToolz\bin\Debug\SMG.pdf
+C:\GITHUB REPOS\pToolz\pToolz\bin\Debug\RSMG.pdf

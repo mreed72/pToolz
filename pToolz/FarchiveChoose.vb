@@ -39,7 +39,7 @@ Public Class FarchiveChoose
                 My.Computer.FileSystem.DeleteDirectory(Label2.Text, FileIO.DeleteDirectoryOption.DeleteAllContents)
 
                 MsgBox("Session Deleted Successfully!")
-                Me.Close()
+                Close()
 
             End If
         Catch ex As Exception

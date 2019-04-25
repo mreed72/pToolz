@@ -46,6 +46,9 @@ Partial Class Form1
         Me.HELPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LVORIHelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.IndustryGuidelinesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RowCropGuidelinesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.tsStat = New System.Windows.Forms.ToolStripStatusLabel()
@@ -67,6 +70,7 @@ Partial Class Form1
         Me.T1 = New System.Windows.Forms.Timer(Me.components)
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Button7 = New System.Windows.Forms.Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.lbPrevSesId = New System.Windows.Forms.Label()
@@ -214,7 +218,7 @@ Partial Class Form1
         '
         'HELPToolStripMenuItem
         '
-        Me.HELPToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LVORIHelpToolStripMenuItem, Me.ToolStripSeparator2, Me.AboutToolStripMenuItem})
+        Me.HELPToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LVORIHelpToolStripMenuItem, Me.ToolStripSeparator2, Me.IndustryGuidelinesToolStripMenuItem, Me.RowCropGuidelinesToolStripMenuItem, Me.ToolStripSeparator5, Me.AboutToolStripMenuItem})
         Me.HELPToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources._183628
         Me.HELPToolStripMenuItem.Name = "HELPToolStripMenuItem"
         Me.HELPToolStripMenuItem.Size = New System.Drawing.Size(71, 28)
@@ -224,19 +228,38 @@ Partial Class Form1
         '
         Me.LVORIHelpToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.weIMAGE080
         Me.LVORIHelpToolStripMenuItem.Name = "LVORIHelpToolStripMenuItem"
-        Me.LVORIHelpToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
+        Me.LVORIHelpToolStripMenuItem.Size = New System.Drawing.Size(192, 30)
         Me.LVORIHelpToolStripMenuItem.Text = "Help (Online Wiki)"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(168, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(189, 6)
+        '
+        'IndustryGuidelinesToolStripMenuItem
+        '
+        Me.IndustryGuidelinesToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.pdficon
+        Me.IndustryGuidelinesToolStripMenuItem.Name = "IndustryGuidelinesToolStripMenuItem"
+        Me.IndustryGuidelinesToolStripMenuItem.Size = New System.Drawing.Size(192, 30)
+        Me.IndustryGuidelinesToolStripMenuItem.Text = "Industry Guidelines"
+        '
+        'RowCropGuidelinesToolStripMenuItem
+        '
+        Me.RowCropGuidelinesToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.pdficon
+        Me.RowCropGuidelinesToolStripMenuItem.Name = "RowCropGuidelinesToolStripMenuItem"
+        Me.RowCropGuidelinesToolStripMenuItem.Size = New System.Drawing.Size(192, 30)
+        Me.RowCropGuidelinesToolStripMenuItem.Text = "Row Crop Guidelines"
+        '
+        'ToolStripSeparator5
+        '
+        Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
+        Me.ToolStripSeparator5.Size = New System.Drawing.Size(189, 6)
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.weIMAGE087
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(192, 30)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'StatusStrip1
@@ -415,12 +438,24 @@ Partial Class Form1
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel2.Controls.Add(Me.Button7)
         Me.Panel2.Controls.Add(Me.Panel5)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel2.Location = New System.Drawing.Point(0, 93)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(200, 593)
         Me.Panel2.TabIndex = 6
+        '
+        'Button7
+        '
+        Me.Button7.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button7.Location = New System.Drawing.Point(7, 156)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(183, 23)
+        Me.Button7.TabIndex = 1
+        Me.Button7.Text = "Safe Burning Checklist"
+        Me.Button7.UseVisualStyleBackColor = False
         '
         'Panel5
         '
@@ -487,8 +522,8 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.pToolz.My.Resources.Resources.psdImages111
-        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.BackgroundImage = Global.pToolz.My.Resources.Resources.Before_You_Burn
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1062, 708)
         Me.ControlBox = False
         Me.Controls.Add(Me.Panel2)
@@ -569,4 +604,8 @@ Partial Class Form1
     Friend WithEvents Label3 As Label
     Friend WithEvents ViewSessionsFolderToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label4 As Label
+    Friend WithEvents Button7 As Button
+    Friend WithEvents IndustryGuidelinesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RowCropGuidelinesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator5 As ToolStripSeparator
 End Class

@@ -50,10 +50,12 @@ Partial Class Fsmokecalc
         Me.btnCalc = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.Panel5.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -65,7 +67,7 @@ Partial Class Fsmokecalc
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Location = New System.Drawing.Point(12, 47)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(591, 136)
+        Me.Panel1.Size = New System.Drawing.Size(591, 133)
         Me.Panel1.TabIndex = 0
         '
         'Panel4
@@ -80,19 +82,19 @@ Partial Class Fsmokecalc
         Me.Panel4.Controls.Add(Me.Label6)
         Me.Panel4.Location = New System.Drawing.Point(3, 70)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(581, 59)
+        Me.Panel4.Size = New System.Drawing.Size(581, 53)
         Me.Panel4.TabIndex = 8
         '
         'txResults
         '
         Me.txResults.BackColor = System.Drawing.SystemColors.Control
-        Me.txResults.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txResults.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txResults.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txResults.ForeColor = System.Drawing.Color.Black
-        Me.txResults.Location = New System.Drawing.Point(10, 31)
+        Me.txResults.Location = New System.Drawing.Point(3, 23)
         Me.txResults.Name = "txResults"
         Me.txResults.ReadOnly = True
-        Me.txResults.Size = New System.Drawing.Size(565, 15)
+        Me.txResults.Size = New System.Drawing.Size(565, 22)
         Me.txResults.TabIndex = 6
         Me.txResults.TabStop = False
         Me.txResults.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -274,7 +276,7 @@ Partial Class Fsmokecalc
         '
         Me.txRecSize.AutoSize = True
         Me.txRecSize.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txRecSize.Location = New System.Drawing.Point(163, 24)
+        Me.txRecSize.Location = New System.Drawing.Point(159, 9)
         Me.txRecSize.Name = "txRecSize"
         Me.txRecSize.Size = New System.Drawing.Size(15, 16)
         Me.txRecSize.TabIndex = 4
@@ -284,7 +286,7 @@ Partial Class Fsmokecalc
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(14, 24)
+        Me.Label13.Location = New System.Drawing.Point(10, 9)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(143, 16)
         Me.Label13.TabIndex = 3
@@ -329,18 +331,27 @@ Partial Class Fsmokecalc
         Me.ToolTip1.SetToolTip(Me.Button1, "Close this form")
         Me.Button1.UseVisualStyleBackColor = False
         '
+        'Panel5
+        '
+        Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel5.Controls.Add(Me.Label13)
+        Me.Panel5.Controls.Add(Me.txRecSize)
+        Me.Panel5.Location = New System.Drawing.Point(12, 6)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(238, 35)
+        Me.Panel5.TabIndex = 5
+        '
         'Fsmokecalc
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(215, Byte), Integer), CType(CType(234, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(615, 193)
+        Me.ClientSize = New System.Drawing.Size(615, 188)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.btnCalc)
-        Me.Controls.Add(Me.txRecSize)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Button1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Name = "Fsmokecalc"
@@ -353,8 +364,9 @@ Partial Class Fsmokecalc
         Me.Panel3.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -385,4 +397,5 @@ Partial Class Fsmokecalc
     Friend WithEvents btnCalc As Button
     Friend WithEvents btnClear As Button
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents Panel5 As Panel
 End Class

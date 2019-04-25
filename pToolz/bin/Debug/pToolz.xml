@@ -57,6 +57,11 @@ pToolz
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:pToolz.My.Resources.Resources.Before_You_Burn">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:pToolz.My.Resources.Resources.CAD1">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -73,6 +78,21 @@ pToolz
 </summary>
 </member>
 <member name="P:pToolz.My.Resources.Resources.MSWORD001">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:pToolz.My.Resources.Resources.pdficon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:pToolz.My.Resources.Resources.pdficonSMALL">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:pToolz.My.Resources.Resources.print_icon__1_">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

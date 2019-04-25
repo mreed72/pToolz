@@ -34,7 +34,7 @@ Partial Class SplashScreen
         '
         Me.Label1.AutoSize = True
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(204, 215)
+        Me.Label1.Location = New System.Drawing.Point(181, 410)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(100, 13)
         Me.Label1.TabIndex = 1
@@ -53,7 +53,7 @@ Partial Class SplashScreen
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.pToolz.My.Resources.Resources.weIMAGE047
-        Me.PictureBox2.Location = New System.Drawing.Point(357, 161)
+        Me.PictureBox2.Location = New System.Drawing.Point(7, 378)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(127, 51)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -62,11 +62,11 @@ Partial Class SplashScreen
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.pToolz.My.Resources.Resources.FireLogoIcon
-        Me.PictureBox1.Location = New System.Drawing.Point(148, 12)
+        Me.PictureBox1.Image = Global.pToolz.My.Resources.Resources.Before_You_Burn
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 20)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(200, 200)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.Size = New System.Drawing.Size(739, 324)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
@@ -75,7 +75,7 @@ Partial Class SplashScreen
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(496, 240)
+        Me.ClientSize = New System.Drawing.Size(763, 432)
         Me.ControlBox = False
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.PictureBox2)
