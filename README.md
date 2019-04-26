@@ -2,6 +2,7 @@
 Application to assist Burn Managers with Prescribed Fires.
 
 DOWNLOAD LATEST VERSION: https://github.com/mreed72/pToolz/releases/download/v1.0/Setup.pToolz_v1.msi
+View the latest changes: https://github.com/mreed72/pToolz/blob/master/pToolz/Changes.txt
 
 This program is to assist Burn Managers with several aspects of control burnings.  :  Smoke Calculator (Single fuel and Multiple Fuels), Probability of Ignition, LVORI.
 
