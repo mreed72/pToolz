@@ -69,14 +69,15 @@ Partial Class Form1
         Me.Button4 = New System.Windows.Forms.Button()
         Me.T1 = New System.Windows.Forms.Timer(Me.components)
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button7 = New System.Windows.Forms.Button()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.lbPrevSesId = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.csSesID = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Button8 = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -228,38 +229,38 @@ Partial Class Form1
         '
         Me.LVORIHelpToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.weIMAGE080
         Me.LVORIHelpToolStripMenuItem.Name = "LVORIHelpToolStripMenuItem"
-        Me.LVORIHelpToolStripMenuItem.Size = New System.Drawing.Size(192, 30)
+        Me.LVORIHelpToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
         Me.LVORIHelpToolStripMenuItem.Text = "Help (Online Wiki)"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(189, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(181, 6)
         '
         'IndustryGuidelinesToolStripMenuItem
         '
         Me.IndustryGuidelinesToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.pdficon
         Me.IndustryGuidelinesToolStripMenuItem.Name = "IndustryGuidelinesToolStripMenuItem"
-        Me.IndustryGuidelinesToolStripMenuItem.Size = New System.Drawing.Size(192, 30)
+        Me.IndustryGuidelinesToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
         Me.IndustryGuidelinesToolStripMenuItem.Text = "Industry Guidelines"
         '
         'RowCropGuidelinesToolStripMenuItem
         '
         Me.RowCropGuidelinesToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.pdficon
         Me.RowCropGuidelinesToolStripMenuItem.Name = "RowCropGuidelinesToolStripMenuItem"
-        Me.RowCropGuidelinesToolStripMenuItem.Size = New System.Drawing.Size(192, 30)
+        Me.RowCropGuidelinesToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
         Me.RowCropGuidelinesToolStripMenuItem.Text = "Row Crop Guidelines"
         '
         'ToolStripSeparator5
         '
         Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
-        Me.ToolStripSeparator5.Size = New System.Drawing.Size(189, 6)
+        Me.ToolStripSeparator5.Size = New System.Drawing.Size(181, 6)
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Image = Global.pToolz.My.Resources.Resources.weIMAGE087
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(192, 30)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'StatusStrip1
@@ -335,6 +336,7 @@ Partial Class Form1
         Me.Button1.Size = New System.Drawing.Size(156, 19)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Create New Session"
+        Me.ToolTip1.SetToolTip(Me.Button1, "Click here to create a New Session")
         Me.Button1.UseVisualStyleBackColor = False
         '
         'ProgressBar1
@@ -365,7 +367,7 @@ Partial Class Form1
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(44, 49)
         Me.btnExit.TabIndex = 7
-        Me.ToolTip1.SetToolTip(Me.btnExit, "Distance between 2 points")
+        Me.ToolTip1.SetToolTip(Me.btnExit, "Close the program")
         Me.btnExit.UseVisualStyleBackColor = False
         '
         'Panel3
@@ -435,17 +437,6 @@ Partial Class Form1
         '
         Me.T1.Enabled = True
         '
-        'Panel2
-        '
-        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel2.Controls.Add(Me.Button7)
-        Me.Panel2.Controls.Add(Me.Panel5)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel2.Location = New System.Drawing.Point(0, 93)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(200, 593)
-        Me.Panel2.TabIndex = 6
-        '
         'Button7
         '
         Me.Button7.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
@@ -455,7 +446,20 @@ Partial Class Form1
         Me.Button7.Size = New System.Drawing.Size(183, 23)
         Me.Button7.TabIndex = 1
         Me.Button7.Text = "Safe Burning Checklist"
+        Me.ToolTip1.SetToolTip(Me.Button7, "Safe Burning Checklist")
         Me.Button7.UseVisualStyleBackColor = False
+        '
+        'Panel2
+        '
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel2.Controls.Add(Me.Button8)
+        Me.Panel2.Controls.Add(Me.Button7)
+        Me.Panel2.Controls.Add(Me.Panel5)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel2.Location = New System.Drawing.Point(0, 93)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(200, 593)
+        Me.Panel2.TabIndex = 6
         '
         'Panel5
         '
@@ -517,6 +521,19 @@ Partial Class Form1
         Me.Label2.Size = New System.Drawing.Size(98, 13)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Current Session ID:"
+        '
+        'Button8
+        '
+        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button8.Image = Global.pToolz.My.Resources.Resources._0814874ABC
+        Me.Button8.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Button8.Location = New System.Drawing.Point(7, 185)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(183, 198)
+        Me.Button8.TabIndex = 2
+        Me.Button8.Text = "Single Fuels LIGHT Edition"
+        Me.Button8.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button8.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -608,4 +625,5 @@ Partial Class Form1
     Friend WithEvents IndustryGuidelinesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RowCropGuidelinesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator5 As ToolStripSeparator
+    Friend WithEvents Button8 As Button
 End Class

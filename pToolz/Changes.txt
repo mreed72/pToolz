@@ -1,5 +1,11 @@
 ﻿Prescribed Fire Tools
 -----------------------------
+26 APRIL 2019
+	Added a "Light" single fuels calculator for a quick and easy way of getting a result without going through the
+		entire main program session.
+	Fixed some minor spelling mistakes.
+	Minor Code Cleanup.
+
 25 APRIL 2019
 	Added SAFE BURNING CHECKLISTS to make it easier for the end use.
 	Added both of the Guideline manuals (Industry and Row Crop).

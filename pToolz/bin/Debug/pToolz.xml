@@ -22,6 +22,11 @@ pToolz
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:pToolz.My.Resources.Resources._0814874ABC">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:pToolz.My.Resources.Resources._13744995">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -168,6 +173,11 @@ pToolz
 </summary>
 </member>
 <member name="P:pToolz.My.Resources.Resources.weIMAGE124">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:pToolz.My.Resources.Resources.x1602802">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

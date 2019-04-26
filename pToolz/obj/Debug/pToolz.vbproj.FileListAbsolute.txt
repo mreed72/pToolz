@@ -37,3 +37,4 @@ C:\GITHUB REPOS\pToolz\pToolz\obj\Debug\pToolz.vbproj.ResolveComReference.cache
 C:\GITHUB REPOS\pToolz\pToolz\obj\Debug\pToolz.PDFVIEWER.resources
 C:\GITHUB REPOS\pToolz\pToolz\bin\Debug\SMG.pdf
 C:\GITHUB REPOS\pToolz\pToolz\bin\Debug\RSMG.pdf
+C:\GITHUB REPOS\pToolz\pToolz\obj\Debug\pToolz.Form2.resources

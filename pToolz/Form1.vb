@@ -200,6 +200,10 @@ Public Class Form1
             Diagnostics.Process.Start(x)
         End If
     End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        Open_MDI(Of Form2)(False)
+    End Sub
 #End Region
 
 
