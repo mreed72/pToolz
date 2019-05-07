@@ -10,17 +10,10 @@
 Imports xFuels
 
 Public Class Fsmokecalc
-    Private x As New xFuels.ClassFuels
     Private sADJ, sNEW As Integer
 
-    Public Property X1 As ClassFuels
-        Get
-            Return x
-        End Get
-        Set(value As ClassFuels)
-            x = value
-        End Set
-    End Property
+    Private x1 As New xFuels.ClassFuels
+
 
     Public Property SADJ1 As Integer
         Get
@@ -190,9 +183,7 @@ Public Class Fsmokecalc
                 ft = txFtype.SelectedItem
                 fl = txFload.SelectedItem
                 res = txResults.Text
-                rec = txRecSize.Text
-
-
+            rec = txRecSize.Text
             X1.SESLog("Smoke Calculator", "Burn Size: " & bs & vbCrLf & "Category Day: " & cd & vbCrLf & "Target Distance: " & td & vbCrLf & "Allowed Tonnage: " & at & vbCrLf & "Total Tons: " & tt _
                      & vbCrLf & "Available Fuels: " & av & vbCrLf & "Fuel Type: " & ft & vbCrLf & "Fuel Load: " & fl & vbCrLf & "Results: " & res & vbCrLf & "Recommend Size: " & rec)
             If My.Settings.CurrentSessionID = String.Empty Then
@@ -200,10 +191,6 @@ Public Class Fsmokecalc
             Else
                 Form1.myicon.ShowBalloonTip(2000, "Smoke Calculator", "Session log has been saved!", ToolTipIcon.Info)
             End If
-
-
-
-
         Catch ex As Exception
             X1.ERRlog("1XYNZOS9", ex.Message) ' ERROR LOG CODE
         End Try

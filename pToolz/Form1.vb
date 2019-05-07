@@ -29,6 +29,12 @@ Public Class Form1
             'Archived Folder Size
             Dim bkf As String = "C:\SMTOOLZ\Sessions\"
             tsSesLogSize.Text = "Archived Session Directory Size: " & X1.finSize(X1.GetFolderSize(bkf, True))
+
+            For Each f As String In My.Computer.FileSystem.GetDirectories("C:\SMTOOLZ\Sessions\")
+                lbx.Items.Add(f)
+            Next
+
+
         Catch ex As Exception
             X1.ERRlog("1XWDTCYJ", ex.Message) ' ERROR LOG CODE
         End Try
@@ -204,6 +210,8 @@ Public Class Form1
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
         Open_MDI(Of Form2)(False)
     End Sub
+
+
 #End Region
 
 

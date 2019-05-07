@@ -119,6 +119,7 @@ Partial Class Flogs
         Me.exlg.Name = "exlg"
         Me.exlg.Size = New System.Drawing.Size(14, 35)
         Me.exlg.Text = "T"
+        Me.exlg.ToolTipText = "Error Logging Enabled/Disabled"
         '
         'ToolStripSeparator2
         '
@@ -148,6 +149,7 @@ Partial Class Flogs
         Me.lgbtn.Size = New System.Drawing.Size(53, 35)
         Me.lgbtn.Text = "Enabled"
         Me.lgbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.lgbtn.ToolTipText = "Logging is Enabled/Disabled"
         '
         'ToolStripSeparator4
         '
@@ -162,7 +164,7 @@ Partial Class Flogs
         Me.ToolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton5.Name = "ToolStripButton5"
         Me.ToolStripButton5.Size = New System.Drawing.Size(23, 35)
-        Me.ToolStripButton5.Text = "ToolStripButton5"
+        Me.ToolStripButton5.Text = "Exit"
         '
         'txSTA
         '

@@ -71,13 +71,14 @@ Partial Class Form1
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.lbx = New System.Windows.Forms.ListBox()
+        Me.Button8 = New System.Windows.Forms.Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.lbPrevSesId = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.csSesID = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Button8 = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -452,6 +453,7 @@ Partial Class Form1
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel2.Controls.Add(Me.lbx)
         Me.Panel2.Controls.Add(Me.Button8)
         Me.Panel2.Controls.Add(Me.Button7)
         Me.Panel2.Controls.Add(Me.Panel5)
@@ -460,6 +462,32 @@ Partial Class Form1
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(200, 593)
         Me.Panel2.TabIndex = 6
+        '
+        'lbx
+        '
+        Me.lbx.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.lbx.BackColor = System.Drawing.SystemColors.Control
+        Me.lbx.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.lbx.ForeColor = System.Drawing.SystemColors.AppWorkspace
+        Me.lbx.FormattingEnabled = True
+        Me.lbx.Location = New System.Drawing.Point(3, 439)
+        Me.lbx.Name = "lbx"
+        Me.lbx.Size = New System.Drawing.Size(189, 143)
+        Me.lbx.TabIndex = 3
+        '
+        'Button8
+        '
+        Me.Button8.BackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(69, Byte), Integer))
+        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button8.Image = Global.pToolz.My.Resources.Resources.x320002
+        Me.Button8.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Button8.Location = New System.Drawing.Point(44, 185)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(104, 72)
+        Me.Button8.TabIndex = 2
+        Me.Button8.Text = "Single Fuels LIGHT Edition"
+        Me.Button8.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button8.UseVisualStyleBackColor = False
         '
         'Panel5
         '
@@ -521,19 +549,6 @@ Partial Class Form1
         Me.Label2.Size = New System.Drawing.Size(98, 13)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Current Session ID:"
-        '
-        'Button8
-        '
-        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button8.Image = Global.pToolz.My.Resources.Resources._0814874ABC
-        Me.Button8.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button8.Location = New System.Drawing.Point(7, 185)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(183, 198)
-        Me.Button8.TabIndex = 2
-        Me.Button8.Text = "Single Fuels LIGHT Edition"
-        Me.Button8.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button8.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -626,4 +641,5 @@ Partial Class Form1
     Friend WithEvents RowCropGuidelinesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator5 As ToolStripSeparator
     Friend WithEvents Button8 As Button
+    Friend WithEvents lbx As ListBox
 End Class

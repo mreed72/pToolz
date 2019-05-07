@@ -52,13 +52,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_049008FD9349455B9C1CA3A43DB515C6"
+        "OwnerKey" = "8:_7A6C947EA657D78BE8E26E0275757705"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_7A6C947EA657D78BE8E26E0275757705"
+        "OwnerKey" = "8:_049008FD9349455B9C1CA3A43DB515C6"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -79,6 +79,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -95,6 +103,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -131,11 +147,6 @@
             "AssemblyAsmDisplayName" = "8:xFuels, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_065E65A5E12E005E86942CD629BF0A74"
-                    {
-                    "Name" = "8:xFuels.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:xFuels.dll"
             "TargetName" = "8:"
@@ -182,11 +193,6 @@
             "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
                 "ScatterAssemblies"
                 {
-                    "_7A6C947EA657D78BE8E26E0275757705"
-                    {
-                    "Name" = "8:System.Net.Http.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:System.Net.Http.dll"
             "TargetName" = "8:"
@@ -293,20 +299,20 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:Setup pToolz"
-        "ProductCode" = "8:{4FC90756-5245-48C9-BD3A-DFA5653D1E9B}"
-        "PackageCode" = "8:{ACB8DEF4-3819-430E-B6C1-2A4747DDBB32}"
+        "ProductName" = "8:pToolz"
+        "ProductCode" = "8:{0BE2B1C5-93E3-4777-B928-15E3B21FA10C}"
+        "PackageCode" = "8:{2EE0E0AA-EBB4-4D42-863D-02C68FDBCAC6}"
         "UpgradeCode" = "8:{554D4E2E-4831-4006-B839-62B844096241}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:1.0.1"
         "Manufacturer" = "8:SimonCoder Software"
         "ARPHELPTELEPHONE" = "8:"
-        "ARPHELPLINK" = "8:"
-        "Title" = "8:Setup pToolz"
+        "ARPHELPLINK" = "8:https://github.com/mreed72/pToolz/wiki"
+        "Title" = "8:pToolz"
         "Subject" = "8:"
         "ARPCONTACT" = "8:Scott Reed"
         "Keywords" = "8:"

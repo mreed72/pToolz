@@ -11,6 +11,7 @@ Public NotInheritable Class SplashScreen
     Private Const KeyValue As String = "REGKEY"
 
     Private Sub SplashScreen_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        ChkLocations()
 
         Dim rk As String
         rk = grs(4) & "-" & grs(4) & "-" & grs(4)

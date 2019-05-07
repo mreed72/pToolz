@@ -11,16 +11,8 @@
 Imports xFuels
 
 Public Class Flvori
-    Private x As New xFuels.ClassFuels
+    Private x1 As New xFuels.ClassFuels
 
-    Public Property X1 As ClassFuels
-        Get
-            Return x
-        End Get
-        Set(value As ClassFuels)
-            x = value
-        End Set
-    End Property
 
     Private Sub btnCalc_Click(sender As Object, e As EventArgs) Handles btnCalc.Click
         Try
@@ -69,6 +61,8 @@ Public Class Flvori
                     Return "Very good dispersion. 75 and above, Control problems likely."
                 Case > 80
                     Return "Excellent dispersion, Control problems expected."
+                Case Else
+                    Exit Select
             End Select
         Catch ex As Exception
             X1.ERRlog("1XZ9J7X0", ex.Message) ' ERROR LOG CODE
@@ -107,8 +101,9 @@ Public Class Flvori
         Try
             Dim i1 As Image = My.Resources.CAD1
             If FimgViewer.Visible = False Then
-                Dim a As New FimgViewer
-                a.MdiParent = Form1
+                Dim a As New FimgViewer With {
+                    .MdiParent = Form1
+                }
                 a.Show()
                 a.pbox.Image = i1
             End If
@@ -121,8 +116,9 @@ Public Class Flvori
         Try
             Dim i1 As Image = My.Resources.CAD2
             If FimgViewer.Visible = False Then
-                Dim a As New FimgViewer
-                a.MdiParent = Form1
+                Dim a As New FimgViewer With {
+                    .MdiParent = Form1
+                }
                 a.Show()
                 a.pbox.Image = i1
 

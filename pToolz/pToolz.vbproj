@@ -244,6 +244,7 @@
     <Content Include="Changes.txt" />
     <None Include="Resources\0814874ABC.png" />
     <None Include="Resources\x1602802.PNG" />
+    <None Include="Resources\x320002.png" />
     <Content Include="SMG.pdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

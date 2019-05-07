@@ -28,7 +28,7 @@ Public Class ClassFuels
                     Case Is = "Heavy"
                         Return 4.4
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case "Shortleaf Pine Regeneration"
                 Select Case cLoad
@@ -39,7 +39,7 @@ Public Class ClassFuels
                     Case Is = "Heavy"
                         Return 5.1
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case "Loblolly Pine with Oak"
                 Select Case cLoad
@@ -50,7 +50,7 @@ Public Class ClassFuels
                     Case Is = "Heavy"
                         Return 7.9
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case "Loblolly Pine Regeneration"
                 Select Case cLoad
@@ -61,7 +61,7 @@ Public Class ClassFuels
                     Case Is = "Heavy"
                         Return 8.5
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case "Hardwood Leaf Litter"
                 Select Case cLoad
@@ -72,7 +72,7 @@ Public Class ClassFuels
                     Case Is = "Heavy"
                         Return 2.5
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case "Grass or Brush"
                 Select Case cLoad
@@ -83,7 +83,7 @@ Public Class ClassFuels
                     Case Is = "Heavy"
                         Return 5.0
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case "Dispersed Slash"
                 Select Case cLoad
@@ -94,7 +94,7 @@ Public Class ClassFuels
                     Case Is = "Heavy"
                         Return 8.0
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case "Piled Debris"
                 Select Case cLoad
@@ -105,7 +105,7 @@ Public Class ClassFuels
                     Case Is = "Heavy"
                         Return 10.0
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case "Shortleaf Loblolly with Grass"
                 Select Case cLoad
@@ -116,7 +116,7 @@ Public Class ClassFuels
                     Case Is = "Heavy"
                         Return 5.9
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case "Corn"
                 Select Case cLoad
@@ -127,7 +127,7 @@ Public Class ClassFuels
                     Case Is = "Heavy"
                         Return 6.2
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case "Cotton"
                 Select Case cLoad
@@ -138,7 +138,7 @@ Public Class ClassFuels
                     Case Is = "Heavy"
                         Return 1.5
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case "Rice"
                 Select Case cLoad
@@ -149,7 +149,7 @@ Public Class ClassFuels
                     Case Is = "Heavy"
                         Return 4.9
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case "Soybean"
                 Select Case cLoad
@@ -160,7 +160,7 @@ Public Class ClassFuels
                     Case Is = "Heavy"
                         Return 5.7
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case "Wheat"
                 Select Case cLoad
@@ -171,10 +171,10 @@ Public Class ClassFuels
                     Case Is = "Heavy"
                         Return 1.9
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case Else
-                Return 0
+                Exit Select
         End Select
     End Function
 
@@ -201,7 +201,7 @@ Public Class ClassFuels
                     Case > 20
                         Return 2880
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case 3
                 Select Case xDistance
@@ -216,7 +216,7 @@ Public Class ClassFuels
                     Case > 20
                         Return 3280
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case 4
                 Select Case xDistance
@@ -231,7 +231,7 @@ Public Class ClassFuels
                     Case > 20
                         Return 6400
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case 5
                 Select Case xDistance
@@ -246,10 +246,10 @@ Public Class ClassFuels
                     Case > 20
                         Return 11600
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case Else
-                Return 0
+                Exit Select
         End Select
     End Function
 
@@ -309,7 +309,6 @@ Public Class ClassFuels
     ''' <param name="xfdfm">Fine Dead Fuel Moisture or 1hr FM</param>
     ''' <returns>INTEGER: as a percentage</returns>
     Public Function ProIgnCalc(ByVal xshad As Integer, ByVal xdry As Integer, ByVal xfdfm As Integer)
-
         Select Case xshad
             Case 1 To 10
                 Select Case xdry
@@ -1584,9 +1583,6 @@ Public Class ClassFuels
                         End Select
                 End Select
         End Select
-
-
-
     End Function
 
     ''' <summary>
@@ -1598,7 +1594,6 @@ Public Class ClassFuels
         Dim readValue As String
         readValue = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\SMTOOLZ\", keyValue, Nothing)
         Return readValue
-
     End Function
 
     ''' <summary>
@@ -1669,8 +1664,6 @@ Public Class ClassFuels
                         Return 2
                     Case Is > 30
                         Return 1
-                    Case Else
-                        Return 0
                 End Select
             Case 56 To 59
                 Select Case xDispersionIndex
@@ -1680,8 +1673,6 @@ Public Class ClassFuels
                         Return 2
                     Case Is > 31
                         Return 1
-                    Case Else
-                        Return 0
                 End Select
             Case 60 To 64
                 Select Case xDispersionIndex
@@ -1691,8 +1682,6 @@ Public Class ClassFuels
                         Return 2
                     Case Is > 31
                         Return 1
-                    Case Else
-                        Return 0
                 End Select
             Case 65 To 69
                 Select Case xDispersionIndex
@@ -1702,8 +1691,6 @@ Public Class ClassFuels
                         Return 2
                     Case Is > 41
                         Return 1
-                    Case Else
-                        Return 0
                 End Select
             Case 70 To 74
                 Select Case xDispersionIndex
@@ -1711,8 +1698,6 @@ Public Class ClassFuels
                         Return 4
                     Case Is > 2
                         Return 3
-                    Case Else
-                        Return 0
                 End Select
             Case 75 To 79
                 Select Case xDispersionIndex
@@ -1720,8 +1705,6 @@ Public Class ClassFuels
                         Return 4
                     Case Is > 17
                         Return 3
-                    Case Else
-                        Return 0
                 End Select
             Case 80 To 82
                 Select Case xDispersionIndex
@@ -1733,8 +1716,6 @@ Public Class ClassFuels
                         Return 4
                     Case Is > 17
                         Return 3
-                    Case Else
-                        Return 0
                 End Select
             Case 83 To 85
                 Select Case xDispersionIndex
@@ -1744,8 +1725,6 @@ Public Class ClassFuels
                         Return 5
                     Case Is > 7
                         Return 4
-                    Case Else
-                        Return 0
                 End Select
             Case 86 To 88
                 Select Case xDispersionIndex
@@ -1755,8 +1734,6 @@ Public Class ClassFuels
                         Return 5
                     Case Is > 13
                         Return 4
-                    Case Else
-                        Return 0
                 End Select
             Case 89 To 91
                 Select Case xDispersionIndex
@@ -1768,8 +1745,6 @@ Public Class ClassFuels
                         Return 5
                     Case Is > 17
                         Return 4
-                    Case Else
-                        Return 0
                 End Select
             Case 92 To 94
                 Select Case xDispersionIndex
@@ -1783,8 +1758,6 @@ Public Class ClassFuels
                         Return 5
                     Case Is > 26
                         Return 4
-                    Case Else
-                        Return 0
                 End Select
             Case 95 To 97
                 Select Case xDispersionIndex
@@ -1800,8 +1773,6 @@ Public Class ClassFuels
                         Return 5
                     Case Is > 26
                         Return 4
-                    Case Else
-                        Return 0
                 End Select
             Case Is > 97
                 Select Case xDispersionIndex
@@ -1817,11 +1788,7 @@ Public Class ClassFuels
                         Return 5
                     Case Is > 26
                         Return 4
-                    Case Else
-                        Return 0
                 End Select
-            Case Else
-                Return 0
         End Select
     End Function
 
@@ -1834,9 +1801,9 @@ Public Class ClassFuels
         Dim d As New System.IO.DirectoryInfo(sld)
         Dim intFiles As Integer
         intFiles = d.GetFiles.GetUpperBound(0) + 1
-        Dim cnt As Integer
-        cnt = intFiles + 1
-        Return cnt
+        Dim CountyString As Integer
+        CountyString = intFiles + 1
+        Return CountyString
     End Function
 
     ''' <summary>
@@ -1871,13 +1838,11 @@ Public Class ClassFuels
     ''' <param name="IncludeSubFolders">Boolean</param>
     ''' <returns>LONG</returns>
     Public Function GetFolderSize(ByVal DirPath As String, Optional IncludeSubFolders As Boolean = True) As Long
-
         Try
             Dim lngDirSize As Long
             Dim objFileInfo As FileInfo
             Dim objDir As DirectoryInfo = New DirectoryInfo(DirPath)
             Dim objSubFolder As DirectoryInfo
-
 
             For Each objFileInfo In objDir.GetFiles()
                 lngDirSize += objFileInfo.Length
@@ -1889,13 +1854,10 @@ Public Class ClassFuels
                 Next
             End If
 
-
             Return lngDirSize
         Catch ex As Exception
             ERRlog("1XKI8X17", ex.Message) ' ERROR LOG CODE
         End Try
-
-
     End Function
 
     ''' <summary>
@@ -1912,6 +1874,29 @@ Public Class ClassFuels
     End Function
 
 
+    Public Function CountyToDistrict(CountyString As String)
 
+        If CountyString.Contains("Ashley") Or CountyString.Contains("Bradley") Or CountyString.Contains("Calhoun") Or CountyString.Contains("Chicot") Or CountyString.Contains("Cleveland") Or CountyString.Contains("Desha") Or CountyString.Contains("Drew") Or CountyString.Contains("Jefferson") Or CountyString.Contains("Lincoln") Then
+            Return 1
+        ElseIf CountyString.Contains("Howard") Or CountyString.Contains("Little River") Or CountyString.Contains("Montgomery") Or CountyString.Contains("Pike") Or CountyString.Contains("Polk") Or CountyString.Contains("Scott") Or CountyString.Contains("Sevier") Or CountyString.Contains("Yell") Then
+            Return 2
+        ElseIf CountyString.Contains("Arkansas") Or CountyString.Contains("Clay") Or CountyString.Contains("Craighead") Or CountyString.Contains("Crittenden") Or CountyString.Contains("Cross") Or CountyString.Contains("Greene") Or CountyString.Contains("Jackson") Or CountyString.Contains("Lee") Or CountyString.Contains("Lonoke") Or CountyString.Contains("Mississippi") Or CountyString.Contains("Monroe") Or CountyString.Contains("Phillips") Or CountyString.Contains("Poinsett") Or CountyString.Contains("Prairie") Or CountyString.Contains("St Francis") Or CountyString.Contains("Woodruff") Then
+            Return 3
+        ElseIf CountyString.Contains("Columbia") Or CountyString.Contains("Hempstead") Or CountyString.Contains("Lafayette") Or CountyString.Contains("Miller") Or CountyString.Contains("Nevada") Or CountyString.Contains("Ouachita") Or CountyString.Contains("Union") Then
+            Return 4
+        ElseIf CountyString.Contains("Clark") Or CountyString.Contains("Dallas") Or CountyString.Contains("Garland") Or CountyString.Contains("Grant") Or CountyString.Contains("Hot Spring") Or CountyString.Contains("Saline") Then
+            Return 5
+        ElseIf CountyString.Contains("Benton") Or CountyString.Contains("Boone") Or CountyString.Contains("Carroll") Or CountyString.Contains("Crawford") Or CountyString.Contains("Franklin") Or CountyString.Contains("Johnson") Or CountyString.Contains("Logan") Or CountyString.Contains("Madison") Or CountyString.Contains("Newton") Or CountyString.Contains("Pope") Or CountyString.Contains("Sebastian") Or CountyString.Contains("Washington") Then
+            Return 6
+        ElseIf CountyString.Contains("Cleburne") Or CountyString.Contains("Conway") Or CountyString.Contains("Faulkner") Or CountyString.Contains("Perry") Or CountyString.Contains("Pulaski") Or CountyString.Contains("Van Buren") Or CountyString.Contains("White") Then
+            Return 7
+        ElseIf CountyString.Contains("Baxter") Or CountyString.Contains("Fulton") Or CountyString.Contains("Independence") Or CountyString.Contains("Izard") Or CountyString.Contains("Lawrence") Or CountyString.Contains("Marion") Or CountyString.Contains("Randolph") Or CountyString.Contains("Searcy") Or CountyString.Contains("Sharp") Or CountyString.Contains("Stone") Then
+            Return 8
+        Else
+            Return 0
+        End If
+
+
+    End Function
 
 End Class

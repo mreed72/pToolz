@@ -1,5 +1,9 @@
 ﻿Prescribed Fire Tools
 -----------------------------
+07 MAY 2019
+	Fixed an issue with code not finding the DLL on some instances.
+	Minor Code Cleanup.
+
 26 APRIL 2019
 	Added a "Light" single fuels calculator for a quick and easy way of getting a result without going through the
 		entire main program session.

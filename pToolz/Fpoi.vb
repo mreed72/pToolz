@@ -9,19 +9,9 @@
 'TODO: Need to have the results HIGHLIGHT when over 79% returns.
 
 
-Imports xFuels
 
 Public Class Fpoi
-    Private x As New xFuels.ClassFuels
-
-    Public Property X1 As ClassFuels
-        Get
-            Return x
-        End Get
-        Set(value As ClassFuels)
-            x = value
-        End Set
-    End Property
+    Private x1 As New xFuels.ClassFuels
 
     Private Sub Fpoi_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 

@@ -7,19 +7,9 @@
 '==============================================================================
 
 
-Imports xFuels
-
 Public Class Fabout
-    Private x As New xFuels.ClassFuels
+    Private x1 As New xFuels.ClassFuels
 
-    Public Property X1 As ClassFuels
-        Get
-            Return x
-        End Get
-        Set(value As ClassFuels)
-            x = value
-        End Set
-    End Property
 
     Private Sub Fabout_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 

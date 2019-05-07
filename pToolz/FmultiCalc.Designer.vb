@@ -235,6 +235,7 @@ Partial Class FmultiCalc
         Me.txTotalSize.Size = New System.Drawing.Size(15, 17)
         Me.txTotalSize.TabIndex = 8
         Me.txTotalSize.Text = "0"
+        Me.ToolTip1.SetToolTip(Me.txTotalSize, "Total size of your burn in acres.")
         '
         'txTotalTons
         '
@@ -244,6 +245,7 @@ Partial Class FmultiCalc
         Me.txTotalTons.Size = New System.Drawing.Size(15, 17)
         Me.txTotalTons.TabIndex = 10
         Me.txTotalTons.Text = "0"
+        Me.ToolTip1.SetToolTip(Me.txTotalTons, "Total Tons this burn will produce.")
         '
         'Label7
         '
@@ -281,6 +283,7 @@ Partial Class FmultiCalc
         Me.txAllowed.Size = New System.Drawing.Size(15, 17)
         Me.txAllowed.TabIndex = 14
         Me.txAllowed.Text = "0"
+        Me.ToolTip1.SetToolTip(Me.txAllowed, "Allowed Tonnage for this burn.")
         '
         'dgv1
         '
@@ -334,6 +337,7 @@ Partial Class FmultiCalc
         Me.lbLabel001.TabIndex = 16
         Me.lbLabel001.TabStop = True
         Me.lbLabel001.Text = "LinkLabel1"
+        Me.ToolTip1.SetToolTip(Me.lbLabel001, "Click to open the CSV file that shows all the fuels and loaging for this burn.")
         '
         'Button1
         '

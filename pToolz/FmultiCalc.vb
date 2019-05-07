@@ -16,11 +16,7 @@ Public Class FmultiCalc
     Private XGX As String
 
     Private Sub FmultiCalc_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
         lbLabel001.Visible = False
-
-
 
     End Sub
 
