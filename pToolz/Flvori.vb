@@ -32,7 +32,7 @@ Public Class Flvori
             res = txResult.Text
 
 
-            x.SESLog("LVORI", "Relative Humidity: " & xR & vbCrLf & "Atmospheric Dispersion Index: " & xA & vbCrLf & "Result: " & res)
+            x1.SESLog("LVORI", "Relative Humidity: " & xR & vbCrLf & "Atmospheric Dispersion Index: " & xA & vbCrLf & "Result: " & res)
 
             If My.Settings.CurrentSessionID = String.Empty Then
                 Form1.myicon.ShowBalloonTip(2000, "LVORI", "NO SESSION LOG CREATED!", ToolTipIcon.Info)

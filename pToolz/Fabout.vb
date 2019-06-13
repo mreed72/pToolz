@@ -26,8 +26,8 @@ Public Class Fabout
         End Try
 
 
-        Dim r As String = Dcypt(x.GetMyKey("REGKEY"))
-        Dim t As String = x.GetMyKey("DECVALUE")
+        Dim r As String = Dcypt(x1.GetMyKey("REGKEY"))
+        Dim t As String = x1.GetMyKey("DECVALUE")
         If r = t Then
             Label2.BackColor = Color.LightGreen
             Label2.ForeColor = Color.Black
