@@ -25,6 +25,8 @@ Partial Class FrmSafeChecklist
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmSafeChecklist))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
@@ -42,8 +44,6 @@ Partial Class FrmSafeChecklist
         Me.CheckBox3 = New System.Windows.Forms.CheckBox()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.PageSetupDialog1 = New System.Windows.Forms.PageSetupDialog()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.PrintForm1 = New Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(Me.components)
@@ -52,9 +52,6 @@ Partial Class FrmSafeChecklist
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.TextBox4)
         Me.Panel1.Controls.Add(Me.ComboBox2)
         Me.Panel1.Controls.Add(Me.ComboBox1)
@@ -74,15 +71,34 @@ Partial Class FrmSafeChecklist
         Me.Panel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel1.Location = New System.Drawing.Point(12, 12)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(747, 254)
+        Me.Panel1.Size = New System.Drawing.Size(1053, 375)
         Me.Panel1.TabIndex = 0
+        '
+        'Button2
+        '
+        Me.Button2.Image = Global.pToolz.My.Resources.Resources.x320040
+        Me.Button2.Location = New System.Drawing.Point(1154, 320)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(53, 40)
+        Me.Button2.TabIndex = 18
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
+        Me.Label3.Location = New System.Drawing.Point(1092, 363)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(43, 15)
+        Me.Label3.TabIndex = 17
+        Me.Label3.Text = "PRINT"
         '
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(223, Byte), Integer))
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button1.Image = Global.pToolz.My.Resources.Resources.print_icon__1_
-        Me.Button1.Location = New System.Drawing.Point(606, 189)
+        Me.Button1.Location = New System.Drawing.Point(1081, 322)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(67, 38)
         Me.Button1.TabIndex = 16
@@ -165,7 +181,7 @@ Partial Class FrmSafeChecklist
         '
         'MaskedTextBox1
         '
-        Me.MaskedTextBox1.Location = New System.Drawing.Point(595, 29)
+        Me.MaskedTextBox1.Location = New System.Drawing.Point(595, 1)
         Me.MaskedTextBox1.Mask = "(999) 000-0000"
         Me.MaskedTextBox1.Name = "MaskedTextBox1"
         Me.MaskedTextBox1.Size = New System.Drawing.Size(149, 26)
@@ -173,7 +189,7 @@ Partial Class FrmSafeChecklist
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(380, 29)
+        Me.TextBox1.Location = New System.Drawing.Point(380, 1)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(209, 26)
         Me.TextBox1.TabIndex = 5
@@ -221,31 +237,12 @@ Partial Class FrmSafeChecklist
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(3, 31)
+        Me.CheckBox1.Location = New System.Drawing.Point(3, 3)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(371, 24)
         Me.CheckBox1.TabIndex = 0
         Me.CheckBox1.Text = "Person in Charge of the Fire and Phone Number:"
         Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.Label3.Location = New System.Drawing.Point(617, 230)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(43, 15)
-        Me.Label3.TabIndex = 17
-        Me.Label3.Text = "PRINT"
-        '
-        'Button2
-        '
-        Me.Button2.Image = Global.pToolz.My.Resources.Resources.x320040
-        Me.Button2.Location = New System.Drawing.Point(679, 187)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(53, 40)
-        Me.Button2.TabIndex = 18
-        Me.Button2.UseVisualStyleBackColor = True
         '
         'PageSetupDialog1
         '
@@ -263,8 +260,11 @@ Partial Class FrmSafeChecklist
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(774, 280)
+        Me.ClientSize = New System.Drawing.Size(1219, 399)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.Button1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmSafeChecklist"
@@ -272,6 +272,7 @@ Partial Class FrmSafeChecklist
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

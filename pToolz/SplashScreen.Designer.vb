@@ -38,7 +38,7 @@ Partial Class SplashScreen
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(100, 13)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "© 2018 Scott Reed"
+        Me.Label1.Text = "© 2019 Scott Reed"
         '
         'Label2
         '

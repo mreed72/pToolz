@@ -23,7 +23,6 @@ Partial Class Fsmokecalc
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.txResults = New System.Windows.Forms.TextBox()
         Me.txAllowed = New System.Windows.Forms.Label()
@@ -51,24 +50,11 @@ Partial Class Fsmokecalc
         Me.Button1 = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.Control
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel1.Controls.Add(Me.Panel4)
-        Me.Panel1.Controls.Add(Me.Panel3)
-        Me.Panel1.Controls.Add(Me.Panel2)
-        Me.Panel1.Location = New System.Drawing.Point(12, 47)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(591, 133)
-        Me.Panel1.TabIndex = 0
         '
         'Panel4
         '
@@ -80,21 +66,23 @@ Partial Class Fsmokecalc
         Me.Panel4.Controls.Add(Me.Label9)
         Me.Panel4.Controls.Add(Me.txAvFuels)
         Me.Panel4.Controls.Add(Me.Label6)
-        Me.Panel4.Location = New System.Drawing.Point(3, 70)
+        Me.Panel4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.Panel4.Location = New System.Drawing.Point(12, 168)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(581, 53)
+        Me.Panel4.Size = New System.Drawing.Size(671, 65)
         Me.Panel4.TabIndex = 8
         '
         'txResults
         '
-        Me.txResults.BackColor = System.Drawing.SystemColors.Control
+        Me.txResults.BackColor = System.Drawing.Color.MistyRose
         Me.txResults.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txResults.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.txResults.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txResults.ForeColor = System.Drawing.Color.Black
-        Me.txResults.Location = New System.Drawing.Point(3, 23)
+        Me.txResults.Location = New System.Drawing.Point(0, 41)
         Me.txResults.Name = "txResults"
         Me.txResults.ReadOnly = True
-        Me.txResults.Size = New System.Drawing.Size(565, 22)
+        Me.txResults.Size = New System.Drawing.Size(669, 22)
         Me.txResults.TabIndex = 6
         Me.txResults.TabStop = False
         Me.txResults.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -102,54 +90,54 @@ Partial Class Fsmokecalc
         'txAllowed
         '
         Me.txAllowed.AutoSize = True
-        Me.txAllowed.Location = New System.Drawing.Point(465, 7)
+        Me.txAllowed.Location = New System.Drawing.Point(600, 7)
         Me.txAllowed.Name = "txAllowed"
-        Me.txAllowed.Size = New System.Drawing.Size(13, 13)
+        Me.txAllowed.Size = New System.Drawing.Size(18, 20)
         Me.txAllowed.TabIndex = 5
         Me.txAllowed.Text = "0"
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(385, 7)
+        Me.Label11.Location = New System.Drawing.Point(487, 7)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(74, 13)
+        Me.Label11.Size = New System.Drawing.Size(107, 20)
         Me.Label11.TabIndex = 4
         Me.Label11.Text = "Allowed Tons:"
         '
         'txTotalTons
         '
         Me.txTotalTons.AutoSize = True
-        Me.txTotalTons.Location = New System.Drawing.Point(315, 7)
+        Me.txTotalTons.Location = New System.Drawing.Point(362, 7)
         Me.txTotalTons.Name = "txTotalTons"
-        Me.txTotalTons.Size = New System.Drawing.Size(13, 13)
+        Me.txTotalTons.Size = New System.Drawing.Size(18, 20)
         Me.txTotalTons.TabIndex = 3
         Me.txTotalTons.Text = "0"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(248, 7)
+        Me.Label9.Location = New System.Drawing.Point(269, 7)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(61, 13)
+        Me.Label9.Size = New System.Drawing.Size(87, 20)
         Me.Label9.TabIndex = 2
         Me.Label9.Text = "Total Tons:"
         '
         'txAvFuels
         '
         Me.txAvFuels.AutoSize = True
-        Me.txAvFuels.Location = New System.Drawing.Point(181, 7)
+        Me.txAvFuels.Location = New System.Drawing.Point(128, 7)
         Me.txAvFuels.Name = "txAvFuels"
-        Me.txAvFuels.Size = New System.Drawing.Size(13, 13)
+        Me.txAvFuels.Size = New System.Drawing.Size(18, 20)
         Me.txAvFuels.TabIndex = 1
         Me.txAvFuels.Text = "0"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(94, 7)
+        Me.Label6.Location = New System.Drawing.Point(3, 7)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(81, 13)
+        Me.Label6.Size = New System.Drawing.Size(119, 20)
         Me.Label6.TabIndex = 0
         Me.Label6.Text = "Available Fuels:"
         '
@@ -160,9 +148,10 @@ Partial Class Fsmokecalc
         Me.Panel3.Controls.Add(Me.Label5)
         Me.Panel3.Controls.Add(Me.txFtype)
         Me.Panel3.Controls.Add(Me.Label4)
-        Me.Panel3.Location = New System.Drawing.Point(261, 3)
+        Me.Panel3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.Panel3.Location = New System.Drawing.Point(354, 47)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(323, 61)
+        Me.Panel3.Size = New System.Drawing.Size(390, 115)
         Me.Panel3.TabIndex = 1
         '
         'txFload
@@ -171,18 +160,18 @@ Partial Class Fsmokecalc
         Me.txFload.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.txFload.FormattingEnabled = True
         Me.txFload.Items.AddRange(New Object() {"Low", "Moderate", "Heavy"})
-        Me.txFload.Location = New System.Drawing.Point(195, 22)
+        Me.txFload.Location = New System.Drawing.Point(94, 70)
         Me.txFload.Name = "txFload"
-        Me.txFload.Size = New System.Drawing.Size(121, 21)
+        Me.txFload.Size = New System.Drawing.Size(121, 28)
         Me.txFload.TabIndex = 1
         Me.ToolTip1.SetToolTip(Me.txFload, "Select the amount of fuel loading")
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(192, 6)
+        Me.Label5.Location = New System.Drawing.Point(4, 73)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(57, 13)
+        Me.Label5.Size = New System.Drawing.Size(84, 20)
         Me.Label5.TabIndex = 2
         Me.Label5.Text = "Fuel Load:"
         '
@@ -192,9 +181,9 @@ Partial Class Fsmokecalc
         Me.txFtype.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.txFtype.FormattingEnabled = True
         Me.txFtype.Items.AddRange(New Object() {"Shortleaf Pine with Oak", "Shortleaf Pine Regeneration", "Loblolly Pine with Oak", "Loblolly Pine Regeneration", "Hardwood Leaf Litter", "Grass or Brush", "Dispersed Slash", "Piled Debris", "Shortleaf Loblolly with Grass", "Corn", "Cotton", "Rice", "Soybean", "Wheat"})
-        Me.txFtype.Location = New System.Drawing.Point(9, 22)
+        Me.txFtype.Location = New System.Drawing.Point(94, 3)
         Me.txFtype.Name = "txFtype"
-        Me.txFtype.Size = New System.Drawing.Size(184, 21)
+        Me.txFtype.Size = New System.Drawing.Size(282, 28)
         Me.txFtype.TabIndex = 0
         Me.ToolTip1.SetToolTip(Me.txFtype, "Select the type of fuel")
         '
@@ -203,7 +192,7 @@ Partial Class Fsmokecalc
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(6, 6)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(57, 13)
+        Me.Label4.Size = New System.Drawing.Size(82, 20)
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "Fuel Type:"
         '
@@ -216,9 +205,10 @@ Partial Class Fsmokecalc
         Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Controls.Add(Me.txCatDay)
-        Me.Panel2.Location = New System.Drawing.Point(3, 3)
+        Me.Panel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.Panel2.Location = New System.Drawing.Point(12, 47)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(252, 61)
+        Me.Panel2.Size = New System.Drawing.Size(336, 115)
         Me.Panel2.TabIndex = 0
         '
         'Label1
@@ -226,59 +216,59 @@ Partial Class Fsmokecalc
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(3, 12)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(171, 13)
+        Me.Label1.Size = New System.Drawing.Size(253, 20)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Size of the burn or block (in acres):"
         '
         'txDistance
         '
-        Me.txDistance.Location = New System.Drawing.Point(209, 35)
+        Me.txDistance.Location = New System.Drawing.Point(262, 41)
         Me.txDistance.Name = "txDistance"
-        Me.txDistance.Size = New System.Drawing.Size(32, 20)
+        Me.txDistance.Size = New System.Drawing.Size(61, 26)
         Me.txDistance.TabIndex = 2
         Me.ToolTip1.SetToolTip(Me.txDistance, "Target distance in MILES (decimals okay)")
         '
         'txBurnSize
         '
-        Me.txBurnSize.Location = New System.Drawing.Point(180, 9)
+        Me.txBurnSize.Location = New System.Drawing.Point(262, 9)
         Me.txBurnSize.Name = "txBurnSize"
-        Me.txBurnSize.Size = New System.Drawing.Size(61, 20)
+        Me.txBurnSize.Size = New System.Drawing.Size(61, 26)
         Me.txBurnSize.TabIndex = 0
         Me.ToolTip1.SetToolTip(Me.txBurnSize, "Size of the burn (in acres) no decimals")
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(129, 38)
+        Me.Label3.Location = New System.Drawing.Point(130, 44)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(86, 13)
+        Me.Label3.Size = New System.Drawing.Size(126, 20)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Target Distance:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(11, 38)
+        Me.Label2.Location = New System.Drawing.Point(147, 79)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(74, 13)
+        Me.Label2.Size = New System.Drawing.Size(109, 20)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Category Day:"
         '
         'txCatDay
         '
-        Me.txCatDay.Location = New System.Drawing.Point(91, 35)
+        Me.txCatDay.Location = New System.Drawing.Point(262, 73)
         Me.txCatDay.Name = "txCatDay"
-        Me.txCatDay.Size = New System.Drawing.Size(32, 20)
+        Me.txCatDay.Size = New System.Drawing.Size(61, 26)
         Me.txCatDay.TabIndex = 1
         Me.ToolTip1.SetToolTip(Me.txCatDay, "A Number 1 through 5")
         '
         'txRecSize
         '
         Me.txRecSize.AutoSize = True
-        Me.txRecSize.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txRecSize.Location = New System.Drawing.Point(159, 9)
+        Me.txRecSize.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.txRecSize.Location = New System.Drawing.Point(159, 6)
         Me.txRecSize.Name = "txRecSize"
-        Me.txRecSize.Size = New System.Drawing.Size(15, 16)
+        Me.txRecSize.Size = New System.Drawing.Size(18, 20)
         Me.txRecSize.TabIndex = 4
         Me.txRecSize.Text = "0"
         '
@@ -297,9 +287,9 @@ Partial Class Fsmokecalc
         Me.btnClear.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnClear.Image = Global.pToolz.My.Resources.Resources._92055
-        Me.btnClear.Location = New System.Drawing.Point(430, 12)
+        Me.btnClear.Location = New System.Drawing.Point(602, 6)
         Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(36, 25)
+        Me.btnClear.Size = New System.Drawing.Size(36, 35)
         Me.btnClear.TabIndex = 2
         Me.ToolTip1.SetToolTip(Me.btnClear, "CLEAR ALL FIELDS")
         Me.btnClear.UseVisualStyleBackColor = False
@@ -310,9 +300,9 @@ Partial Class Fsmokecalc
         Me.btnCalc.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnCalc.Image = Global.pToolz.My.Resources.Resources._56260
         Me.btnCalc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCalc.Location = New System.Drawing.Point(472, 12)
+        Me.btnCalc.Location = New System.Drawing.Point(644, 6)
         Me.btnCalc.Name = "btnCalc"
-        Me.btnCalc.Size = New System.Drawing.Size(100, 25)
+        Me.btnCalc.Size = New System.Drawing.Size(100, 35)
         Me.btnCalc.TabIndex = 1
         Me.btnCalc.Text = "Calculate"
         Me.btnCalc.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -324,9 +314,9 @@ Partial Class Fsmokecalc
         Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button1.Image = Global.pToolz.My.Resources.Resources.weIMAGE118
-        Me.Button1.Location = New System.Drawing.Point(578, 12)
+        Me.Button1.Location = New System.Drawing.Point(689, 168)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(25, 25)
+        Me.Button1.Size = New System.Drawing.Size(55, 65)
         Me.Button1.TabIndex = 3
         Me.ToolTip1.SetToolTip(Me.Button1, "Close this form")
         Me.Button1.UseVisualStyleBackColor = False
@@ -336,6 +326,7 @@ Partial Class Fsmokecalc
         Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel5.Controls.Add(Me.Label13)
         Me.Panel5.Controls.Add(Me.txRecSize)
+        Me.Panel5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.Panel5.Location = New System.Drawing.Point(12, 6)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(238, 35)
@@ -346,18 +337,19 @@ Partial Class Fsmokecalc
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(215, Byte), Integer), CType(CType(234, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(615, 188)
+        Me.ClientSize = New System.Drawing.Size(755, 242)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel5)
+        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.btnClear)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.btnCalc)
-        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Button1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "Fsmokecalc"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Smoke Calculator"
-        Me.Panel1.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         Me.Panel3.ResumeLayout(False)
@@ -369,8 +361,6 @@ Partial Class Fsmokecalc
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents Button1 As Button
     Friend WithEvents Panel3 As Panel
     Friend WithEvents txFload As ComboBox
