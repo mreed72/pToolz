@@ -151,6 +151,11 @@ Public Class Form1
         myChild.Show()
     End Sub
 
+
+
+
+
+
 #Region "MDI CHILD FORM OPEN WITHOUT DUPLICATES"
 
     Private Sub SmokeCalculatorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SmokeCalculatorToolStripMenuItem.Click, Button2.Click
