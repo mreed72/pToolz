@@ -42,7 +42,6 @@ Partial Class FrmSafeChecklist
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.PageSetupDialog1 = New System.Windows.Forms.PageSetupDialog()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
@@ -52,8 +51,10 @@ Partial Class FrmSafeChecklist
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.TextBox4)
         Me.Panel1.Controls.Add(Me.ComboBox2)
+        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.ComboBox1)
         Me.Panel1.Controls.Add(Me.TextBox3)
         Me.Panel1.Controls.Add(Me.Label2)
@@ -217,28 +218,18 @@ Partial Class FrmSafeChecklist
         'Button2
         '
         Me.Button2.Image = Global.pToolz.My.Resources.Resources.x320040
-        Me.Button2.Location = New System.Drawing.Point(714, 241)
+        Me.Button2.Location = New System.Drawing.Point(692, 175)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(53, 40)
         Me.Button2.TabIndex = 18
         Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.Label3.Location = New System.Drawing.Point(652, 284)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(43, 15)
-        Me.Label3.TabIndex = 17
-        Me.Label3.Text = "PRINT"
         '
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(223, Byte), Integer))
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button1.Image = Global.pToolz.My.Resources.Resources.print_icon__1_
-        Me.Button1.Location = New System.Drawing.Point(641, 243)
+        Me.Button1.Location = New System.Drawing.Point(619, 175)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(67, 38)
         Me.Button1.TabIndex = 16
@@ -260,11 +251,8 @@ Partial Class FrmSafeChecklist
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(779, 309)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Label3)
+        Me.ClientSize = New System.Drawing.Size(779, 242)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Button1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmSafeChecklist"
@@ -272,7 +260,6 @@ Partial Class FrmSafeChecklist
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -295,7 +282,6 @@ Partial Class FrmSafeChecklist
     Friend WithEvents CheckBox2 As CheckBox
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents Button2 As Button
-    Friend WithEvents Label3 As Label
     Friend WithEvents PageSetupDialog1 As PageSetupDialog
     Friend WithEvents PrintDocument1 As Printing.PrintDocument
     Friend WithEvents PrintForm1 As PowerPacks.Printing.PrintForm

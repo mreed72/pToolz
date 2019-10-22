@@ -6,9 +6,6 @@
 'You should have received a copy of the GNU General Public License along with this program.  If not, see <https://www.gnu.org/licenses/>
 '==============================================================================
 
-'TODO: Need to have the results HIGHLIGHT when over 79% returns.
-
-
 
 Public Class Fpoi
     Private x1 As New xFuels.ClassFuels
@@ -36,6 +33,11 @@ Public Class Fpoi
             a3 = txFDFM.Value
             a4 = X1.ProIgnCalc(a1, a2, a3)
 
+            If a4 >= 80 Then
+                txResult.BackColor = Color.LightPink
+            Else
+                txResult.BackColor = DefaultBackColor
+            End If
             txResult.Text = a4 & "%"
 
             X1.SESLog("Probability of Ignition", "Shading: " & a1 & vbCrLf & "Dry Bulb Temp: " & a2 & vbCrLf & "Fuel Moisture: " & a3 & vbCrLf & "Result: " & a4 & "%")
@@ -61,6 +63,7 @@ Public Class Fpoi
             txDryBulb.Value = 1
             txFDFM.Value = 1
             txResult.Clear()
+            txResult.BackColor = DefaultBackColor
         Catch ex As Exception
             X1.ERRlog("1X6F1M6K", ex.Message) ' ERROR LOG CODE
         End Try
