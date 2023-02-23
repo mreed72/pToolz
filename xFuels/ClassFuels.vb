@@ -19,7 +19,7 @@ Public Class ClassFuels
     ''' <returns>DOUBLE: value represents the available fuels for a burn.</returns>
     Public Function GetAvFuels(ByVal cTypx As String, ByVal cLoad As String)
         Select Case cTypx
-            Case "Shortleaf Pine with Oak"
+            Case "1-Shortleaf Pine with Oak"
                 Select Case cLoad
                     Case Is = "Low"
                         Return 3.0
@@ -30,7 +30,7 @@ Public Class ClassFuels
                     Case Else
                         Exit Select
                 End Select
-            Case "Shortleaf Pine Regeneration"
+            Case "2-Shortleaf Pine Regeneration"
                 Select Case cLoad
                     Case Is = "Low"
                         Return 2.6
@@ -41,7 +41,7 @@ Public Class ClassFuels
                     Case Else
                         Exit Select
                 End Select
-            Case "Loblolly Pine with Oak"
+            Case "3-Loblolly Pine with Oak"
                 Select Case cLoad
                     Case Is = "Low"
                         Return 6.4
@@ -52,7 +52,7 @@ Public Class ClassFuels
                     Case Else
                         Exit Select
                 End Select
-            Case "Loblolly Pine Regeneration"
+            Case "4-Loblolly Pine Regeneration"
                 Select Case cLoad
                     Case Is = "Low"
                         Return 4.4
@@ -63,7 +63,7 @@ Public Class ClassFuels
                     Case Else
                         Exit Select
                 End Select
-            Case "Hardwood Leaf Litter"
+            Case "5-Hardwood Leaf Litter"
                 Select Case cLoad
                     Case Is = "Low"
                         Return 0.8
@@ -74,7 +74,7 @@ Public Class ClassFuels
                     Case Else
                         Exit Select
                 End Select
-            Case "Grass or Brush"
+            Case "6-Grass or Brush"
                 Select Case cLoad
                     Case Is = "Low"
                         Return 2.0
@@ -85,7 +85,7 @@ Public Class ClassFuels
                     Case Else
                         Exit Select
                 End Select
-            Case "Dispersed Slash"
+            Case "7-Dispersed Slash"
                 Select Case cLoad
                     Case Is = "Low"
                         Return 4.0
@@ -96,7 +96,7 @@ Public Class ClassFuels
                     Case Else
                         Exit Select
                 End Select
-            Case "Piled Debris"
+            Case "8-Piled Debris"
                 Select Case cLoad
                     Case Is = "Low"
                         Return 5.0
@@ -107,7 +107,7 @@ Public Class ClassFuels
                     Case Else
                         Exit Select
                 End Select
-            Case "Shortleaf Loblolly with Grass"
+            Case "9-Shortleaf Loblolly with Grass"
                 Select Case cLoad
                     Case Is = "Low"
                         Return 1.5
@@ -118,7 +118,7 @@ Public Class ClassFuels
                     Case Else
                         Exit Select
                 End Select
-            Case "Corn"
+            Case "10-Corn"
                 Select Case cLoad
                     Case Is = "Low"
                         Return 3.1
@@ -129,7 +129,7 @@ Public Class ClassFuels
                     Case Else
                         Exit Select
                 End Select
-            Case "Cotton"
+            Case "11-Cotton"
                 Select Case cLoad
                     Case Is = "Low"
                         Return 0.8
@@ -140,7 +140,7 @@ Public Class ClassFuels
                     Case Else
                         Exit Select
                 End Select
-            Case "Rice"
+            Case "12-Rice"
                 Select Case cLoad
                     Case Is = "Low"
                         Return 2.5
@@ -151,7 +151,7 @@ Public Class ClassFuels
                     Case Else
                         Exit Select
                 End Select
-            Case "Soybean"
+            Case "13-Soybean"
                 Select Case cLoad
                     Case Is = "Low"
                         Return 2.9
@@ -162,7 +162,7 @@ Public Class ClassFuels
                     Case Else
                         Exit Select
                 End Select
-            Case "Wheat"
+            Case "14-Wheat"
                 Select Case cLoad
                     Case Is = "Low"
                         Return 0.9
