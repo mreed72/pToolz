@@ -1,5 +1,5 @@
 ﻿'==============================================================================
-'Smoke Tools - Assisting burn managers with Smoke Management. ©2018 Scott Reed
+'Smoke Tools - Assisting burn managers with Smoke Management. ©2018-2024 Scott Reed
 'This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
 'the Free Software Foundation, either version 3 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful,
 'but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
@@ -1876,21 +1876,34 @@ Public Class ClassFuels
 
     Public Function CountyToDistrict(CountyString As String)
 
-        If CountyString.Contains("Ashley") Or CountyString.Contains("Bradley") Or CountyString.Contains("Calhoun") Or CountyString.Contains("Chicot") Or CountyString.Contains("Cleveland") Or CountyString.Contains("Desha") Or CountyString.Contains("Drew") Or CountyString.Contains("Jefferson") Or CountyString.Contains("Lincoln") Then
+        If CountyString.Contains("Ashley") Or CountyString.Contains("Bradley") Or CountyString.Contains("Calhoun") Or CountyString.Contains("Chicot") _
+            Or CountyString.Contains("Cleveland") Or CountyString.Contains("Desha") Or CountyString.Contains("Drew") Or CountyString.Contains("Jefferson") _
+            Or CountyString.Contains("Lincoln") Then
             Return 1
-        ElseIf CountyString.Contains("Howard") Or CountyString.Contains("Little River") Or CountyString.Contains("Montgomery") Or CountyString.Contains("Pike") Or CountyString.Contains("Polk") Or CountyString.Contains("Scott") Or CountyString.Contains("Sevier") Or CountyString.Contains("Yell") Then
+        ElseIf CountyString.Contains("Howard") Or CountyString.Contains("Little River") Or CountyString.Contains("Montgomery") Or CountyString.Contains("Pike") _
+            Or CountyString.Contains("Polk") Or CountyString.Contains("Scott") Or CountyString.Contains("Sevier") Or CountyString.Contains("Yell") Then
             Return 2
-        ElseIf CountyString.Contains("Arkansas") Or CountyString.Contains("Clay") Or CountyString.Contains("Craighead") Or CountyString.Contains("Crittenden") Or CountyString.Contains("Cross") Or CountyString.Contains("Greene") Or CountyString.Contains("Jackson") Or CountyString.Contains("Lee") Or CountyString.Contains("Lonoke") Or CountyString.Contains("Mississippi") Or CountyString.Contains("Monroe") Or CountyString.Contains("Phillips") Or CountyString.Contains("Poinsett") Or CountyString.Contains("Prairie") Or CountyString.Contains("St Francis") Or CountyString.Contains("Woodruff") Then
+        ElseIf CountyString.Contains("Arkansas") Or CountyString.Contains("Clay") Or CountyString.Contains("Craighead") Or CountyString.Contains("Crittenden") _
+            Or CountyString.Contains("Cross") Or CountyString.Contains("Greene") Or CountyString.Contains("Jackson") Or CountyString.Contains("Lee") _
+            Or CountyString.Contains("Lonoke") Or CountyString.Contains("Mississippi") Or CountyString.Contains("Monroe") Or CountyString.Contains("Phillips") _
+            Or CountyString.Contains("Poinsett") Or CountyString.Contains("Prairie") Or CountyString.Contains("St Francis") Or CountyString.Contains("Woodruff") Then
             Return 3
-        ElseIf CountyString.Contains("Columbia") Or CountyString.Contains("Hempstead") Or CountyString.Contains("Lafayette") Or CountyString.Contains("Miller") Or CountyString.Contains("Nevada") Or CountyString.Contains("Ouachita") Or CountyString.Contains("Union") Then
+        ElseIf CountyString.Contains("Columbia") Or CountyString.Contains("Hempstead") Or CountyString.Contains("Lafayette") Or CountyString.Contains("Miller") _
+            Or CountyString.Contains("Nevada") Or CountyString.Contains("Ouachita") Or CountyString.Contains("Union") Then
             Return 4
-        ElseIf CountyString.Contains("Clark") Or CountyString.Contains("Dallas") Or CountyString.Contains("Garland") Or CountyString.Contains("Grant") Or CountyString.Contains("Hot Spring") Or CountyString.Contains("Saline") Then
+        ElseIf CountyString.Contains("Clark") Or CountyString.Contains("Dallas") Or CountyString.Contains("Garland") Or CountyString.Contains("Grant") _
+            Or CountyString.Contains("Hot Spring") Or CountyString.Contains("Saline") Then
             Return 5
-        ElseIf CountyString.Contains("Benton") Or CountyString.Contains("Boone") Or CountyString.Contains("Carroll") Or CountyString.Contains("Crawford") Or CountyString.Contains("Franklin") Or CountyString.Contains("Johnson") Or CountyString.Contains("Logan") Or CountyString.Contains("Madison") Or CountyString.Contains("Newton") Or CountyString.Contains("Pope") Or CountyString.Contains("Sebastian") Or CountyString.Contains("Washington") Then
+        ElseIf CountyString.Contains("Benton") Or CountyString.Contains("Boone") Or CountyString.Contains("Carroll") Or CountyString.Contains("Crawford") _
+            Or CountyString.Contains("Franklin") Or CountyString.Contains("Johnson") Or CountyString.Contains("Logan") Or CountyString.Contains("Madison") _
+            Or CountyString.Contains("Newton") Or CountyString.Contains("Pope") Or CountyString.Contains("Sebastian") Or CountyString.Contains("Washington") Then
             Return 6
-        ElseIf CountyString.Contains("Cleburne") Or CountyString.Contains("Conway") Or CountyString.Contains("Faulkner") Or CountyString.Contains("Perry") Or CountyString.Contains("Pulaski") Or CountyString.Contains("Van Buren") Or CountyString.Contains("White") Then
+        ElseIf CountyString.Contains("Cleburne") Or CountyString.Contains("Conway") Or CountyString.Contains("Faulkner") Or CountyString.Contains("Perry") _
+            Or CountyString.Contains("Pulaski") Or CountyString.Contains("Van Buren") Or CountyString.Contains("White") Then
             Return 7
-        ElseIf CountyString.Contains("Baxter") Or CountyString.Contains("Fulton") Or CountyString.Contains("Independence") Or CountyString.Contains("Izard") Or CountyString.Contains("Lawrence") Or CountyString.Contains("Marion") Or CountyString.Contains("Randolph") Or CountyString.Contains("Searcy") Or CountyString.Contains("Sharp") Or CountyString.Contains("Stone") Then
+        ElseIf CountyString.Contains("Baxter") Or CountyString.Contains("Fulton") Or CountyString.Contains("Independence") Or CountyString.Contains("Izard") _
+            Or CountyString.Contains("Lawrence") Or CountyString.Contains("Marion") Or CountyString.Contains("Randolph") Or CountyString.Contains("Searcy") _
+            Or CountyString.Contains("Sharp") Or CountyString.Contains("Stone") Then
             Return 8
         Else
             Return 0
