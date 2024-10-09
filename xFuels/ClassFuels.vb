@@ -1912,4 +1912,64 @@ Public Class ClassFuels
 
     End Function
 
+
+    ''' <summary>
+    ''' Copy an ACCDB file and log the event
+    ''' </summary>
+    ''' <param name="StartFolder">The folder that contains the file you want to COPY FROM!</param>
+    ''' <param name="ArchiveFolder">The folder that you want to copy the file to.</param>
+    ''' <param name="mnFile">the name of the file in the StartFolder that will be copied.</param>
+    ''' <param name="Dname">The PREFIX of the new file name (Prefix)_YYYY_MM_DD.accdb</param>
+    ''' <returns></returns>
+    Function CopyFile(StartFolder As String, ArchiveFolder As String, mnFile As String, Dname As String)
+        Dim logFileName As String = "CopyLog.txt" ' Log file name
+        Dim logFilePath As String = Path.Combine(ArchiveFolder, logFileName)
+        ' Create the full path for the source and destination files
+        Dim sourceFilePath As String = Path.Combine(StartFolder, mnFile)
+        ' Get the current date in the desired format (Year, Month, Day)
+        Dim currentDate As DateTime = DateTime.Now
+        Dim destinationFileName As String = Dname & "_" & currentDate.Year & "_" &
+                                            currentDate.Month.ToString("D2") & "_" &
+                                            currentDate.Day.ToString("D2") & ".accdb"
+        Dim destinationFilePath As String = Path.Combine(ArchiveFolder, destinationFileName)
+        Try
+            ' Copy the file to the archive folder with the new name
+            File.Copy(sourceFilePath, destinationFilePath, True) ' True to overwrite if it already exists
+            Console.WriteLine("File copied and renamed successfully to: " & destinationFileName)
+
+            ' Log the date, time, and filename to the log file
+            Dim logEntry As String = DateTime.Now.ToString() & ": Copied '" & mnFile & "' to '" & destinationFileName & "'"
+            File.AppendAllText(logFilePath, logEntry & Environment.NewLine)
+
+
+        Catch ex As Exception
+
+        End Try
+    End Function
+
+
+
+    ''' <summary>
+    ''' Validate and format a date string
+    ''' </summary>
+    ''' <param name="dateString"></param>
+    ''' <returns></returns>
+    Private Function ValidateAndFormatDate(dateString As String) As String
+        Dim parsedDate As DateTime
+
+        ' Try to parse the input date string
+        If DateTime.TryParse(dateString, parsedDate) Then
+            ' If successful, format it to the desired format (e.g., "MM/dd/yyyy")
+            Return parsedDate.ToString("MM/dd/yyyy")
+        Else
+            ' If parsing fails, return an empty string or a specific message
+            'MessageBox.Show("Please enter a valid date in the format MM/dd/yyyy.", "Invalid Date", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return String.Empty
+        End If
+    End Function
+
+
+
+
+
 End Class
