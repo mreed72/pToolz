@@ -179,6 +179,38 @@ Public Class ClassFuels
     End Function
 
     ''' <summary>
+    ''' Get Available Fuels (Refined Version)
+    ''' </summary>
+    ''' <param name="cTypx">Fuel Type</param>
+    ''' <param name="cLoad">Fuel Load</param>
+    ''' <returns>DOUBLE: value represents the available fuels for a burn.</returns>
+    Public Function GetFuels(ByVal cTypx As String, ByVal cLoad As String) As Double
+        Dim fuelValues As New Dictionary(Of String, Dictionary(Of String, Double)) From {
+        {"1-Shortleaf Pine with Oak", New Dictionary(Of String, Double) From {{"Low", 3.0}, {"Moderate", 4.0}, {"Heavy", 4.4}}},
+        {"2-Shortleaf Pine Regeneration", New Dictionary(Of String, Double) From {{"Low", 2.6}, {"Moderate", 3.8}, {"Heavy", 5.1}}},
+        {"3-Loblolly Pine with Oak", New Dictionary(Of String, Double) From {{"Low", 6.4}, {"Moderate", 6.8}, {"Heavy", 7.9}}},
+        {"4-Loblolly Pine Regeneration", New Dictionary(Of String, Double) From {{"Low", 4.4}, {"Moderate", 7.6}, {"Heavy", 8.5}}},
+        {"5-Hardwood Leaf Litter", New Dictionary(Of String, Double) From {{"Low", 0.8}, {"Moderate", 1.5}, {"Heavy", 2.5}}},
+        {"6-Grass or Brush", New Dictionary(Of String, Double) From {{"Low", 2.0}, {"Moderate", 3.0}, {"Heavy", 5.0}}},
+        {"7-Dispersed Slash", New Dictionary(Of String, Double) From {{"Low", 4.0}, {"Moderate", 6.0}, {"Heavy", 8.0}}},
+        {"8-Piled Debris", New Dictionary(Of String, Double) From {{"Low", 5.0}, {"Moderate", 7.5}, {"Heavy", 10.0}}},
+        {"9-Shortleaf Loblolly with Grass", New Dictionary(Of String, Double) From {{"Low", 1.5}, {"Moderate", 3.8}, {"Heavy", 5.9}}},
+        {"10-Corn", New Dictionary(Of String, Double) From {{"Low", 3.1}, {"Moderate", 4.7}, {"Heavy", 6.2}}},
+        {"11-Cotton", New Dictionary(Of String, Double) From {{"Low", 0.8}, {"Moderate", 1.1}, {"Heavy", 1.5}}},
+        {"12-Rice", New Dictionary(Of String, Double) From {{"Low", 2.5}, {"Moderate", 3.7}, {"Heavy", 4.9}}},
+        {"13-Soybean", New Dictionary(Of String, Double) From {{"Low", 2.9}, {"Moderate", 4.3}, {"Heavy", 5.7}}},
+        {"14-Wheat", New Dictionary(Of String, Double) From {{"Low", 0.9}, {"Moderate", 1.4}, {"Heavy", 1.9}}}
+    }
+
+        If fuelValues.ContainsKey(cTypx) AndAlso fuelValues(cTypx).ContainsKey(cLoad) Then
+            Return fuelValues(cTypx)(cLoad)
+        Else
+            Return 0 ' or some default value or action in case of an unknown cTypx/cLoad
+        End If
+    End Function
+
+
+    ''' <summary>
     ''' Main Smoke Guidelines Calculation Code
     ''' </summary>
     ''' <param name="xCatDay">INTEGER: 1-5, Category Day</param>
